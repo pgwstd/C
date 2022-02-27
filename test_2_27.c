@@ -9,7 +9,7 @@ int main()
     int j=0;
     for(i=1;i<=9;i++){
         for (j = 1; j <=i ; j++) {
-            printf("%dx%d=%2d ",i,j,i*j);
+            printf("%dx%d=%-2d ",i,j,i*j);
         }
         printf("\n");//打印完一行记得换行
     }

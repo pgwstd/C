@@ -6,16 +6,20 @@
 int xshu(){
     int i=0;
     int j=0;
+    int flag=1;
     int count=0;
     for (i = 100; i <=200 ; i++) {
         for (j = 2; j < i; j++) {
             if(i%j==0) {
+                flag=0;
                 break;
             }
             else{
-                count++;
+                flag=1;
             }
         }
+        if(flag==1)
+            count++;
     }
 
     return count;

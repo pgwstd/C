@@ -5,12 +5,16 @@
 #include "stdio.h"
 int factral(int i)
 {
-    int sum=1;
-    if(i<0) {
-        factral(i - 1);
-        sum*=i;
+
+    if(i<=0){
+        return 1;
     }
-    return sum;
+    else
+    {
+        return i * factral(i - 1);
+    }
+
+
 }
 int main()
 {
@@ -19,6 +23,6 @@ int main()
     printf("请输入你要阶乘的数:\n");
     scanf("%d",&n);
     int ret=factral(n);
-    printf("%d\n",ret);
+    printf("%d",ret);
     return 0;
 }

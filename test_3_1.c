@@ -16,9 +16,15 @@ int my_strlen(char *p)
 
 void remove_string(char* str)
 {
-    int ret=0;
-    int size=my_strlen(str)-1;
-
+    char ret=*str;
+    int size=my_strlen(str);
+    *str=*(str+size-1);
+    *(str+size-1)='\0';
+    if(my_strlen(str+1)>=2)
+    {
+        remove_string(str+1);
+    }
+     *(str+size-1)=ret;
 }
 int main()
 {

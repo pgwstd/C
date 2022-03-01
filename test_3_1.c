@@ -4,7 +4,7 @@
 
 //用递归逆序一个数组，不能使用string函数
 #include "stdio.h"
-remove_string(cahr* str)
+remove_string(char* str)
 {
 
 }

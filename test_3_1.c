@@ -16,8 +16,8 @@ int my_strlen(char *p)
 
 void remove_string(char* str)
 {
-    int left=0;
-    int right=my_strlen(str)-1;
+    int ret=0;
+    int size=my_strlen(str)-1;
 
 }
 int main()

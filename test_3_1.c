@@ -4,8 +4,20 @@
 
 //用递归逆序一个数组，不能使用string函数
 #include "stdio.h"
-remove_string(char* str)
+int my_strlen(char *p)
 {
+    int count=0;
+    if(p!='\0'){
+        count++;
+        p++;
+    }
+    return count;
+}
+
+void remove_string(char* str)
+{
+    int left=0;
+    int right=my_strlen(str)-1;
 
 }
 int main()

@@ -4,7 +4,7 @@
 
 //用递归逆序一个数组，不能使用string函数
 #include "stdio.h"
-int my_strlen(char *p)
+int my_strlen(char *p)   //计算数组大小函数
 {
     int count=0;
     if(*p!='\0'){
@@ -14,7 +14,7 @@ int my_strlen(char *p)
     return count;
 }
 
-void remove_string(char* str)
+void remove_string(char* str)   //移动数组函数
 {
     char ret=*str;
     int size=my_strlen(str);

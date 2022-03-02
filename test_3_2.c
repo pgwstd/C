@@ -10,7 +10,7 @@ double Pow(int n,int k)
     else if(k>0)
         return n* Pow(n,k-1);//一个数的正数次方时
         else
-        return 1.0/Pow(n,-k);//一个数的负次方时
+        return 1.0/(Pow(n,-k));//一个数的负次方时
 }
 
 int main()

@@ -6,7 +6,7 @@
 double Pow(int n,int k)
 {
     if(n>0&&k==0)
-        return 1;//一个数的零次方时
+        return 1.0;//一个数的零次方时
     else if(k>0)
         return n* Pow(n,k-1);//一个数的正数次方时
         else

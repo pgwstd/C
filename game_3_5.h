@@ -4,7 +4,7 @@
 #include "stdio.h"
 #ifndef C_HOMEWORK_GAME_3_5_H
 #define C_HOMEWORK_GAME_3_5_H
-//符号的定义
+//符号的定义-棋盘大小
 #define ROW 3
 #define COL 3
 

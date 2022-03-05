@@ -8,14 +8,14 @@ void menu()
 {
     printf("***************************\n");
     printf("*********  1.开始游戏   *****\n");
-    printf("*********  2.结束游戏     *****\n");
+    printf("*********  0.结束游戏     *****\n");
     printf("***************************\n");
 
 }
 void game()
 {
     char board[ROW][COL];//存储数据 -二维数据
-    InintBoard(board[ROW][COL]);//初始化横盘-空格
+    InintBoard(board,ROW,COL);//初始化横盘-空格
 }
 int main()
 {
@@ -36,6 +36,6 @@ int main()
                 break;
         }
 
-    } while ()
+    } while (ipunt);
     return 0;
 }

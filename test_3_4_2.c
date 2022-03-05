@@ -13,7 +13,7 @@ void  blbl_sort(int arr[],int size){
                 int tep = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = tep;
-                flag =0;//如果交换了位置，就把flag改成0；
+                flag =0;  //如果交换了位置，就把flag改成0；
             }
         }
         if(flag==1){

@@ -3,7 +3,7 @@
 //
 //冒泡排序一个正序数组
 #include "stdio.h"
-int  blbl_sort(int arr[],int size){
+void  blbl_sort(int arr[],int size){
     int i=0;
     int j=0;
     for(int i = 0; i < size-1;++i) {

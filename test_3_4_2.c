@@ -17,7 +17,7 @@ void  blbl_sort(int arr[],int size){
             }
         }
         if(flag==1){
-            break;   //当这个数组排序都没交换过的话就直接跳出，节约时间
+            break;   //当这个数组左边比右边小的时候就不要往下排序直接跳出，节约时间
         }
     }
 }

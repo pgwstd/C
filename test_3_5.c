@@ -3,6 +3,7 @@
 //
 //三子棋
 #include "stdio.h"
+#include "game_3_5.h"
 void menu()
 {
     printf("***************************\n");
@@ -13,7 +14,8 @@ void menu()
 }
 void game()
 {
-
+    char board[ROW][COL];//存储数据 -二维数据
+    InintBoard(board[ROW][COL]);//初始化横盘-空格
 }
 int main()
 {

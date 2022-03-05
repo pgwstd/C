@@ -6,13 +6,18 @@
 void  blbl_sort(int arr[],int size){
     int i=0;
     int j=0;
+    int flag=1;
     for(int i = 0; i < size-1;++i) {
         for (int j = 0; j < size-1-i; ++j) {
             if (arr[j] > arr[j + 1]) {
                 int tep = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = tep;
+                flag =0;//如果交换了位置，就把flag改成0；
             }
+        }
+        if(flag==1){
+            break;   //当这个数组排序都没交换过的话就直接跳出，节约时间
         }
     }
 }

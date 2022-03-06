@@ -5,9 +5,9 @@
 #include "stdio.h"
 #ifndef C_HOMEWORK_GAME_3_5_H
 #define C_HOMEWORK_GAME_3_5_H
-//符号的定义-棋盘大小
-#define ROW 3
-#define COL 3
+//符号的定义-棋盘大小，可根据自身爱好自己调准
+#define ROW 3 //棋盘的横坐标可放的元素
+#define COL 3 //棋盘的纵坐标可放的元素
 
 //函数的声明
 //初始化横盘为空格函数

@@ -124,8 +124,8 @@ void ComputerMove(char board[ROW][COL],int row,int col) {
         //如果棋盘满了就返回Q，没满返回0
         int ret = IsFull(board, row, col);
         if (ret == 1) {
-            return 'Q';
+            return 'q';
         }
         //不满就继续
-        return 'C';
+        return 'c';
     }

@@ -51,13 +51,14 @@ void PlayerMove(char board[ROW][COL],int row,int col)
     while (1)
     {
     printf("请输入下棋的坐标:>");
-    scanf("%d %d",&x,&x);
+    scanf("%d %d",&x, &y);
     //判断坐标合法性
       if (x >= 1 && x <= row && y >= 1 && y <= col)
       {
           //下子
           //检测坐标是不否被占用
-          if(board[x-1][y-1]==' '){
+          if(board[x-1][y-1]==' ')
+          {
               board[x-1][y-1]='*';
               break;
           }
@@ -65,8 +66,9 @@ void PlayerMove(char board[ROW][COL],int row,int col)
               printf("坐标被占用，请重新输入！\n");
           }
       }
-      else{
-          printf("坐标非法，请重新输入！");
+      else
+      {
+          printf("坐标非法，请重新输入！\n");
       }
     }
 }

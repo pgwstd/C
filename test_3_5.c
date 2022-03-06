@@ -11,6 +11,7 @@ void menu()
     printf("***************************\n");
 
 }
+
 void game()
 {
     char board[ROW][COL];//存储数据 -二维数据

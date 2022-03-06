@@ -23,12 +23,14 @@ void game()
         PlayerMove(board,ROW,COL);
         DisplayBoard(board,ROW,COL);//打印棋盘
         //电脑下棋
-
+        ComputerMove(board,ROW,COL);
+        DisplayBoard(board,ROW,COL);//打印棋盘
     }
 }
 int main()
 {
     int ipunt=0;
+    srand((unsigned int)time(NULL));
     do{
         menu();
         printf("请选择:>");

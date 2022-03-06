@@ -55,7 +55,7 @@ void PlayerMove(char board[ROW][COL],int row,int col)
     //判断坐标合法性
       if (x >= 1 && x <= row && y >= 1 && y <= col)
       {
-          //下子
+          //玩家下子
           //检测坐标是不否被占用
           if(board[x-1][y-1]==' ')
           {
@@ -70,5 +70,19 @@ void PlayerMove(char board[ROW][COL],int row,int col)
       {
           printf("坐标非法，请重新输入！\n");
       }
+    }
+}
+//电脑下棋
+void ComputerMove(char board[ROW][COL],int row,int col) {
+    printf("电脑走:>\n");
+    while (1)
+    {
+        int x = rand() % row;
+        int y = rand() % col;
+        if (board[x][y] == ' ') {
+            //电脑下子
+            board[x - 1][y - 1] = '#';
+            break;
+        }
     }
 }

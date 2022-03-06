@@ -3,6 +3,8 @@
 //
 //游戏头文件，头文件全部在这引用，让代码整体性更好
 #include "stdio.h"
+#include "stdlib.h"
+#include "time.h"
 #ifndef C_HOMEWORK_GAME_3_5_H
 #define C_HOMEWORK_GAME_3_5_H
 //符号的定义-棋盘大小，可根据自身爱好自己调准
@@ -16,4 +18,6 @@ void InintBoard(char board[ROW][COL],int row,int col);
 void DisplayBoard(char board[ROW][COL],int row,int col);
 //玩家下棋
 void PlayerMove(char board[ROW][COL],int row,int col);
+//电脑下棋
+void ComputerMove(char board[ROW][COL],int row,int col);
 #endif //C_HOMEWORK_GAME_3_5_H

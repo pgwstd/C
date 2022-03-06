@@ -29,9 +29,9 @@ void DisplayBoard(char board[ROW][COL],int row,int col)
             printf("|");//打印出2个|符号，所以就是col-1
         }
         printf("\n");//打印完一行就换行
-        if (i < row - 1)
+        if (i < row - 1)//减少打印一行—————|——————|————符号，让其更美观
         {
-            for (j = 0; j < col; ++j)
+            for (j = 0; j < col; ++j)//原理和上面一样
             {
                 printf("---");
                 if(j<col-1)

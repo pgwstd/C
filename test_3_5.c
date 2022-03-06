@@ -1,7 +1,7 @@
 //
 // Created by 潘光伟 on 2022/3/5.
 //
-//三子棋游戏
+//三子棋游戏,游戏主界面
 #include "game_3_5.h"
 void menu()
 {

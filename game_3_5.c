@@ -84,12 +84,13 @@ void ComputerMove(char board[ROW][COL],int row,int col) {
             break;
         }
     }
+}
     int IsFull(char board[ROW][COL], int row, int col)
     {
         int i = 0;
         int j = 0;
-        for (int i = 0; i < row; ++i) {
-            for (int j = 0; j < col; ++j) {
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
                 if (board[i][j] == ' ') {
                     return 0;
                 }
@@ -124,8 +125,8 @@ void ComputerMove(char board[ROW][COL],int row,int col) {
         //如果棋盘满了就返回Q，没满返回0
         int ret = IsFull(board, row, col);
         if (ret == 1) {
-            return 'q';
+            return 'Q';
         }
         //不满就继续
-        return 'c';
+        return 'C';
     }

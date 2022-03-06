@@ -24,14 +24,14 @@ void game()
         PlayerMove(board,ROW,COL);
         DisplayBoard(board,ROW,COL);//打印棋盘
         ret=IsWin(board,ROW,COL);//判断游戏是否赢
-        if(ret!='c')
+        if(ret!='C')
             break;
 
         //电脑下棋
         ComputerMove(board,ROW,COL);
         DisplayBoard(board,ROW,COL);//打印棋盘
         ret=IsWin(board,ROW,COL);//判断游戏是否赢
-        if(ret!='c')
+        if(ret!='C')
             break;
     }
     if(ret=='*'){

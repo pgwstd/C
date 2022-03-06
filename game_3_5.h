@@ -1,6 +1,7 @@
 //
 // Created by 潘光伟 on 2022/3/5.
 //
+//游戏头文件，头文件全部在这引用，让代码整体性更好
 #include "stdio.h"
 #ifndef C_HOMEWORK_GAME_3_5_H
 #define C_HOMEWORK_GAME_3_5_H

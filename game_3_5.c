@@ -24,11 +24,11 @@ void DisplayBoard(char board[ROW][COL],int row,int col)
     {
         for (j = 0; j < col; ++j)
         {
-            printf(" %c ",board[i][j]);
+            printf(" %c ",board[i][j]);//循环打印空格
             if(j<col-1)
-            printf("|");
+            printf("|");//打印出2个|符号，所以就是col-1
         }
-        printf("\n");
+        printf("\n");//打印完一行就换行
         if (i < row - 1)
         {
             for (j = 0; j < col; ++j)

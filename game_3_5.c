@@ -12,7 +12,7 @@ void InintBoard(char board[ROW][COL],int row,int col)
     {
         for (j=0;j<col;j++)
         {
-            board[i][j]=' ';//初始化棋盘，不放置任何元素其实也就是放空格
+            board[i][j]=' ';//初始化棋盘，棋盘的横与列，不放置任何元素其实也就是放空格
         }
     }
 }

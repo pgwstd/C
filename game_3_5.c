@@ -1,7 +1,7 @@
 //
 // Created by 潘光伟 on 2022/3/5.
 //
-
+//游戏调用一些用法函数和设定在此，
 #include "game_3_5.h"
 //初始化棋盘
 void InintBoard(char board[ROW][COL],int row,int col)

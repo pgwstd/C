@@ -20,4 +20,6 @@ void DisplayBoard(char board[ROW][COL],int row,int col);
 void PlayerMove(char board[ROW][COL],int row,int col);
 //电脑下棋
 void ComputerMove(char board[ROW][COL],int row,int col);
+//游戏输赢判断
+char IsWin(char board[ROW][COL],int row,int col);
 #endif //C_HOMEWORK_GAME_3_5_H

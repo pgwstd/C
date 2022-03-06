@@ -8,7 +8,7 @@
 #define ROW 3
 #define COL 3
 
-//阳函数的声明
+//函数的声明
 //初始化横盘为空格
 void InintBoard(char board[ROW][COL],int row,int col);
 //打印棋盘

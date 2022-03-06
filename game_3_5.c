@@ -27,7 +27,7 @@ void DisplayBoard(char board[ROW][COL],int row,int col)
         {
             printf(" %c ",board[i][j]);//循环打印空格
             if(j<col-1)
-            printf("|");//打印出2个|符号，所以就是col-1
+            printf("|");//少打一列|符号，所以就是col-1，让其美观
         }
         printf("\n");//打印完一行就换行
         if (i < row - 1)//减少打印一行—————|——————|————符号，让其更美观

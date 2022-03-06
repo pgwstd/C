@@ -22,6 +22,8 @@ void game()
         //玩家下棋
         PlayerMove(board,ROW,COL);
         DisplayBoard(board,ROW,COL);//打印棋盘
+        //电脑下棋
+
     }
 }
 int main()

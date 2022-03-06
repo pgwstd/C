@@ -16,6 +16,10 @@ void game()
     char board[ROW][COL];//存储数据 -二维数据
     InintBoard(board,ROW,COL);//初始化横盘-空格
     DisplayBoard(board,ROW,COL);//打印棋盘
+    while (1){
+        //玩家下棋
+        PlayerMove(board,ROW,COL);
+    }
 }
 int main()
 {

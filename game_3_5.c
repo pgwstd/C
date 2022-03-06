@@ -42,3 +42,15 @@ void DisplayBoard(char board[ROW][COL],int row,int col)
         }
     }
 }
+//玩家下棋
+void PlayerMove(char board[ROW][COL],int row,int col)
+{
+    int i=0;
+    int j=0;
+    printf("玩家走:>\n");
+    printf("请输入下棋的坐标:>");
+    scanf("%d %d",&i,&j);
+    //判断坐标合法性
+
+
+}

@@ -14,4 +14,6 @@
 void InintBoard(char board[ROW][COL],int row,int col);
 //打印棋盘函数
 void DisplayBoard(char board[ROW][COL],int row,int col);
+//玩家下棋
+void PlayerMove(char board[ROW][COL],int row,int col);
 #endif //C_HOMEWORK_GAME_3_5_H

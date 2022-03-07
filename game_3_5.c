@@ -128,6 +128,6 @@ int IsFull(char board[ROW][COL], int row, int col)
         if (ret == 1) {
             return 'Q';
         }
-        //不满就返回C
+        //棋盘不满就返回C
         return 'C';
     }

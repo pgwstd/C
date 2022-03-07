@@ -79,6 +79,7 @@ void ComputerMove(char board[ROW][COL],int row,int col)
     while (1) {
         int x = rand() % row;//随机值模上行(3)等于行的一个随机值(0-2)
         int y = rand() % col;//随机值模上列(3)等于列的一个随机值(0-2)
+        //判断占用
         if (board[x][y] == ' ') {
             //电脑下子
             board[x][y] = '#';

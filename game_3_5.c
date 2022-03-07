@@ -73,11 +73,12 @@ void PlayerMove(char board[ROW][COL],int row,int col)
     }
 }
 //电脑下棋
-void ComputerMove(char board[ROW][COL],int row,int col) {
+void ComputerMove(char board[ROW][COL],int row,int col)
+{
     printf("电脑走:>\n");
     while (1) {
-        int x = rand() % row;
-        int y = rand() % col;
+        int x = rand() % row;//随机值模上行等于行的一个随机值
+        int y = rand() % col;//随机值模上列等于列的一个随机值
         if (board[x][y] == ' ') {
             //电脑下子
             board[x][y] = '#';
@@ -85,7 +86,7 @@ void ComputerMove(char board[ROW][COL],int row,int col) {
         }
     }
 }
-    int IsFull(char board[ROW][COL], int row, int col)
+int IsFull(char board[ROW][COL], int row, int col)
     {
         int i = 0;
         int j = 0;
@@ -102,19 +103,19 @@ void ComputerMove(char board[ROW][COL],int row,int col) {
     char IsWin(char board[ROW][COL], int row, int col)
     {
         int i = 0;
-        //判断三行
+        //判断三行是否一样，一样就是赢了
         for (i = 0; i < row; ++i) {
             if (board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][1] != ' ') {
                 return board[i][1];
             }
         }
-        //判断三列
+        //判断三列是否是一样，一样就是赢了
         for (i = 0; i < col; ++i) {
             if (board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[1][i] != ' ') {
                 return board[1][i];
             }
         }
-        //判断对角
+        //判断对角是否一样，一样就是赢了
         if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[1][1] != ' ') {
             return board[1][1];
         }
@@ -122,11 +123,11 @@ void ComputerMove(char board[ROW][COL],int row,int col) {
             return board[1][1];
         }
         //平局
-        //如果棋盘满了就返回Q，没满返回0
+        //如果棋盘满了就返回Q，没满返回C
         int ret = IsFull(board, row, col);
         if (ret == 1) {
             return 'Q';
         }
-        //不满就继续
+        //不满就返回C
         return 'C';
     }

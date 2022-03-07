@@ -87,6 +87,7 @@ void ComputerMove(char board[ROW][COL],int row,int col)
         }
     }
 }
+//平局或者是棋盘没满的情况
 int IsFull(char board[ROW][COL], int row, int col)
     {
         int i = 0;

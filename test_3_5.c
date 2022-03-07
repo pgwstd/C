@@ -66,6 +66,6 @@ int main()
                 break;
         }
 
-    } while (ipunt);
+    } while (0);//如果有输赢就跳出，也可以改成1，让其一直玩
     return 0;
 }

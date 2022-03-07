@@ -34,7 +34,8 @@ void game()
         if(ret!='C')//棋盘满了就跳出
             break;
     }
-    if(ret=='*'){
+    if(ret=='*')
+    {
         printf("玩家赢了!\n");
     }
     else if(ret=='#')

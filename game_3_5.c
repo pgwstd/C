@@ -105,19 +105,19 @@ int IsFull(char board[ROW][COL], int row, int col)
     char IsWin(char board[ROW][COL], int row, int col)
     {
         int i = 0;
-        //判断三行是否一样，一样就是赢了
+        //判断三行是否一样且其中没有空格，这样就是赢了
         for (i = 0; i < row; ++i) {
             if (board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][1] != ' ') {
                 return board[i][1];
             }
         }
-        //判断三列是否是一样，一样就是赢了
+        //判断三列是否是一样且其中没有空格，这样就是赢了
         for (i = 0; i < col; ++i) {
             if (board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[1][i] != ' ') {
                 return board[1][i];
             }
         }
-        //判断对角是否一样，一样就是赢了
+        //判断对角是否一样且其中对角中没有空格，这样就是赢了
         if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[1][1] != ' ') {
             return board[1][1];
         }

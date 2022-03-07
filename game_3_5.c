@@ -77,8 +77,8 @@ void ComputerMove(char board[ROW][COL],int row,int col)
 {
     printf("电脑走:>\n");
     while (1) {
-        int x = rand() % row;//随机值模上行等于行的一个随机值
-        int y = rand() % col;//随机值模上列等于列的一个随机值
+        int x = rand() % row;//随机值模上行等于行的一个随机值(0-2)
+        int y = rand() % col;//随机值模上列等于列的一个随机值(0-2)
         if (board[x][y] == ' ') {
             //电脑下子
             board[x][y] = '#';

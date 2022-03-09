@@ -113,7 +113,7 @@ void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
         }
     }
 
-    if (win == row * col - EASY_COUNT)
+    if (win == row * col - EASY_COUNT)//WIN循环的次数等于棋盘格子数减去雷的个数是，就是证明排完了
     {
         printf("恭喜你，排雷成功\n");
         DisplayBoard(mine, row, col);

@@ -93,7 +93,7 @@ void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
         {
             if (mine[x][y] == '1')//如果里面是雷的操作
             {
-                printf("很遗憾，你被炸死了\n");
+                printf("COME OVER!\n");
                 DisplayBoard(mine, row, col);
                 break;
             }
@@ -115,7 +115,7 @@ void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 
     if (win == row * col - EASY_COUNT)//WIN循环的次数等于棋盘格子数减去雷的个数是，就是证明排完了
     {
-        printf("恭喜你，排雷成功\n");
+        printf("WIN!\n");
         DisplayBoard(mine, row, col);
     }
 }

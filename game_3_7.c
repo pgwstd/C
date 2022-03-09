@@ -48,7 +48,7 @@ void SetMine(char mine[ROWS][COLS], int row, int col)
     while (count)
     {
         //生产随机的下标
-        int x = rand()%row+1;
+        int x = rand()%row+1;//等于8加1等于9
         int y = rand()%col+1;
         if (mine[x][y] == '0')
         {

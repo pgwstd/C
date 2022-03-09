@@ -11,7 +11,6 @@ void menu()
     printf("**************************\n");
 }
 
-int main() {
     void game()
     {
         char mine[ROWS][COLS] = {0};//存放布置好的雷的信息
@@ -55,4 +54,3 @@ int main() {
 
         return 0;
     }
-}

@@ -86,12 +86,12 @@ void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
     while (win<row*col- EASY_COUNT)
     {
         printf("请输入要排查的坐标:>");
-        scanf("%d%d", &x, &y);//x--(1,9)  y--(1,9)
+        scanf("%d%d", &x, &y);
 
         //判断坐标的合法性
         if (x >= 1 && x <= row && y >= 1 && y <= col)
         {
-            if (mine[x][y] == '1')
+            if (mine[x][y] == '1')//如果里面是雷的操作
             {
                 printf("很遗憾，你被炸死了\n");
                 DisplayBoard(mine, row, col);

@@ -69,7 +69,7 @@ static int get_mine_count(char mine[ROWS][COLS], int x, int y)
            mine[x + 1][y] +
            mine[x + 1][y + 1] +
            mine[x][y + 1] +
-           mine[x - 1][y + 1] - 8 * '0';
+           mine[x - 1][y + 1] - 8 * '0';//因为棋盘里面显示的都是字符，所以要是想计算要转成整型
 }
 
 void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)

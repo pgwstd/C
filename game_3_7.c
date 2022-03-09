@@ -61,6 +61,7 @@ void SetMine(char mine[ROWS][COLS], int row, int col)
 
 static int get_mine_count(char mine[ROWS][COLS], int x, int y)
 {
+    //计算翻开坐标周围有多少个雷
     return mine[x - 1][y] +
            mine[x - 1][y - 1] +
            mine[x][y - 1] +

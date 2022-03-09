@@ -53,7 +53,7 @@ void SetMine(char mine[ROWS][COLS], int row, int col)
         if (mine[x][y] == '0')
         {
             mine[x][y] = '1';
-            count--;
+            count--;//布置好一次就减1
         }
     }
 }

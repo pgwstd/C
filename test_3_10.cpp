@@ -1,22 +1,16 @@
 //
-// Created by 潘光伟 on 2022/3/10.
-//
-//数据结构作业
-//
 // Created by 潘光伟 on 2022/3/9.
 //
 //数据结构作业
-#include "stdio.h"
-#include "stdlib.h"
 #include "iostream"
-using namespace std;
 #define OK 1
-#define ERROR 2
-#define OVERFLOW -2
+#define ERROR 0
+#define OVERFLOW 3
 #define MAXSIZE 100
 typedef int Status;
 typedef int ElemType;
 
+//顺序表存储结构
 typedef struct
 {
     ElemType *elem;
@@ -89,37 +83,33 @@ int main() {
     InitList(myList);
 
     //建立顺序表
-    for (i = 1; i < 10; i++) {
-        ListInsert(myList,i,i);
-        printf("建立后的顺序是:");
-        for (i = 1; i <= myList.length;i++) {
-            GetElem(myList,i,x);
-            printf("%d", x);
-        }
-        printf("\n");
+    for (i = 1; i < 10; i++)
+        ListInsert(myList, i, i);
+    printf("建立后的顺序是:");
+    for (i =0; i <myList.length; i++)
+        printf("%d  ", myList.elem[i]);
+    printf("\n");
 
-        //取值
-        GetElem(myList, 6, x);
-        printf("取到的第6个数是:%d", x);
-        printf("\n");
+    //取值
+    GetElem(myList, 6, x);
+    printf("取到的第6个数是:%d", x);
+    printf("\n");
 
-        //查找
-        printf("在已有的顺序表里查找5，结果是: ");
-        y = LocateElem(myList, 5);
-        if (y == 0)
-            printf("未找到！");
-        else
-            printf("找到第%d个数是5！", y);
-        printf("\n");
+    //查找
+    printf("在已有的顺序表里查找5，结果是: ");
+    y = LocateElem(myList, 5);
+    if (y == 0)
+        printf("未找到！");
+    else
+        printf("找到第%d个数是5！", y);
+    printf("\n");
 
-        //删除
-        ListDelete(myList, 4);
-        printf("删除第4个数后的顺序表是:");
-        for (i = 1; i <= myList.length; i++) {
-            GetElem(myList, i, x);
-            printf("%d", x);
-            return 0;
-        }
+    //删除
+    ListDelete(myList, 4);
+    printf("删除第4个数后的顺序表是:");
+    for (i = 0; i <myList.length; i++)
+        printf("%d  ", myList.elem[i]);
+    return 0;
 
-    }
+
 }

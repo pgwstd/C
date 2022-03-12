@@ -9,9 +9,12 @@ int main()
     int b=5;
     printf("a=%d ",a);
     printf("b=%d\n",b);
-    a=a+b;
-    b=a-b;
-    a=a-b;
+//    a=a+b;
+//    b=a-b;
+//    a=a-b;
+    a=a^b;//二进制位是110=6
+    b=a^b;//二进制位是011=3
+    a=a^b;//二进制位是101=5
     printf("a=%d ",a);
     printf("b=%d\n",b);
     return 0;

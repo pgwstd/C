@@ -17,6 +17,7 @@ int main()
             //计算
             count++;
         }
+        //右移1位
         a=a>>1;
     }
     printf("%d",count);

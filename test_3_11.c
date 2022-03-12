@@ -9,6 +9,7 @@ int main()
     int b=5;
     printf("a=%d ",a);
     printf("b=%d\n",b);
+    //这样换大的数时候，加减会出现溢出，所以不是很好
 //    a=a+b;
 //    b=a-b;
 //    a=a-b;

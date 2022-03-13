@@ -15,9 +15,14 @@ int main()
 
 
     struct book a={"西游戏","c1998020211",198};
-    printf("书名:%s\n",a.book_name);
-    printf("书本的ID:%s\n",a.id_book);
-    printf("价格:%d\n",a.price);
+//    printf("书名:%s\n",a.book_name);
+//    printf("书本的ID:%s\n",a.id_book);
+//    printf("价格:%d\n",a.price);
+    //也可以通过指针的形式来访问结构体
+    struct book * pd=&a;
+    printf("书名:%s\n",(*pd).book_name);
+    printf("书本的ID:%s\n",(*pd).id_book);
+    printf("价格:%d\n",(*pd).price);
     return 0;
 }
 

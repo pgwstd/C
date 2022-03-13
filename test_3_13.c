@@ -19,7 +19,7 @@ int main()
 //        printf("或运算！\n");
 //    }
 //    printf("%d\n%d\n%d\n%d\n",a,b,c,d);//1 6 4 5
-   int n=a>b?1:-1;
+   int n=a>b?1:-1;//三目操作符
     printf("%d\n",n);
     return 0;
 }

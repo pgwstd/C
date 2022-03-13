@@ -4,15 +4,20 @@
 #include "stdio.h"
 int main()
 {
-    int a=3;
+    int a=0;
     int b=5;
-    int c=0;
-    if(a&b)
-    {
-        printf("与运算！\n");
-    }
-    if(a|c){
-        printf("或运算！\n");
-    }
+    int c=4;
+    int d=5;
+//    int i=a++ && ++b && c++;
+    int i=a++ || ++b || c++;
+//    int c=0;
+//    if(a&&b)
+//    {
+//        printf("与运算！\n");
+//    }
+//    if(a||c){
+//        printf("或运算！\n");
+//    }
+    printf("%d\n%d\n%d\n%d\n",a,b,c,d);//1 6 4 5
     return 0;
 }

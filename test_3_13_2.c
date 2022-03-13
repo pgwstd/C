@@ -23,6 +23,11 @@ int main()
     printf("书名:%s\n",(*pd).book_name);
     printf("书本的ID:%s\n",(*pd).id_book);
     printf("价格:%d\n",(*pd).price);
+    //用指针输出的时候可以直接—>指向结构体的里的函数,这样更加方便，如下：
+    printf("输出的时候可以直接—>指向结构体\n");
+    printf("书名:%s\n",pd->book_name);
+    printf("书本的ID:%s\n",pd->id_book);
+    printf("价格:%d\n",pd->price);
     return 0;
 }
 

@@ -7,6 +7,8 @@ int main()
     int a=22;
     int *pa=&a;
     *pa=33;
+//    int p;//变量没有在内存里面准确的分配
+//    *p=10;// 这个就叫野指针
     printf("%d",a);
 
     return 0;

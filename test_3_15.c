@@ -6,7 +6,7 @@
 int fun()
 {
     int b=1;
-    ++b;
+    return ++b;
 }
 
 int main()

@@ -8,6 +8,7 @@ int main()
     int *pa=&a;
     *pa=33;
     printf("%d",a);
+
     return 0;
 }
 

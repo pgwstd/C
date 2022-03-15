@@ -21,7 +21,7 @@
 int main()
 {
     int i=0;
-    int count=(++i)+(++i)+(++i);//有问题的代码，++i不懂是从哪一个开始赋值计算
+    int count=(++i)+(++i)+(++i);//有问题的代码，++i不懂是从哪一个开始计算,顺序是未知的
     printf("%d\n",count);
     return 0;
 }

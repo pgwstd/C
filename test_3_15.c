@@ -5,7 +5,7 @@
 #include "stdio.h"
 int fun()
 {
-    int b=1;
+    static int b=1;
     return ++b;
 }
 

@@ -10,8 +10,9 @@ void bubble_sort(int a[],int sz)
 //        tmp=a[i];
 //        a[i+1]=a[i];
 //        a[i]=tmp;
-     if(a[i]>a[i+1])
+     if(a[i]<a[i+1])
          a[i]=a[i+1];
+        printf("%d ",a[i]);
     }
 }
 int main()

@@ -12,7 +12,7 @@ void InputArray(int *pa, int n)
 void OutputArray(int *pa, int n)
 {
     for(; *pa <= n; pa++) {
-        printf("%d ", *pa);
+        printf("%4d", *pa);
     }
     printf("\n");
 }
@@ -21,6 +21,7 @@ int main()
     int a[5];
     printf("请输入5个数:\n");
     InputArray(a, 5);
+
     OutputArray(a, 5);
 }
 

@@ -11,7 +11,9 @@ void InputArray(int *pa, int n)
 }
 void OutputArray(int *pa, int n)
 {
+    int tmp=0;
     for(; *pa <= n; pa++) {
+
         printf("%d ", *pa);
     }
     printf("\n");

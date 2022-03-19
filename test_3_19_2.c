@@ -7,7 +7,7 @@ int main() {
 
     for (int n = 1; n < 2200; ++n) {
         if ((n % 5 == 1) && (n % 6 == 5) && (n % 7 == 4) && (n % 11 == 10))
-            printf("n=%d\n", n);
+            printf("一共还有%d兵力\n", n);
     }
 
         return 0;

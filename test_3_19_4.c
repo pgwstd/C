@@ -3,7 +3,6 @@
 //
 //输入五个数输出（运用指针和函数）
 #include <stdio.h>
-
 void InputArray(int *pa, int n)
 {
     for (; *pa <  n; pa++)

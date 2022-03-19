@@ -3,6 +3,7 @@
 //
 #include "stdio.h"
 #include "stdlib.h"
+//输入一个自定义大小的数组，进行从小到大排序
 int main() {
     int n = 0;
     int *arr;

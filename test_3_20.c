@@ -34,7 +34,8 @@ int main() {
     scanf("%d", &n);
     int sz = InputArray(arr, n);
     if (sz > n) {
-        printf("你输入的个数与实际规定的个数不一致！");
+        printf("你输入的个数与实际规定的个数不一致！\n");
+        printf("请核对好，再输入！");
     } else {
         int ret = OutputArray(arr, n);
         printf("输出他们和:\n");

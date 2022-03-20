@@ -4,7 +4,7 @@
 #include "stdio.h"
 int main()
 {
-    int arr[]={0};
+    int* arr;
     int n=0;
     int sum=0;
     printf("请输入你要输入数组的个数\n");

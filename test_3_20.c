@@ -5,19 +5,20 @@
 #include "stdio.h"
 
 
-int InputArray(int *p, int n) {    //输入函数
+void InputArray(int *p, int n) {    //输入函数
     int size=0;
-    printf("请输入你要输入的数:\n");
+    printf("请输入你要输入的数(输入一个按下回车确定):\n");
     for (int i = 0; i < n; ++i) {
         scanf("%d", &p[i]);
     }
-    while(*p != '\0')
-    {
-        size++;
-        p++;
-    }
-    return size;
-}
+//    while(*p != '\0')
+//    {
+//        size++;
+//        p++;
+//    }
+//
+//    return size;
+ }
 
 int OutputArray(int *p, int n) {  //输出函数
     int sum = 0;
@@ -32,14 +33,14 @@ int main() {
     int n = 0;
     printf("请输入你要输入数组的个数\n");
     scanf("%d", &n);
-    int sz = InputArray(arr, n);
-    if (sz > n) {
-        printf("你输入的个数与实际规定的个数不一致！\n");
-        printf("请核对好，再输入！");
-    } else {
+    InputArray(arr, n);
+//    if (sz > n) {
+//        printf("你输入的个数与实际规定的个数不一致！\n");
+//        printf("请核对好，再输入！");
+//    } else {
         int ret = OutputArray(arr, n);
         printf("输出他们和:\n");
         printf("%d ", ret);
         return 0;
     }
-}
+

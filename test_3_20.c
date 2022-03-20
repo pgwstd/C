@@ -4,12 +4,19 @@
 //制做一个函数，使的从键盘输入数组的个数，要他们输出和
 #include "stdio.h"
 
+
 int InputArray(int *p, int n) {    //输入函数
+    int size=0;
     printf("请输入你要输入的数:\n");
     for (int i = 0; i < n; ++i) {
         scanf("%d", &p[i]);
     }
-    return sizeof(*p)/sizeof(int*);
+    while(*p != '\0')
+    {
+        size++;
+        p++;
+    }
+    return size;
 }
 
 int OutputArray(int *p, int n) {  //输出函数

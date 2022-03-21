@@ -34,25 +34,25 @@ int RomanToint(char* s)
         switch (*s) {
             case 'I':
                 i_count++;
-                break;
+                continue;
             case 'V':
-                i_count++;
-                break;
+                v_count++;
+                continue;
             case 'X':
-                i_count++;
-                break;
+                x_count++;
+                continue;
             case 'L':
-                i_count++;
-                break;
+                l_count++;
+                continue;
             case 'C':
-                i_count++;
-                break;
+                c_count++;
+                continue;
             case 'D':
-                i_count++;
-                break;
+                d_count++;
+                continue;
             case 'M':
-                i_count++;
-                break;
+                m_count++;
+                continue;
             default :
                 break;
 

@@ -30,6 +30,8 @@ int RomanToint(char* s)
             d_count++;
         else if(*p=='M')
             m_count++;
+        else
+            printf("输入有误！\n");
 //        switch (*s) {
 //            case 'I':
 //                i_count++;
@@ -53,6 +55,7 @@ int RomanToint(char* s)
 //                m_count++;
 //                continue;
 //            default :
+//                printf("输入有误！\n");
 //                break;
 //
 //        }

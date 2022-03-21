@@ -67,10 +67,10 @@ int RomanToint(char* s)
 int main()
 {
 
-    char* n;
+    char* s;
     printf("请输入你要转换的数:\n");
-    scanf("%c",n);
-    int ret=RomanToint(n);
+    scanf("%c",s);
+    int ret=RomanToint(s);
     printf("%d",ret);
     return 0;
 }

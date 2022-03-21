@@ -6,6 +6,7 @@
 
 int RomanToint(char* s)
 {
+    char*p=s;
     int i_count=0;
     int v_count=0;
     int x_count=0;
@@ -14,20 +15,20 @@ int RomanToint(char* s)
     int d_count=0;
     int m_count=0;
 
-    while (*s!='\0'){
-        if(*s=='I')
+    while (*p!='\0'){
+        if(*p=='I')
             i_count++;
-        else if(*s=='V')
+        else if(*p=='V')
             v_count++;
-        else if(*s=='X')
+        else if(*p=='X')
             x_count++;
-        else if(*s=='L')
+        else if(*p=='L')
             l_count++;
-        else if(*s=='C')
+        else if(*p=='C')
             c_count++;
-        else if(*s=='D')
+        else if(*p=='D')
             d_count++;
-        else if(*s=='M')
+        else if(*p=='M')
             m_count++;
 //        switch (*s) {
 //            case 'I':
@@ -55,7 +56,7 @@ int RomanToint(char* s)
 //                break;
 //
 //        }
-        s++;
+        p++;
     }
     return (i_count*1)+(v_count*5)+(x_count*10)+(l_count*50)+(c_count*100)+(d_count*500)+(m_count*1000);
 }

@@ -55,6 +55,7 @@ int RomanToint(char* s)
                 break;
             default :
                 break;
+
         }
         s++;
     }

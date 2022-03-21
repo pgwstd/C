@@ -17,46 +17,46 @@ int RomanToint(char* s)
     printf("请输入你要转换的数:\n");
     scanf("%c",&n);
     while (*s!='\0'){
-//        if(*s=='I')
-//            i_count++;
-//        else if(*s=='V')
-//            v_count++;
-//        else if(*s=='X')
-//            x_count++;
-//        else if(*s=='L')
-//            l_count++;
-//        else if(*s=='C')
-//            c_count++;
-//        else if(*s=='D')
-//            d_count++;
-//        else if(*s=='M')
-//            m_count++;
-        switch (*s) {
-            case 'I':
-                i_count++;
-                continue;
-            case 'V':
-                v_count++;
-                continue;
-            case 'X':
-                x_count++;
-                continue;
-            case 'L':
-                l_count++;
-                continue;
-            case 'C':
-                c_count++;
-                continue;
-            case 'D':
-                d_count++;
-                continue;
-            case 'M':
-                m_count++;
-                continue;
-            default :
-                break;
-
-        }
+        if(*s=='I')
+            i_count++;
+        else if(*s=='V')
+            v_count++;
+        else if(*s=='X')
+            x_count++;
+        else if(*s=='L')
+            l_count++;
+        else if(*s=='C')
+            c_count++;
+        else if(*s=='D')
+            d_count++;
+        else if(*s=='M')
+            m_count++;
+//        switch (*s) {
+//            case 'I':
+//                i_count++;
+//                continue;
+//            case 'V':
+//                v_count++;
+//                continue;
+//            case 'X':
+//                x_count++;
+//                continue;
+//            case 'L':
+//                l_count++;
+//                continue;
+//            case 'C':
+//                c_count++;
+//                continue;
+//            case 'D':
+//                d_count++;
+//                continue;
+//            case 'M':
+//                m_count++;
+//                continue;
+//            default :
+//                break;
+//
+//        }
         s++;
     }
     return (i_count*1)+(v_count*5)+(x_count*10)+(l_count*50)+(c_count*100)+(d_count*500)+(m_count*1000);

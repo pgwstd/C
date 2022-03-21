@@ -4,9 +4,8 @@
 //制做一个函数，使的从键盘输入数组的个数，要他们输出和
 #include "stdio.h"
 
-
 void InputArray(int *p, int n) {    //输入函数
-    int size=0;
+    int size = 0;
     printf("请输入你要输入的数(输入一个按下回车确定):\n");
     for (int i = 0; i < n; ++i) {
         scanf("%d", &p[i]);
@@ -18,7 +17,7 @@ void InputArray(int *p, int n) {    //输入函数
 //    }
 //
 //    return size;
- }
+}
 
 int OutputArray(int *p, int n) {  //输出函数
     int sum = 0;
@@ -38,9 +37,10 @@ int main() {
 //        printf("你输入的个数与实际规定的个数不一致！\n");
 //        printf("请核对好，再输入！");
 //    } else {
-        int ret = OutputArray(arr, n);
-        printf("输出他们和:\n");
-        printf("%d ", ret);
-        return 0;
-    }
+    int ret = OutputArray(arr, n);
+    printf("输出他们和:\n");
+    printf("%d ", ret);
+
+    return 0;
+}
 

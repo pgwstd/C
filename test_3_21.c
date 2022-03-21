@@ -6,7 +6,6 @@
 
 int RomanToint(char* s)
 {
-    char n=0;
     int i_count=0;
     int v_count=0;
     int x_count=0;
@@ -14,8 +13,7 @@ int RomanToint(char* s)
     int c_count=0;
     int d_count=0;
     int m_count=0;
-    printf("请输入你要转换的数:\n");
-    scanf("%c",&n);
+
     while (*s!='\0'){
         if(*s=='I')
             i_count++;
@@ -65,8 +63,10 @@ int RomanToint(char* s)
 int main()
 {
 
-    char* arr[]={"I","V","X","L","C","D","M"};
-    int ret=RomanToint(*arr);
+    char* n;
+    printf("请输入你要转换的数:\n");
+    scanf("%c",n);
+    int ret=RomanToint(n);
     printf("%d",ret);
     return 0;
 }

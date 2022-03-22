@@ -27,6 +27,7 @@ int romanToInt(char* s) {
 
 int main()
 {
+
     char *s;
     scanf("%c",s);
     int ret=romanToInt(s);

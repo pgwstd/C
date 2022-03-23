@@ -39,6 +39,7 @@ Status GetElem(LinkList L,int i,ElemType &e)
 //单链表的按值查找
 LNode *LocateElem(LinkList L,ElemType e)
 {
+
     p=L->next;
     while(p && p->data!=e)
         p=p->next;

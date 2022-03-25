@@ -1,6 +1,7 @@
 //
 // Created by 潘光伟 on 2022/3/23.
 //
+//单链表作业
 #include "iostream"
 #define OK 1
 #define ERROR 0
@@ -81,12 +82,12 @@ int main()
     int x = 0;
     SqList myList;
 
-    //初始化顺序表
+    //初始化单链表
     InitList(myList);
 
-    //建立顺序表
-    for (i = 1; i < 10; i++)
-        ListInsert(myList, i, i);
+    //建立单链表
+    for (i = 0; i < 5; i++)
+        ListInsert(myList, '65', i);
     printf("建立后的顺序是:");
     for (i =0; i <myList.length; i++)
         printf("%d  ", myList.elem[i]);
@@ -111,6 +112,5 @@ int main()
     printf("删除第4个数后的顺序表是:");
     for (i = 0; i <myList.length; i++)
         printf("%d  ", myList.elem[i]);
-    return 0;
     return 0;
 }

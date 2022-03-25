@@ -85,7 +85,7 @@ int main() {
     //建立顺序表
     for (i = 1; i < 10; i++)
         ListInsert(myList, i, i);
-    printf("建立后的顺序是:");
+    printf("建立后:");
     for (i =0; i <myList.length; i++)
         printf("%d  ", myList.elem[i]);
     printf("\n");

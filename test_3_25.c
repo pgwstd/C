@@ -5,8 +5,11 @@
 #include "stdio.h"
 int main()
 {
-
-
-    printf("123");
+    const int* p=0;
+    p=20;
+    int* const b=0;
+    *b=8;
+    printf("%d\n",*p);
+    printf("%d\n",*b);
     return 0;
 }

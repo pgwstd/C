@@ -1,45 +1,46 @@
 //
 // Created by 潘光伟 on 2022/3/27.
 //
-
+//螺旋数阵由内向外旋转的8种情况
 #include <stdio.h>
-#define N 5
+#define N 7
 int print_array(int (*b)[N]);
 int spin_array(int (*c)[N]);
 int fold_array(int (*d)[N]);
 int main(int argc, const char *argv[])
 {
-    int s0[N][N],s[N][N];
+    int arr[N][N],s[N][N];
     int k=0,i=0,j=0;
-    int a=1,b;
-    for(;k<(N+1)/2;k++)
+    int a=1;
+    for(k=0;k<(N+1)/2;k++)
     {
-        while(j < N-k)s0[i][j++]=a++;i++;j--;
-        while(i < N-k)s0[i++][j]=a++;i--;j--;
-        while(j > k-1)s0[i][j--]=a++;i--;j++;
-        while(i > k)s0[i--][j]=a++;i++;j++;
+        while(j < N-k)arr[i][j++]=a++;i++;j--;
+        while(i < N-k)arr[i++][j]=a++;i--;j--;
+        while(j > k-1)arr[i][j--]=a++;i--;j++;
+        while(i > k)arr[i--][j]=a++;i++;j++;
     }
     for(i=0;i<N;i++)
     {
         for(j=0;j<N;j++)
         {
-            s[i][j]=N*N+1-s0[i][j];
+
+            s[i][j]=N*N+1-arr[i][j];
         }
     }
     spin_array(s);
-    printf("===========================================\n");
+    printf("===================================\n");
     fold_array(s);
-    printf("===========================================\n");
+    printf("===================================\n");
     spin_array(s);
-    printf("===========================================\n");
+    printf("===================================\n");
     fold_array(s);
-    printf("===========================================\n");
+    printf("===================================\n");
     spin_array(s);
-    printf("===========================================\n");
+    printf("===================================\n");
     fold_array(s);
-    printf("===========================================\n");
+    printf("===================================\n");
     spin_array(s);
-    printf("===========================================\n");
+    printf("===================================\n");
     fold_array(s);
 
 }
@@ -84,6 +85,7 @@ int fold_array(int (*d)[N])
         }
     }
     print_array(f);
+    return 0;
 }
 int print_array(int (*b)[N]) {
     int i, j;
@@ -92,6 +94,6 @@ int print_array(int (*b)[N]) {
             printf("%5d", b[i][j]);
             if ((j + 1) % N == 0)
                 putchar('\n');
-            return 0;
         }
+    return 0;
 }

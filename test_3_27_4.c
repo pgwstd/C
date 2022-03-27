@@ -11,7 +11,7 @@ int main()
     char ch4='n';
     char ch5='a';
     printf("没有加密之前：\n");
-    printf("%c%c%c%c%c",ch1,ch2,ch3,ch4,ch5);
+    printf("%c%c%c%c%c\n",ch1,ch2,ch3,ch4,ch5);
     printf("加密之后：\n");
     printf("%c%c%c%c%c",ch1+4,ch2+4,ch3+4,ch4+4,ch5+4);
     return 0;

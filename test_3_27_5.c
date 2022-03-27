@@ -9,7 +9,9 @@ int main()
     c1=97;
     c2=98;
     char a1=0;
-    scanf("%c",&a1);
+    char a2=0;
+    scanf("%c %c",&a1,&a2);
+    printf("%c %c\n",a1,a2);
     printf("%c %c\n",c1,c2);
     printf("%d %d\n",c1,c2);
     return 0;

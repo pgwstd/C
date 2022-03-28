@@ -25,8 +25,8 @@ int main()
 //             count++;
 //         }
 //    }
-    int ret=n ^ m;
-    count=number(ret);
+    int ret=n ^ m; //按位异或就可以得出这两个数二进制们不相同的个数
+    count=number(ret); //在通过用求ret里面有多少个1就可以得到这两个数的不相同的个数
     printf("%d",count);
     return 0;
 }

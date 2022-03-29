@@ -29,7 +29,7 @@ int main() {
         while (*end!=' ' && *end!='\0'){  //不是空格和\0 就加加，指针向后
             end++;
         }
-        reverse(start, end - 1);
+        reverse(start, end - 1);  //调用函数再次反转回来，但这次是一断一断单词反的，不是全部
         if(*end==' ')
             start=end+1;
         else

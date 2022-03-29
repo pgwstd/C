@@ -26,7 +26,7 @@ int main() {
     char *start=arr;
     while (*start){
         char *end=start;
-        while (*end!=' ' && *end!='\0'){
+        while (*end!=' ' && *end!='\0'){  //不是空格和\0 就加加，指针向后
             end++;
         }
         reverse(start, end - 1);

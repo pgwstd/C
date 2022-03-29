@@ -30,10 +30,10 @@ int main() {
             end++;
         }
         reverse(start, end - 1);  //调用函数再次反转回来，但这次是一断一断单词反的，不是全部
-        if(*end==' ')
+        if(*end==' ') //如果指针指的位置是空格的时候，就加1从下一个单词反转，前面转过的单词就不要了
             start=end+1;
         else
-            start=end;
+            start=end; //当最后一位不是空格的时候证明他应该是\0，这个时候把最后一位的内容给STARTY让它回去while判断以结束
     }
     puts(arr); //打印数组
 

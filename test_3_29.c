@@ -24,12 +24,14 @@ int min_math(int n, int m) {
 //                printf("最大公约数是:%d\n", 1);
 //            }
 //    }
-    int i = 0;
-    for (i = 1;; ++i) {
+    int i = 1;
+//    for (i = 1;; ++i) {
+    while (i){
         if (i * n % m == 0) {
             printf("最小公倍数是:%d\n",i*n);
             break;
         }
+        i++;
     }
 }
 

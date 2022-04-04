@@ -17,7 +17,7 @@ int main()
     scanf("%d%d%d",&a,&b,&c);
     for (i = 10; i <=100 ; ++i) {
         if(i%3==a && i%5==b && i%7==c){
-            printf("他的兵队有:%d",i);
+            printf("他的兵队有%d人",i);
             break;
         }
     }

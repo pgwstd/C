@@ -25,11 +25,15 @@ int main()
 //    for (i = 9; i >=0 ; i--) {
 //        printf("%u\n",i);
 //    }
-    char a[1000];
-    int i=0;
-    for (int i = 0; i < 1000; ++i) {
-        a[i]=-1-i;
+//    char a[1000];
+//    int i=0;
+//    for (int i = 0; i < 1000; ++i) {
+//        a[i]=-1-i;
+//    }
+//    printf("%d\n",strlen(a));//999?  打'\0'所以就有-128+127=255（个数）
+   unsigned char i=0;
+    for (i = 0; i <=255 ; ++i) { //死循环,无符号字符串本身就是255，所以这个没有跑出条件，所以死循环了
+        printf("123\n");
     }
-    printf("%d\n",strlen(a));//999?  打'\0'所以就有-127+128=255（个数）
     return 0;
 }

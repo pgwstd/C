@@ -5,6 +5,8 @@
 int main()
 {
     int arr[5]={1,2,6,4,3};
+    //数组指针 指向数组的首地址
+    int *p=arr;
     //冒泡排序
     int i,j,temp;
     for(i=0;i<5;i++)

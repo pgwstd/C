@@ -1,0 +1,6 @@
+
+2c:S1481	"unused variable 'p'(¨‡åõøÿÿÿÿ8¯‡ÜÊÿ/
+Ac:S5955")Declare the variable "j" inside the loop.(ó»¸Ãıÿÿÿÿ
+`c:SingleDeclarationPerStatement"0Define each identifier in a dedicated statement.(ê¬Ğğúÿÿÿÿ
+uc:S5350	"VMake the type of this variable a pointer-to-const. The current type of "p" is "int *".(¨‡åõøÿÿÿÿ8±‡ÜÊÿ/
+Zc:S1854	";Value stored to 'p' during its initialization is never read(¨‡åõøÿÿÿÿ8µ‡ÜÊÿ/

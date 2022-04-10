@@ -6,9 +6,9 @@
 #include "stdlib.h"
 //创建多项式自定义结构
 typedef struct PNode{
-    int coef;
-    int exp;
-    struct PNode *next;
+    int coef; //系数
+    int exp; //指数
+    struct PNode *next; //指向下一个结点的指针
 }PNode,*Polynomial;
 //输入n项的系数和指数，建立表示多项式的有序链表P
 void CreatePoly(Polynomial *P,int n){

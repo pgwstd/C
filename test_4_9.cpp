@@ -2,138 +2,178 @@
 // Created by 潘光伟 on 2022/4/9.
 //
 //数据结构作业3
-#include "stdio.h"
-//单链表多项式的结构
-typedef struct polynomial
+#include<stdio.h>
+#include <iostream>
+#include<stdlib.h>
+using namespace std;
+
+typedef struct PNode                            //系数coed，指数expn
 {
-    int n;
-    node *head;
-}polynomial;
-//创建多项式
-polynomial *create_polynomial(int n)
-{
-    polynomial *p=(polynomial *)malloc(sizeof(polynomial));
-    p->n=n;
-    p->head=(node *)malloc(sizeof(node));
-    p->head->next=NULL;
-    return p;
-}
-//创建多项式的系数
-node *create_coefficient(int n)
-{
-    node *p=(node *)malloc(sizeof(node));
-    p->data=n;
-    p->next=NULL;
-    return p;
-}
-//创建多项式的指数
-node *create_exponent(int n)
-{
-    node *p=(node *)malloc(sizeof(node));
-    p->data=n;
-    p->next=NULL;
-    return p;
-}
-//插入多项式的系数
-void insert_coefficient(polynomial *p,int n)
-{
-    node *q=create_coefficient(n);
-    node *r=p->head;
-    while(r->next!=NULL)
+    float coef;
+    int expn;
+    struct PNode* next;
+}PNode, * Polynomial;
+/*创建多项式*/
+void CreatePolyn(Polynomial& P, int n)
+{ //输入n项的系数和指数，建立表示多项式的有序链表P
+    P = new PNode;
+    P->next = NULL;                             //建立一个带表头结点的单链表
+    Polynomial s, pre, q;
+    int i;
+    for (i = 1; i <= n; ++i)                 //依次输入n个非零项
     {
-        r=r->next;
-    }
-    r->next=q;
-}
-//插入多项式的指数
-void insert_exponent(polynomial *p,int n)
-{
-    node *q=create_exponent(n);
-    node *r=p->head;
-    while(r->next!=NULL)
-    {
-        r=r->next;
-    }
-    r->next=q;
-}
-//求多项式的值
-int get_value(polynomial *p,int x)
-{
-    node *r=p->head;
-    int sum=0;
-    while(r->next!=NULL)
-    {
-        sum=sum+r->data*pow(x,r->next->data);
-        r=r->next;
-    }
-    return sum;
-}
-//求多项式的导数
-polynomial *get_derivative(polynomial *p)
-{
-    polynomial *q=create_polynomial(p->n-1);
-    node *r=p->head;
-    node *s=q->head;
-    while(r->next!=NULL)
-    {
-        insert_coefficient(q,r->data*r->next->data);
-        insert_exponent(q,r->next->data-1);
-        r=r->next;
-        s=s->next;
-    }
-    return q;
-}
-//求多项式的和
-polynomial *get_sum(polynomial *p,polynomial *q)
-{
-    polynomial *r=create_polynomial(p->n>q->n?p->n:q->n);
-    node *s=p->head;
-    node *t=q->head;
-    while(s->next!=NULL)
-    {
-        while(t->next!=NULL)
+        s = new PNode;                           //生成新结点
+        cin >> s->coef >> s->expn;              //输入系数和指数;
+        pre = P;                                //pre用于保存P的前驱，初值为头结点
+        q = P->next;                            //q初始化，指向首元结点
+        while (q && q->expn < s->expn)           //通过比较指数找到第一个大于输入项指数的项*q
         {
-            insert_coefficient(r,s->data+t->data);
-            insert_exponent(r,s->next->data>t->next->data?s->next->data:t->next->data);
-            t=t->next;
-        }
-        s=s->next;
-    }
-    return r;
+            pre = q;
+            q = q->next;
+        }                                       //while
+        s->next = q;                             //将输入项s插入到q和其前驱节点pre之间;
+        pre->next = s;
+    }                                           //for?
 }
-//求多项式的差
-polynomial *get_difference(polynomial *p,polynomial *q)
+/*多项式的相加*/
+void  AddPoly(Polynomial& Pa, Polynomial& Pb)
 {
-    polynomial *r=create_polynomial(p->n>q->n?p->n:q->n);
-    node *s=p->head;
-    node *t=q->head;
-    while(s->next!=NULL)
+    printf("SUM=");//多项式加法：Pa=Pa+Pb,两个多项式的结点构成“和多项式”
+    Polynomial p1, p2, p3, r;
+    int sum = 0;
+    p1 = Pa->next; p2 = Pb->next;//p1和p2初值分别指向Pa和Pb的首元结点
+    p3 = Pa;                        //p3指向多项式的当前结点，初值为Pa
+    while (p1 && p2)                  //p1与p2均为非空
     {
-        while(t->next!=NULL)
+        if (p1->expn == p2->expn)     //指数相等
         {
-            insert_coefficient(r,s->data-t->data);
-            insert_exponent(r,s->next->data>t->next->data?s->next->data:t->next->data);
-            t=t->next;
+            sum = p1->coef + p2->coef;//sum保存两项的系数和
+            if (sum != 0)               //当系数和不为0
+            {
+                p1->coef = sum;         //修改Pa当前结点的系数值为两项系数的和
+                p3->next = p1;          //将修改后的Pa当前结点链在p3之后
+                p3 = p1;                //p3指向p1
+                p1 = p1->next;          //p1指向后一项
+                r = p2;
+                p2 = p2->next;            //p2指向后一项
+                delete r;               //删除Pb当前结点
+            }
+            else//系数和为0时
+            {
+                r = p1; p1 = p1->next; delete r;//删除Pa当前结点，p1指向后一项
+                r = p2; p2 = p2->next; delete r;//删除Pb当前结点，p2指向后一项
+            }
         }
-        s=s->next;
-    }
-    return r;
+        else if (p1->expn, p2->expn)          //Pa当前结点的指数值小
+        {
+            p3->next = p1;                      //将p1链在p3之后
+            p3 = p1;                            //p3指向p1
+            p1 = p1->next;                      //p1指向后一项
+        }
+        else    // Pb当前结点的指数值小
+        {
+            p3->next = p2;                      //将p2链在p3之后
+            p3 = p2;                            //p3指向p2
+            p2 = p2->next;                      //p2指向后一项
+        }
+    }                                           //while
+    p3->next = p1 ? p1 : p2;                    //插入非空多项式的剩余段
+    delete Pb;      //释放Pb的头结点
 }
+// 输出多项式
+void PrintfPolyn(Polynomial P) {//输出多项式
+    Polynomial t;
+    t = P->next;
+    if (t == NULL)
+    {
+        cout << "0" << endl;
+        return;
+    }
+    while (t->next) {
+        if (t->expn != 0)
+        {
+            if (t->coef != 1 && t->coef != -1)
+                cout << t->coef << "x";
+            else if (t->coef == 1)
+                cout << "x";
+            else
+                cout << "-x";
+            if (t->next->coef > 0)
+                cout << "^" << t->expn << "+";
+            else
+                cout << "^";
+        }
+        else
+            cout << t->coef;
+        t = t->next;
+    }
+    if (t->expn != 0)
+    {
+        if (t->coef != 1 && t->coef != -1)
+            cout << t->coef << "x";
+        else if (t->coef == 1)
+            cout << "x";
+        else
+            cout << "-x";
+        if (t->expn != 1)
+            cout << "^" << t->expn;
+    }
+    else
+        cout << t->coef;
+    cout << endl;
+}
+void meau()
+{
+    cout << "-----------------稀疏多项式的计算-----------------" << endl;
+    cout << "                 1、建立并输出多项式" << endl;
+    cout << "                 2、多项式相加" << endl;
+    cout << "                 3、退出" << endl;
+    cout << "" << endl;
+}
+/*主函数输出界面*/
 int main()
 {
-    polynomial *p=create_polynomial(3);
-    insert_coefficient(p,1);
-    insert_exponent(p,0);
-    insert_coefficient(p,2);
-    insert_exponent(p,1);
-    insert_coefficient(p,3);
-    insert_exponent(p,2);
-    polynomial *q=create_polynomial(2);
-    insert_coefficient(q,1);
-    insert_exponent(q,0);
-    insert_coefficient(q,2);
-    insert_exponent(q,1);
-    printf("%d\n",get_value(p,2));
-    polynomial *r=get_derivative(p);
+
+    Polynomial p1, p2;
+    int n1 = 0, n2 = 0;
+    int m = 0;
+    while (m != 3) {
+        meau();
+        cin >> m;
+        switch (m) {
+            case 1:
+                printf("请输入多项式项数\n");
+                scanf("%d", &n1);
+                printf("请输入多项式各项的系数及指数\n");
+                CreatePolyn(p1, n1);
+                printf("p1=");
+                PrintfPolyn(p1);
+                break;
+            case 2:
+                printf("请输入p1的项数\n");
+                scanf("%d", &n1);
+                printf("请输入多项式各项的系数及指数\n");
+                CreatePolyn(p1, n1);
+                printf("p1=");
+                PrintfPolyn(p1);
+                printf("请输入p2的项数\n");
+                scanf("%d", &n2);
+                printf("请输入多项式各项的系数及指数\n");
+                CreatePolyn(p2, n2);
+                printf("p2=");
+                PrintfPolyn(p2);
+                AddPoly(p1, p2);
+                PrintfPolyn(p1);
+                break;
+            case 3:
+                cout << "即将退出系统" << endl;
+                break;
+            default:
+                cout << "无该选项" << endl;
+                break;
+        }
+        system("pause");
+        system("cls");
+    }
     return 0;
 }

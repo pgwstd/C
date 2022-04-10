@@ -3,7 +3,6 @@
 //
 //数据结构作业3
 #include "stdio.h"
-#include "stdlib.h"
 //单链表多项式的结构
 typedef struct polynomial
 {

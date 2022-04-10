@@ -108,7 +108,6 @@ void SubPoly(Polynomial *P,Polynomial Q){
     }
 }
 
-
 int main(){
     Polynomial P,Q;
     int n,m;

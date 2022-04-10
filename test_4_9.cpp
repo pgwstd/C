@@ -81,7 +81,7 @@ void  AddPoly(Polynomial& Pa, Polynomial& Pb)
     delete Pb;      //释放Pb的头结点
 }
 // 输出多项式
-void PrintfPolyn(Polynomial P) {//输出多项式
+void PrintfPolyn(Polynomial P) {
     Polynomial t;
     t = P->next;
     if (t == NULL)
@@ -122,13 +122,15 @@ void PrintfPolyn(Polynomial P) {//输出多项式
         cout << t->coef;
     cout << endl;
 }
-void meau()
+void menu()
 {
-    cout << "-----------------稀疏多项式的计算-----------------" << endl;
-    cout << "                 1、建立并输出多项式" << endl;
-    cout << "                 2、多项式相加" << endl;
-    cout << "                 3、退出" << endl;
-    cout << "" << endl;
+    printf("-----------------稀疏多项式的计算-----------------\n");
+    printf("\n");
+    printf("               1、建立并输出多项式\n"                );
+    printf("                 2、多项式相加\n"                   );
+    printf("                    3、退出\n"                     );
+    printf("\n");
+    printf("-----------------     End     -----------------\n");
 }
 /*主函数输出界面*/
 int main()
@@ -138,8 +140,8 @@ int main()
     int n1 = 0, n2 = 0;
     int m = 0;
     while (m != 3) {
-        meau();
-        cin >> m;
+        menu();
+        scanf("%d",&m);
         switch (m) {
             case 1:
                 printf("请输入多项式项数\n");
@@ -166,10 +168,10 @@ int main()
                 PrintfPolyn(p1);
                 break;
             case 3:
-                cout << "即将退出系统" << endl;
+                printf("即将退出系统\n");
                 break;
             default:
-                cout << "无该选项" << endl;
+                printf("无该选项\n");
                 break;
         }
         system("pause");

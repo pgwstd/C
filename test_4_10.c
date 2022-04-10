@@ -10,6 +10,8 @@ int main()
     int* p[]={a,b,c};
     int i=0;
     int j=0;
+    double* d[5];
+    double* (*pd)[5];//数组指针
     for (i = 0;  i< 3; i++) {
         for (j=0; j<5 ;j++){
 //            printf("%d ",*(p[i]+j));

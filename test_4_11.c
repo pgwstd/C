@@ -8,6 +8,7 @@ int main()
 {
     //创建一个指针数组
     int *p[3];
+
     //分配三个指针
     p[0] = (int *)malloc(sizeof(int));
     p[1] = (int *)malloc(sizeof(int));

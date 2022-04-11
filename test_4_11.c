@@ -26,7 +26,7 @@ int main()
     printf("%d %d %d\n", *p[0], *p[1], *p[2]);  //此处的*不是代表指针，而是代表的解引用（也就是取出在该地址中的值）
     printf("%d\n",sizeof(char *));
     printf("%d\n",sizeof(short *));
-    printf("%d\n",sizeof(int *));//指针在c中也叫做指针变量
+    printf("%d\n",sizeof(int *));//指针在c中也叫做"指针变量"
     printf("%d\n",sizeof(float *));//指针在也是有大小的值（在32位机中是4个字节，64位机中是8个字节）
     return 0;
 }

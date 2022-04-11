@@ -13,6 +13,7 @@ int main()
     p[0] = (int *)malloc(sizeof(int));
     p[1] = (int *)malloc(sizeof(int));
     p[2] = (int *)malloc(sizeof(int));
+
     //分配三个整数
     *p[0] = 1;
     *p[1] = 2;

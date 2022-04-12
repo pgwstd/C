@@ -21,6 +21,7 @@ int twoSum(int arr[], int getnum, int nbsize) {
     }
     printf("你的输入有误!\n");
 
+
 }
 
 int main() {

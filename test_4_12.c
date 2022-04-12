@@ -12,10 +12,10 @@
 int twoSum(int arr[], int getnum, int nbsize) {
     int i = 0;
     int j = 0;
-    for (i = 0; i < nbsize; ++i) {
-        for (j = 0; j < nbsize; ++j) {
+    for (i = 0; i < nbsize; i++) {
+        for (j = 0; j < nbsize; j++) {
             if (arr[i] + arr[j] == getnum) {
-                printf("%d %d", j, i);
+                printf("%d %d", i, j);
             }
             else{
                 break;

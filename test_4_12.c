@@ -18,6 +18,7 @@ int twoSum(int arr[], int getnum, int nbsize) {
                 printf("%d %d", i, j);
             }
         }
+        break;
     }
     printf("你的输入有误!\n");
 

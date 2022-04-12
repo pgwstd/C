@@ -47,11 +47,10 @@ int main() {
     int target = 0;
     scanf("%d", &target);
     printf("这两数数组的下标是:\n");
-    int t=twoSum(arr, target, sz);
-    if(t==-1){
-        printf("输入有误了！\n");
-    } else{
-//        twoSum(arr,target,sz);
-    }
+    twoSum(arr, target, sz);
+//    if(t==-1){
+//        printf("输入有误了！\n");
+//    }
+
     return 0;
 }

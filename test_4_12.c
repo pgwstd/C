@@ -15,14 +15,16 @@ int twoSum(int arr[], int getnum, int nbsize) {
     for (i = 0; i < nbsize; ++i) {
         for (j = 0; j < nbsize; ++j) {
             if (arr[i] + arr[j] == getnum) {
-                printf("%d %d", i, j);
-
-            } else{
-                printf("你的输入有误!\n");
+                printf("%d %d", j, i);
             }
+            else{
+                break;
+            }
+
         }
-        break;
+
     }
+//    printf("你的输入有误!\n");
 
 }
 

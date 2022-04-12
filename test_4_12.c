@@ -16,6 +16,7 @@ int twoSum(int arr[], int getnum, int nbsize) {
         for (j = 0; j < nbsize; ++j) {
             if (arr[i] + arr[j] == getnum) {
                 printf("%d %d", i, j);
+                break;
             }
         }
         break;

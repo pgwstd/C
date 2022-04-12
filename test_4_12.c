@@ -13,6 +13,7 @@ int twoSum(int arr[], int getnum, int nbsize) {
     int i = 0;
     int j = 0;
     int k=0;
+    int b=-1;
     if (getnum!=k) {
         for (i = 0; i < nbsize; i++) {
             for (j = 0; j < nbsize; j++) {
@@ -27,9 +28,8 @@ int twoSum(int arr[], int getnum, int nbsize) {
         }
     }
     else{
-        return -1;
+        return b;
     }
-
 
 }
 
@@ -47,6 +47,11 @@ int main() {
     int target = 0;
     scanf("%d", &target);
     printf("这两数数组的下标是:\n");
-    twoSum(arr, target, sz);
+    int t=twoSum(arr, target, sz);
+    if(t==-1){
+        printf("输入有误了！\n");
+    } else{
+//        twoSum(arr,target,sz);
+    }
     return 0;
 }

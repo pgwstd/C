@@ -8,16 +8,18 @@
 //解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。
 //
 #include "stdio.h"
+#include "stdlib.h"
 
+//两和相加函数
 int twoSum(int arr[], int getnum, int nbsize) {
     int i = 0;
     int j = 0;
     int k=1;
-    int b=-1;
     if (k!=0) {
         for (i = 0; i < nbsize; i++) {
             for (j = 0; j < nbsize; j++) {
                 if (arr[i] + arr[j] == getnum) {
+                    printf("这两个数组的下标是:\n");
                     printf("%d %d", i, j);
                     k=0;
                     return k;
@@ -26,16 +28,25 @@ int twoSum(int arr[], int getnum, int nbsize) {
             }
 
         }
-        printf("-1");
+        printf("ERROR\n");
+        printf("输入有误!请重新输入！");
     }
 
 }
 
 int main() {
 
-    int arr[4] = {2, 7, 11, 15};
+    int *arr;//创建指针数组
+    int n=0;
+    printf("请输入你要定义的数组长度:\n");
+    scanf("%d",&n);
+    arr=(int *)malloc(n*sizeof(int));//动态开辟空间
+    printf("开始输入你要输入的数组元素:\n");
+    for (int i = 0; i < n; ++i) {
+        scanf("%d",&arr[i]);
+    }
     printf("开始遍历数组:\n");
-    for (int i = 0; i < 4; ++i) {
+    for (int i = 0; i < n; ++i) {
         printf("%d ", arr[i]);
     }
     printf("\n");
@@ -44,7 +55,7 @@ int main() {
     printf("两个整数，并且返回数组的下标\n");
     int target = 0;
     scanf("%d", &target);
-    printf("这两数数组的下标是:\n");
+//    printf("这两数数组的下标是:\n");
     twoSum(arr, target, sz);
 //    if(t==-1){
 //        printf("输入有误了！\n");

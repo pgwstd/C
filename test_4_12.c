@@ -11,7 +11,7 @@
 #include "stdlib.h"
 
 //两和相加函数
-int twoSum(int arr[], int getnum, int nbsize) {
+int twoSum(int (*arr), int getnum, int nbsize) {
     int i = 0;
     int j = 0;
     int k=1;
@@ -32,15 +32,15 @@ int twoSum(int arr[], int getnum, int nbsize) {
         printf("输入有误!请重新输入！");
     }
 
+    return 0;
 }
-
 int main() {
 
     int *arr;//创建指针数组
     int n=0;
     printf("请输入你要定义的数组长度:\n");
     scanf("%d",&n);
-    arr=(int *)malloc(n*sizeof(int));//动态开辟空间
+    arr=(int *)malloc(n*sizeof(int));//动态开辟空间n个
     printf("开始输入你要输入的数组元素:\n");
     for (int i = 0; i < n; ++i) {
         scanf("%d",&arr[i]);
@@ -50,13 +50,13 @@ int main() {
         printf("%d ", arr[i]);
     }
     printf("\n");
-    int sz = sizeof(arr) / sizeof(arr[0]);
+//    int sz = sizeof(arr) / sizeof(arr[0]);
     printf("请输入一个目标值，数组会找去和为目标值的\n");
     printf("两个整数，并且返回数组的下标\n");
     int target = 0;
     scanf("%d", &target);
 //    printf("这两数数组的下标是:\n");
-    twoSum(arr, target, sz);
+    twoSum(arr, target, n);
 //    if(t==-1){
 //        printf("输入有误了！\n");
 //    }

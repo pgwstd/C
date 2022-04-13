@@ -12,23 +12,21 @@
 int twoSum(int arr[], int getnum, int nbsize) {
     int i = 0;
     int j = 0;
-    int k=0;
+    int k=1;
     int b=-1;
-    if (getnum!=k) {
+    if (k!=0) {
         for (i = 0; i < nbsize; i++) {
             for (j = 0; j < nbsize; j++) {
                 if (arr[i] + arr[j] == getnum) {
                     printf("%d %d", i, j);
-                    k=getnum;
+                    k=0;
                     return k;
                 }
 
             }
 
         }
-    }
-    else{
-        return b;
+        printf("-1");
     }
 
 }

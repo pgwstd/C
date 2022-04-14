@@ -48,6 +48,7 @@ int main() {
     printf("开始遍历数组:\n");
     for (int i = 0; i < n; ++i) {
         printf("%d ", arr[i]);
+
     }
     printf("\n");
 //    int sz = sizeof(arr) / sizeof(arr[0]);

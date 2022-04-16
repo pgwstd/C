@@ -7,7 +7,7 @@
 int main()
 {
     int i=0;
-    for (i = 100; i <= 100000; ++i) {
+    for (i = 0; i <= 100000; ++i) {
         //计算出数是几位的
         int n=1;
         int tmp=i;
@@ -19,7 +19,7 @@ int main()
         tmp=i;
         int sum=0;
         while (tmp){
-            sum+=pow(tmp%10,3);
+            sum+=pow(tmp%10,n);
             tmp=tmp/10;
         }
         if(sum==i){

@@ -7,7 +7,7 @@
 int main()
 {
     int i=0;
-    for (i = 0; i <= 100000; ++i) {
+    for (i = 100; i <= 100000; ++i) {
         //计算出数是几位的
         int n=1;
         int tmp=i;
@@ -22,7 +22,7 @@ int main()
             sum+=pow(tmp%10,3);
             tmp=tmp/10;
         }
-        if(sum==i && i>100){
+        if(sum==i){
             printf("%d ",i);
         }
 

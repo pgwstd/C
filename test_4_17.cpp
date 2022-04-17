@@ -11,7 +11,7 @@ using namespace std;
 
 typedef struct PNode                 //系数coed，指数expn
 {
-    int coef;
+    float coef;
     int expn;
     struct PNode *next;
 } PNode, *Polynomial;
@@ -25,7 +25,8 @@ void CreatePolyn(Polynomial &P, int n) { //输入n项的系数和指数，建立
     for (i = 1; i <= n; ++i)                 //依次输入n个非零项
     {
         s = new PNode;                           //生成新结点
-        cin >> s->coef >> s->expn;              //输入系数和指数;
+//        cin >> s->coef >> s->expn;              //输入系数和指数;
+        scanf("%f%d",&(s->coef),&(s->expn));
         pre = P;                                //pre用于保存P的前驱，初值为头结点
         q = P->next;                            //q初始化，指向首元结点
         while (q && q->expn < s->expn)           //通过比较指数找到第一个大于输入项指数的项*q
@@ -41,7 +42,7 @@ void CreatePolyn(Polynomial &P, int n) { //输入n项的系数和指数，建立
 /*多项式的相加*/
 void AddPoly(Polynomial &Pa, Polynomial &Pb) {
     printf("SUM=");//多项式加法：Pa=Pa+Pb,两个多项式的结点构成“和多项式”
-    PNode *p1, *p2, *p3, *r;
+    PNode  *p1, *p2, *p3, *r;
     float sum = 0;
     p1 = Pa->next;
     p2 = Pb->next;//p1和p2初值分别指向Pa和Pb的首元结点
@@ -68,14 +69,10 @@ void AddPoly(Polynomial &Pa, Polynomial &Pb) {
                 r = p2;
                 p2 = p2->next;
                 delete r;
-            } else {
-                p1->coef = sum;
-                p3->next = p1;
-                p3 = p1;
-                p1 = p1->next;
-                r = p2;
-                p2 = p2->next;
-                delete r;                     //p2指向后一项
+            } else{
+                p1->coef=sum;
+                p3->next=p1;p3=p1;p1=p1->next;
+                r=p2;p2=p2->next;delete r;                     //p2指向后一项
             }
         }
     }//while
@@ -86,7 +83,7 @@ void AddPoly(Polynomial &Pa, Polynomial &Pb) {
 /*多项式的相减*/
 void SubPoly(Polynomial &Pa, Polynomial &Pb) {
     printf("SUB=");
-    PNode *p1, *p2, *p3, *r;
+    PNode  *p1, *p2, *p3, *r;
     float sub = 0;
     p1 = Pa->next;
     p2 = Pb->next;//p1和p2初值分别指向Pa和Pb的首元结点
@@ -132,29 +129,34 @@ void SubPoly(Polynomial &Pa, Polynomial &Pb) {
 void printfPolyn(Polynomial P) {
     PNode *p = P->next;             //p指向首元结点
     if (p->expn == 0)
-
-        printf("%d", p->coef);
-    else if (p->expn == 1)
-
-        printf("%dx", p->coef);
+//        cout << p->coef;            //coef是系数
+        printf("%f",p->coef);
+    else if (p->expn == 1)          //
+//        cout << p->coef << "x";
+        printf("%fx",p->coef);
     else
-        printf("%dx^%d", p->coef, p->expn);
-
+        printf("%fx^%d",p->coef,p->expn);
+//        cout << p->coef << "x^" << p->expn;
     p = p->next;
     while (p) {
-
+//        cout << ' ';
         printf(" ");
         if (p->coef > 0)
-
+//            cout << "+ ";
             printf("+");
+//        else {
+//            cout << "- ";
+//            p->coef = abs(p->coef);
+//        }
         if (p->expn == 1)
-
-            printf("%dx", p->coef);
+//            cout << p->coef << "x";
+            printf("%fx",p->coef);
         else
-            printf("%dx^%d", p->coef, p->expn);
+//            cout << p->coef << "x^" << p->expn;
+            printf("%fx^%d",p->coef,p->expn);
         p = p->next;
     }
-    cout << '\n';
+    printf("\n");
 }
 
 void menu() {
@@ -174,59 +176,59 @@ int main() {
     Polynomial p1, p2;
     int n1 = 0, n2 = 0;
     int m = 0;
-    while (m != 4) {
-        menu();
-        scanf("%d", &m);
-        switch (m) {
-            case 1:
-                printf("请输入多项式项数\n");
-                scanf("%d", &n1);
-                printf("请输入多项式各项的系数及指数\n");
-                CreatePolyn(p1, n1);
-                printf("p1=");
-                printfPolyn(p1);
-                break;
-            case 2:
-                printf("请输入p1的项数\n");
-                scanf("%d", &n1);
-                printf("请输入多项式各项的系数及指数\n");
-                CreatePolyn(p1, n1);
-                printf("p1=");
-                printfPolyn(p1);
-                printf("请输入p2的项数\n");
-                scanf("%d", &n2);
-                printf("请输入多项式各项的系数及指数\n");
-                CreatePolyn(p2, n2);
-                printf("p2=");
-                printfPolyn(p2);
-                AddPoly(p1, p2);
-                printfPolyn(p1);
-                break;
-            case 3:
-                printf("请输入p1的项数\n");
-                scanf("%d", &n1);
-                printf("请输入多项式各项的系数及指数\n");
-                CreatePolyn(p1, n1);
-                printf("p1=");
-                printfPolyn(p1);
-                printf("请输入p2的项数\n");
-                scanf("%d", &n2);
-                printf("请输入多项式各项的系数及指数\n");
-                CreatePolyn(p2, n2);
-                printf("p2=");
-                printfPolyn(p2);
-                SubPoly(p1, p2);
-                printfPolyn(p1);
-                break;
-            case 4:
-                printf("即将退出系统！\n");
-                break;
-            default:
-                printf("无该选项,请重新输入！\n");
-                break;
-        }
-        system("pause");
-        system("cls");
+//    while (m != 4) {
+    menu();
+    scanf("%d", &m);
+    switch (m) {
+        case 1:
+            printf("请输入多项式项数\n");
+            scanf("%d", &n1);
+            printf("请输入多项式各项的系数及指数\n");
+            CreatePolyn(p1, n1);
+            printf("p1=");
+            printfPolyn(p1);
+            break;
+        case 2:
+            printf("请输入p1的项数\n");
+            scanf("%d", &n1);
+            printf("请输入多项式各项的系数及指数\n");
+            CreatePolyn(p1, n1);
+            printf("p1=");
+            printfPolyn(p1);
+            printf("请输入p2的项数\n");
+            scanf("%d", &n2);
+            printf("请输入多项式各项的系数及指数\n");
+            CreatePolyn(p2, n2);
+            printf("p2=");
+            printfPolyn(p2);
+            AddPoly(p1, p2);
+            printfPolyn(p1);
+            break;
+        case 3:
+            printf("请输入p1的项数\n");
+            scanf("%d", &n1);
+            printf("请输入多项式各项的系数及指数\n");
+            CreatePolyn(p1, n1);
+            printf("p1=");
+            printfPolyn(p1);
+            printf("请输入p2的项数\n");
+            scanf("%d", &n2);
+            printf("请输入多项式各项的系数及指数\n");
+            CreatePolyn(p2, n2);
+            printf("p2=");
+            printfPolyn(p2);
+            SubPoly(p1, p2);
+            printfPolyn(p1);
+            break;
+        case 4:
+            printf("即将退出系统！\n");
+            break;
+        default:
+            printf("无该选项,请重新输入！\n");
+            break;
     }
+//        system("pause");
+//        system("cls");
+
     return 0;
 }

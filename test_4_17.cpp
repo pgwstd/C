@@ -6,63 +6,60 @@
 #include <iostream>
 #include<stdlib.h>
 #include "math.h"
-
 using namespace std;
-
-typedef struct PNode                 //系数coed，指数expn
+typedef struct PNode
 {
-    float coef;
+    float coef;//系数coed，指数expn
     int expn;
     struct PNode *next;
 } PNode, *Polynomial;
 
 /*创建多项式*/
-void CreatePolyn(Polynomial &P, int n) { //输入n项的系数和指数，建立表示多项式的有序链表P
+void CreatePolyn(Polynomial &P, int n) {
     P = new PNode;
-    P->next = NULL;                             //建立一个带表头结点的单链表
+    P->next = NULL;
     PNode *s, *pre, *q;
     int i;
-    for (i = 1; i <= n; ++i)                 //依次输入n个非零项
+    for (i = 1; i <= n; ++i)
     {
-        s = new PNode;                           //生成新结点
-//        cin >> s->coef >> s->expn;              //输入系数和指数;
+        s = new PNode;
         scanf("%f%d",&(s->coef),&(s->expn));
-        pre = P;                                //pre用于保存P的前驱，初值为头结点
-        q = P->next;                            //q初始化，指向首元结点
-        while (q && q->expn < s->expn)           //通过比较指数找到第一个大于输入项指数的项*q
+        pre = P;
+        q = P->next;
+        while (q && q->expn < s->expn)
         {
             pre = q;
             q = q->next;
-        }                                       //while
-        s->next = q;                             //将输入项s插入到q和其前驱节点pre之间;
+        }
+        s->next = q;
         pre->next = s;
-    }                                           //for?
+    }
 }
-
 /*多项式的相加*/
 void AddPoly(Polynomial &Pa, Polynomial &Pb) {
-    printf("SUM=");//多项式加法：Pa=Pa+Pb,两个多项式的结点构成“和多项式”
+    printf("SUM=");
     PNode  *p1, *p2, *p3, *r;
     float sum = 0;
     p1 = Pa->next;
-    p2 = Pb->next;//p1和p2初值分别指向Pa和Pb的首元结点
-    p3 = Pa;                        //p3指向多项式的当前结点，初值为Pa
-    while (p1 && p2)                  //p1与p2均为非空
+    p2 = Pb->next;
+    p3 = Pa;
+    while (p1 && p2)
     {
-        if (p1->expn < p2->expn)     //指数相等
+        if (p1->expn < p2->expn)
         {
             p3->next = p1;
             p3 = p1;
             p1 = p1->next;
-        }//sum保存两项的系数和
-        else if (p1->expn > p2->expn)               //当系数和不为0
+        }
+        else if (p1->expn > p2->expn)
         {
             p3->next = p2;
             p3 = p2;
-            p2 = p2->next;               //删除Pb当前结点
+            p2 = p2->next;
         } else {
             sum = p1->coef + p2->coef;
-            if (fabs(sum) < 1e-6) {  //和的绝对值小于epslon（用来抵消误差）
+            //判断是否等于0
+            if (fabs(sum) < 1e-6) {
                 r = p1;
                 p1 = p1->next;
                 delete r;
@@ -72,12 +69,12 @@ void AddPoly(Polynomial &Pa, Polynomial &Pb) {
             } else{
                 p1->coef=sum;
                 p3->next=p1;p3=p1;p1=p1->next;
-                r=p2;p2=p2->next;delete r;                     //p2指向后一项
+                r=p2;p2=p2->next;delete r;
             }
         }
-    }//while
-    p3->next = p1 ? p1 : p2;                    //插入非空多项式的剩余段
-    delete Pb;      //释放Pb的头结点
+    }
+    p3->next = p1 ? p1 : p2;
+    delete Pb;
 }
 
 /*多项式的相减*/
@@ -86,24 +83,24 @@ void SubPoly(Polynomial &Pa, Polynomial &Pb) {
     PNode  *p1, *p2, *p3, *r;
     float sub = 0;
     p1 = Pa->next;
-    p2 = Pb->next;//p1和p2初值分别指向Pa和Pb的首元结点
-    p3 = Pa;                        //p3指向多项式的当前结点，初值为Pa
-    while (p1 && p2)                  //p1与p2均为非空
+    p2 = Pb->next;
+    p3 = Pa;
+    while (p1 && p2)
     {
-        if (p1->expn < p2->expn)     //指数相等
+        if (p1->expn < p2->expn)
         {
             p3->next = p1;
             p3 = p1;
             p1 = p1->next;
-        }//sum保存两项的系数和
-        else if (p1->expn > p2->expn)               //当系数和不为0
+        }
+        else if (p1->expn > p2->expn)
         {
             p3->next = p2;
             p3 = p2;
-            p2 = p2->next;               //删除Pb当前结点
+            p2 = p2->next;
         } else {
             sub = p1->coef - p2->coef;
-            if (fabs(sub) < 1e-6) {
+            if (fabs(sub) < 0) {
                 r = p1;
                 p1 = p1->next;
                 delete r;
@@ -117,7 +114,7 @@ void SubPoly(Polynomial &Pa, Polynomial &Pb) {
                 p1 = p1->next;
                 r = p2;
                 p2 = p2->next;
-                delete r;                     //p2指向后一项
+                delete r;
             }
         }
     }
@@ -127,32 +124,21 @@ void SubPoly(Polynomial &Pa, Polynomial &Pb) {
 
 // 输出多项式
 void printfPolyn(Polynomial P) {
-    PNode *p = P->next;             //p指向首元结点
+    PNode *p = P->next;
     if (p->expn == 0)
-//        cout << p->coef;            //coef是系数
         printf("%f",p->coef);
-    else if (p->expn == 1)          //
-//        cout << p->coef << "x";
+    else if (p->expn == 1)
         printf("%fx",p->coef);
     else
         printf("%fx^%d",p->coef,p->expn);
-//        cout << p->coef << "x^" << p->expn;
     p = p->next;
     while (p) {
-//        cout << ' ';
         printf(" ");
         if (p->coef > 0)
-//            cout << "+ ";
             printf("+");
-//        else {
-//            cout << "- ";
-//            p->coef = abs(p->coef);
-//        }
         if (p->expn == 1)
-//            cout << p->coef << "x";
             printf("%fx",p->coef);
         else
-//            cout << p->coef << "x^" << p->expn;
             printf("%fx^%d",p->coef,p->expn);
         p = p->next;
     }
@@ -176,9 +162,9 @@ int main() {
     Polynomial p1, p2;
     int n1 = 0, n2 = 0;
     int m = 0;
-//    while (m != 4) {
     menu();
     scanf("%d", &m);
+
     switch (m) {
         case 1:
             printf("请输入多项式项数\n");
@@ -227,8 +213,5 @@ int main() {
             printf("无该选项,请重新输入！\n");
             break;
     }
-//        system("pause");
-//        system("cls");
-
     return 0;
 }

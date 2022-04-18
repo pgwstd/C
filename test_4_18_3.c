@@ -19,6 +19,7 @@ int main()
     scanf("%d%d",&m,&n);
     printf("交换之前:%d %d\n",m,n);
     printf("交换之后:");
+
     exchange(&m,&n);
     printf("交换之前:%d %d\n",m,n);
     return 0;

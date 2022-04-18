@@ -9,7 +9,8 @@ void my_Printf(char* str,int k,int sz)
 {
 
     int b=k-1;
-    for (int i = b; i < sz; ++i) {
+//    for (int i = b; i < sz; ++i) {
+    while (*(str+b)!='\0'){
         printf("%c", *(str + b));
         b++;
 

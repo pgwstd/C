@@ -12,6 +12,7 @@ void my_Printf(char* str,int k,int sz)
     for (int i = b; i < sz; ++i) {
         printf("%c", *(str + b));
         b++;
+
     }
 
 }

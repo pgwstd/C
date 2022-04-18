@@ -24,8 +24,10 @@ int main()
     printf("请输入字符串:\n");
     scanf("%s",str);
     int sz=strlen(str);
+
     printf("请输入从哪个位置开始输出:\n");
     scanf("%d",&k);
+
     my_Printf(str,k,sz);
     return 0;
 }

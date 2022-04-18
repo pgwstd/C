@@ -15,6 +15,7 @@ int main()
 
     int m=0;
     int n=0;
+
     scanf("%d%d",&m,&n);
     printf("交换之前:%d %d\n",m,n);
     printf("交换之后:");

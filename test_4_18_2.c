@@ -21,6 +21,7 @@ int main()
 
     char str[100];
     int k=0;
+
     printf("请输入字符串:\n");
     scanf("%s",str);
     int sz=strlen(str);

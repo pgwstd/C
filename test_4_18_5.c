@@ -18,7 +18,7 @@ int main()
         count=count/2;
     }
 //    if(money>0)
-//    total=2*money-1;
+//    total=2*money-1;(规律，些种方法也行)
     printf("%d",total);
     return 0;
 }

@@ -16,24 +16,24 @@ int pop(stack *s){
 int empty(stack *s){
     return s->index==0;
 }
-void DtoB_2(int num,stack *s) {
+void DtoB(int num,stack *s) {
     while (num != 0) {
         push(s, num % 2);
         num /= 2;
     }
 }
-void DtoB_8(int num,stack *s) {
+void DtoN(int num,stack *s) {
     while (num != 0) {
         push(s, num % 8);
         num /= 8;
     }
 }
 void menu(){
-    printf("-----     数制的转换    -----\n");
-    printf("----- 1.十进制转换八进制 -----\n");
-    printf("----- 2.十进制转换二进制 -----\n");
-    printf("-----    3.退出系统    -----\n");
-    printf("-----        END      -----\n");
+    printf("-----数制的转换----\n");
+    printf("1.十进制转换八进制\n");
+    printf("2.十进制转换二进制\n");
+    printf("    3.退出系统\n");
+    printf("-------END-------\n");
 }
 void main(){
     stack s;
@@ -47,14 +47,14 @@ void main(){
         switch (p) {
             case 1:
                 scanf("%d", &b);
-                DtoB_8(b, &s); //这里是要转的数
+                DtoN(b, &s); //这里是要转的数
                 while (!empty(&s)) {
                     printf("%d", pop(&s));
                 }
                 break;
             case 2:
                 scanf("%d", &b);
-                DtoB_2(b, &s); //这里是要转的数
+                DtoB(b, &s); //这里是要转的数
                 while (!empty(&s)) {
                     printf("%d", pop(&s));
                 }

@@ -136,18 +136,6 @@ void DelList(LinkList  *head,int i)
     else
         printf("删除结点位置错误，删除失败！");
 }
-//将所有的在线性表LB中但不在LA中和数据元素插入到LA中
-void MergeList(LinkList LA,LinkList LB)
-{
-    int m;
-    int n;
-    m= LengthList(LA);n= LengthList(LB);
-    for (int i=1;i<=n;i++){
-        GetElem(LB,i,e);
-        if(!Locate(LA,e))
-            LengthList(LA,++m,e);
-    }
-}
 void DispList(LinkList *head)
 {  /*显示输出链表函数*/
     LinkList *p;
@@ -169,7 +157,6 @@ void  MenuLine()
     printf("\n|               4——按位置查找                  |");
     printf("\n|               5——按元素值查找                |");
     printf("\n|               6——求表长                      |");
-    printf("\n|               7——合并线性表                      |");
     printf("\n|               0——返回                        |");
     printf("\n =================================================");
     printf("\n请输入菜单号（0-6）:");
@@ -226,9 +213,6 @@ main()
                 break;
             case  '6':
                 printf("该线性表的长度为%d！",LengthList(head));
-                break;
-            case  '7':
-                printf("合并线性表后");
                 break;
             case  '0':
                 ch1='n';break;

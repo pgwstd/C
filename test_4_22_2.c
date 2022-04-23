@@ -9,7 +9,7 @@ typedef  struct  linknode       /*单链表存储类型*/
 {
     DataType       data;         /*定义结点的数据域*/
     struct  linknode   *next;    /*定义结点的指针域*/
-} LinkList;
+} LinkList, *LinkListPtr;
 
 LinkList  *InitList()
 {   /*初始化链表函数*/
@@ -114,6 +114,7 @@ void InsList(LinkList  *head, int i, DataType x)
         printf("插入元素失败");
 }
 
+
 void DelList(LinkList  *head,int i)
 {  /*按位置删除链表中元素函数*/
     int j=0;
@@ -135,15 +136,17 @@ void DelList(LinkList  *head,int i)
     else
         printf("删除结点位置错误，删除失败！");
 }
+//将所有的在线性表LB中但不在LA中和数据元素插入到LA中
 void MergeList(LinkList LA,LinkList LB)
 {
-    m=LengthList(LA);n=LengthList(LB);
-    for (int i = 1; i <=n ; ++i) {
+    int m;
+    int n;
+    m= LengthList(LA);n= LengthList(LB);
+    for (int i=1;i<=n;i++){
         GetElem(LB,i,e);
-        if (!LocateElem(LA,e))
-            ListInsert(LA,++m,e)
+        if(!Locate(LA,e))
+            LengthList(LA,++m,e);
     }
-
 }
 void DispList(LinkList *head)
 {  /*显示输出链表函数*/
@@ -175,6 +178,7 @@ void  MenuLine()
 main()
 {
     LinkList *head;
+    LinkListPtr LA,LB;
     DataType x;
     int i,n;
     char  ch1,ch2,a;
@@ -224,7 +228,7 @@ main()
                 printf("该线性表的长度为%d！",LengthList(head));
                 break;
             case  '7':
-                printf("合并线性表后",);
+                printf("合并线性表后");
                 break;
             case  '0':
                 ch1='n';break;

@@ -3,6 +3,7 @@
 //
 
 #include<stdio.h>
+//
 typedef struct{
     char data[30];
     int index;

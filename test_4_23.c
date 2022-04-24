@@ -3,10 +3,17 @@
 //
 
 #include "stdio.h"
+void test(int** ptr)
+{
+    **ptr=2;
+}
 int main()
 {
 
-
-
-    return 0;
+   int a=12;
+   int *p=&a;
+   int** ppa=&p;
+   test(ppa);
+   printf("%d", a);
+   return 0;
 }

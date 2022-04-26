@@ -26,6 +26,6 @@ int main()
         scanf("%d",&arr[i]);
     }
     int sum=cal(arr,sz);
-    printf("%d",sum);
+    printf("和是:%d",sum);
     return 0;
 }

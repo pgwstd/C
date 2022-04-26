@@ -30,13 +30,13 @@ void DtoN(int num,stack *s) {
     }
 }
 void menu(){
-    printf("-----数制的转换----\n");
-    printf("1.十进制转换八进制\n");
-    printf("2.十进制转换二进制\n");
+    printf("------数制的转换----\n");
+    printf("  1.十进制转换八进制\n");
+    printf("  2.十进制转换二进制\n");
     printf("    3.退出系统\n");
-    printf("-------END-------\n");
+    printf("--------END-------\n");
 }
-void main(){
+int main(){
     stack s;
     int b=0;
     int p=0;

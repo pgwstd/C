@@ -8,9 +8,11 @@
 void menu()
 {
     printf("***********************\n");
-    printf("***** 1.Add  2.Sub *****\n");
-    printf("***** 1.Mul  2.Div *****\n");
-    printf("*****    0.exti    *****\n");
+    printf("***** 1.相加  2.相减 *****\n");
+    printf("***** 3.相乘  4.相除 *****\n");
+    printf("***** 5.相或  6.相与 *****\n");
+    printf("*****    7.异或    *****\n");
+    printf("*****    0.退出    *****\n");
     printf("***********************\n");
 
 }
@@ -29,6 +31,18 @@ int Mul(int x,int y)
 int Div(int x,int y)
 {
     return x/y;
+}
+int Or(int x,int y)
+{
+    return x|y;
+}
+int And(int x,int y)
+{
+    return x&y;
+}
+int Xor(int x,int y)
+{
+    return x^y;
 }
 int main()
 {
@@ -63,6 +77,24 @@ int main()
                 printf("请输入两个数据:\n");
                 scanf("%d %d",&x,&y);
                 ret=Div(x,y);
+                printf("ret=%d\n",ret);
+                break;
+            case 5:
+                printf("请输入两个数据:\n");
+                scanf("%d %d",&x,&y);
+                ret=Or(x,y);
+                printf("ret=%d\n",ret);
+                break;
+            case 6:
+                printf("请输入两个数据:\n");
+                scanf("%d %d",&x,&y);
+                ret=And(x,y);
+                printf("ret=%d\n",ret);
+                break;
+            case 7:
+                printf("请输入两个数据:\n");
+                scanf("%d %d",&x,&y);
+                ret=Xor(x,y);
                 printf("ret=%d\n",ret);
                 break;
             case 0:

@@ -229,7 +229,7 @@ int Xor(int x,int y)
 {
     return x^y;
 }
-int cakl(int (*ptr)(int, int))
+int cakl(int (*ptr)(int, int))  //函数指针
 {
     int x=0;
     int y=0;
@@ -249,7 +249,7 @@ int main()
         scanf("%d",&input);
         switch (input) {
             case 1:
-                ret=cakl(Add);
+                ret=cakl(Add); //相当于给Add的名字，让函数指针到函数里面找出Add的函数方法
                 printf("ret=%d\n",ret);
                 break;
             case 2:
@@ -269,7 +269,7 @@ int main()
                 printf("ret=%d\n",ret);
                 break;
             case 6:
-                ret=cakl(Add);
+                ret=cakl(And);
                 printf("ret=%d\n",ret);
                 break;
             case 7:

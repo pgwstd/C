@@ -282,7 +282,6 @@ int main()
             default:
                 printf("输入有误，请重新输入!\n");
                 break;
-
         }
     } while (input);
     return 0;

@@ -235,7 +235,7 @@ int cakl(int (*ptr)(int, int))  //函数指针
     int y=0;
     printf("请输入两个数据:\n");
     scanf("%d %d", &x, &y);
-    return ptr(x,y);
+    return ptr(x,y);  //找到相应的函数方法调用返回值
 }
 int main()
 {

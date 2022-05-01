@@ -91,17 +91,17 @@ void conversion2(int N) {//对于任意一个非负十进制数，打印输出�
     LinkStack S;
     InitStack(S);//初始化空找s
     while (N) { //当非零时，循环
-        Push(S, N % 2);//把与8求余得到的八进刺数压入浅s
+        Push(S, N % 2);//把与8求余得到的八进刺数压入栈s
         N = N / 2;//N更新为N与8的商
     }
-    while(S)//当浅s非空时，循环
+    while(S)//当栈s非空时，循环
     {
         Pop(S,e); //弹出浅顶元素e
-        printf("%d", e);//静出e
+        printf("%d", e);//输入出e
     }
 }
 int main()
-{//对于输入的在意一个非负十进制数，打印输出与其等值的八进制数或二进制数
+{//对于输入的任意一个非负十进制数，打印输出与其等值的八进制数或二进制数
     int n,e,x;
     printf("输入一个十进制整数:");
     scanf("%d",&n);

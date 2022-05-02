@@ -4,5 +4,5 @@ project(c_homework C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(c_homework
-                          test_5_1.c)
+                          test_5_1.c test_5_2.c)
 

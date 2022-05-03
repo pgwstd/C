@@ -22,7 +22,7 @@ int main()
     printf("请输入字符串:\n");
 //    scanf("%s",str);  //这种方法输入字符串的时候空格的时候会出错，所以不能用这种方法输入有空格的字符串
 //    int sz=strlen(str);
-    gets(str);
+    fgets(str,100,stdin);
     printf("输入从哪个位置输出字符串:\n");
     scanf("%d",&len);
     print_sort(str,len);

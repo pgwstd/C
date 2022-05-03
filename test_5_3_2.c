@@ -4,7 +4,7 @@
 //复制部分字符串，如:
 //hello world! 输入7输出的是world!
 #include "stdio.h"
-void print_sort(char str[],)
+void print_sort(char str[],int len)
 {
 
 }

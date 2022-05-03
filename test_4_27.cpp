@@ -5,9 +5,10 @@
 #include "stdio.h"
 #include "stdlib.h"
 using namespace std;
+
 #define OK 1
 #define ERROR 0
-#define OVERFLOW -1
+#define OVERFLOW 3
 #define MAXSIZE 100
 typedef int Status;
 typedef int SElemType;

@@ -5,13 +5,14 @@
 //hello world! 输入7输出的是world!
 #include "stdio.h"
 #include "string.h"
-void print_sort(char str[],int sz,int len)
+void print_sort(char str[],int len)
 {
      char *p=str;
 //    for (int i = len-1; i < sz; ++i) {
         while((*p+len)!='\0')
         {
-
+            printf("%c",*p);
+            p++;
         }
 //    }
 }
@@ -21,10 +22,10 @@ int main()
     int len=0;
     printf("请输入字符串:\n");
     scanf("%s",str);
-    int sz=strlen(str);
+//    int sz=strlen(str);
     printf("输入从哪个位置输出字符串:\n");
     scanf("%d",&len);
-    print_sort(str,sz,len);
+    print_sort(str,len);
     return 0;
 }
 

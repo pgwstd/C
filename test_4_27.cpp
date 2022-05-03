@@ -10,7 +10,7 @@ using namespace std;
 #define OVERFLOW -1
 #define MAXSIZE 100
 typedef int Status;
-typedef char SElemType;
+typedef int SElemType;
 
 typedef struct {
     SElemType *base;

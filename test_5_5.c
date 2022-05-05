@@ -6,6 +6,7 @@
 #include "stdio.h"
 void print_sort(int *p,int sz)
 {
+    printf("开始遍历数组:\n");
     for (int i = 0; i < sz; ++i) {
         printf("%d ",*(p+i));
     }

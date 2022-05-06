@@ -30,7 +30,7 @@ int main() {
     int *arr;
     printf("请输入你要定义的数组长度:\n");
     scanf("%d", &n);
-    arr = (int *) calloc(n, sizeof(int));
+    arr = (int *) calloc(n, sizeof(int)); //动态分配连续空间
     for (int i = 0; i < n; ++i) {
         scanf("%d", &arr[i]);
     }

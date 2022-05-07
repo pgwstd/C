@@ -8,6 +8,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 typedef int ElemType;
+typedef int Status;
 typedef struct LNode
 {
     ElemType data;//定义数据域
@@ -20,6 +21,6 @@ int main()
     int n=0;
     printf("请输入你要定义的数组长度:\n");
     scanf("%d",&n);
-    Linst
+
     return 0;
 }

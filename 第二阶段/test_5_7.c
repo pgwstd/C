@@ -7,15 +7,18 @@
 // 并顺序输出链表每个节点的值
 #include "stdio.h"
 #include "stdlib.h"
-typedef int ElemType;
-typedef int Status;
+typedef int ElemType; //定义结构体的数据域的类型
+typedef int Status;  //定义返回类型的值
 typedef struct LNode
 {
     ElemType data;//定义数据域
     struct LNode *next;//结点的指针域
 
 }LNode,*LinkList;
+Status InitList(LinkList L)
+{
 
+}
 int main()
 {
     int n=0;

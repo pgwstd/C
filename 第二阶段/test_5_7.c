@@ -9,15 +9,19 @@
 #include "stdlib.h"
 typedef int ElemType; //定义结构体的数据域的类型
 typedef int Status;  //定义返回类型的值
+#define OK 1
+#define ERROR ０
 typedef struct LNode
 {
     ElemType data;//定义数据域
     struct LNode *next;//结点的指针域
 
 }LNode,*LinkList;
-Status InitList(LinkList L)
+Status InitList(LinkList &L)
 {
-
+  L=new LNode;
+  L->newt=NULL;
+  return OK;
 }
 int main()
 {

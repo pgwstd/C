@@ -78,10 +78,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/panguangwei/c_homework/第二阶段/test_5_7.c">
-			<Option target="c_homework"/>
-		</Unit>
-		<Unit filename="/Users/panguangwei/c_homework/第二阶段/test_5_8.c">
+		<Unit filename="/Users/panguangwei/c_homework/第二阶段/test_5_8_2.c">
 			<Option target="c_homework"/>
 		</Unit>
 		<Unit filename="/Users/panguangwei/c_homework/CMakeLists.txt">

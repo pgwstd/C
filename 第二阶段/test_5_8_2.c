@@ -3,10 +3,33 @@
 //
 //杨氏矩阵
 #include "stdio.h"
-int find_sum(int array[3][3],int r,int c,int k)
+//int find_sum(int array[3][3],int r,int c,int k)
+//{
+//    int x=0;
+//    int y=c-1;
+//    while (x<3 && y>=0)
+//    {
+//        if(array[x][y] < k)
+//        {
+//            x++;
+//        }
+//        else if(array[x][y] > k)
+//        {
+//            y--;
+//        }
+//        else
+//        {
+//            printf("下标是:%d %d ",x,y);
+//            return 1;
+//        }
+//    }
+//    return 0;
+//}
+
+int find_sum(int array[3][3],int* px,int* py,int k)
 {
     int x=0;
-    int y=c-1;
+    int y=*py-1;
     while (x<3 && y>=0)
     {
         if(array[x][y] < k)
@@ -19,7 +42,8 @@ int find_sum(int array[3][3],int r,int c,int k)
         }
         else
         {
-            printf("下标是:%d %d ",x,y);
+            *px=x;
+            *py=y;
             return 1;
         }
     }
@@ -30,9 +54,12 @@ int main()
 
     int arr[3][3]={1,2,3,4,5,6,7,8,9};
     int k=7;
-    int ret=find_sum(arr,3,3,k);
+    int x=3;
+    int y=3;
+    int ret=find_sum(arr,&x,&y,k);
     if(ret==1){
         printf("找到了\n");
+        printf("下标是:%d %d ",x,y);
     }
     else
     {

@@ -56,7 +56,7 @@ int main()
     int k=7;
     int x=3;
     int y=3;
-    int ret=find_sum(arr,&x,&y,k);
+    int ret=find_sum(arr,&x,&y,k);//传址调用
     if(ret==1){
         printf("找到了\n");
         printf("下标是:%d %d ",x,y);

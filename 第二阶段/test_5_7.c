@@ -8,26 +8,35 @@
 #include "stdio.h"
 #include "stdlib.h"
 typedef int ElemType; //定义结构体的数据域的类型
-typedef int Status;  //定义返回类型的值
-#define OK 1
-#define ERROR ０
+
 //链表初始化
 typedef struct LNode
 {
     ElemType data;//定义数据域
     struct LNode *next;//结点的指针域
 
-}LNode,*LinkList;  //这个结构体有两个名称，一个是LNode,一个是指向这个结构体的指针类型*LinkList
-
+}LNode; //定义结点类型
 
 int main()
 {
-    int n=0;
-    LNode L;
-    int* arr;
+    int n=0; //定义一个变量用来存储链表的长度
+    int t=0; //用来记录链表的长度
+    LNode *L,*p,*q; //定义三个指针
     printf("请输入你要定义的数组长度:\n");
-    scanf("%d",&n);
-    arr=(int*) calloc(n,sizeof(int));//动态分配连续空间
-
+    scanf("%d",&n); //输入数组长度
+    p=L=(LNode*) calloc(n,sizeof(LNode));//动态分配连续空间
+    for (int i = 0; i < n; ++i) { //循环输入数组
+        scanf("%d",&t); //输入数组
+        q=(LNode*) calloc(n,sizeof(LNode)); //动态分配连续空间
+        q->data=t; //赋值
+        q->next=NULL; //指针域为空
+        p->next=q; //指针域指向q
+        p=q; //p指向q
+    }
+    L=L->next; //L指向第一个结点
+    for (int i = 0; i < n; ++i) { //循环输出链表
+        printf("%d ",L->data); //输出链表
+        L=L->next; //L指向下一个结点
+    }
     return 0;
 }

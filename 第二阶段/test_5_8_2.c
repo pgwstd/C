@@ -59,7 +59,7 @@ int main()
     int ret=find_sum(arr,&x,&y,k);//传址调用
     if(ret==1){
         printf("找到了\n");
-        printf("下标是:%d %d ",x,y);
+        printf("下标是:%d %d ",x,y);//可以返回改变的值
     }
     else
     {

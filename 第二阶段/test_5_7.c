@@ -17,11 +17,11 @@ typedef struct LNode
     ElemType data;//定义数据域
     struct LNode *next;//结点的指针域
 
-}LNode,*LinkList;
+}LNode,*LinkList;  //这个结构体有两个名称，一个是LNode,一个是指向这个结构体的指针类型*LinkList
 Status InitList(LinkList &L)
 {
-  L=new LNode;
-  L->newt=NULL;
+  L=new LNode;  //生成新的头结点并赋给L
+  L->newt=NULL;  //将结点后的空间全部置为空
   return OK;
 }
 int main()

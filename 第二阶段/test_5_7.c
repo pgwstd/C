@@ -25,12 +25,19 @@ Status InitList(LinkList &L)
   L->newt=NULL;  //将结点后的空间全部置为空
   return OK;
 }
+//单链表取值
+Status GetElem()
+{
+
+}
 int main()
 {
     int n=0;
     LNode L;
+    int* arr;
     printf("请输入你要定义的数组长度:\n");
     scanf("%d",&n);
+    arr=(int*) malloc(4,sizeof(int));
     InitList(L);
     return 0;
 }

@@ -20,8 +20,8 @@ typedef struct LNode
 int main()
 {
     int n=0; //定义一个变量用来存储链表的长度
-    int t=0; //用来记录链表的长度
-    LinkList *L,*p,*q; //定义三个指针
+    int t=0; //用来记录链表元素
+    LinkList *L,*p,*q; //定义三个指针,头指针p,尾指针q,链表头结点L
     printf("请输入你要定义的数组长度:\n");
     scanf("%d",&n); //输入数组长度
     p=L=(LinkList *) calloc(n,sizeof(LinkList));//动态分配连续空间

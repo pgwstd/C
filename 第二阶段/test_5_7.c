@@ -18,18 +18,8 @@ typedef struct LNode
     struct LNode *next;//结点的指针域
 
 }LNode,*LinkList;  //这个结构体有两个名称，一个是LNode,一个是指向这个结构体的指针类型*LinkList
-//构造出单链表置成空
-Status InitList(LinkList &L)
-{
-  L=new LNode;  //生成新的头结点并赋给L
-  L->newt=NULL;  //将结点后的空间全部置为空
-  return OK;
-}
-//单链表取值
-Status GetElem()
-{
 
-}
+
 int main()
 {
     int n=0;
@@ -37,7 +27,7 @@ int main()
     int* arr;
     printf("请输入你要定义的数组长度:\n");
     scanf("%d",&n);
-    arr=(int*) calloc(n,sizeof(int));
-    InitList(L);
+    arr=(int*) calloc(n,sizeof(int));//动态分配连续空间
+
     return 0;
 }

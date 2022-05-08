@@ -18,6 +18,7 @@ typedef struct LNode
     struct LNode *next;//结点的指针域
 
 }LNode,*LinkList;  //这个结构体有两个名称，一个是LNode,一个是指向这个结构体的指针类型*LinkList
+//构造出单链表置成空
 Status InitList(LinkList &L)
 {
   L=new LNode;  //生成新的头结点并赋给L

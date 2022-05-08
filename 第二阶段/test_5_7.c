@@ -15,19 +15,19 @@ typedef struct LNode
     ElemType data;//定义数据域
     struct LNode *next;//结点的指针域
 
-}LNode; //定义结点类型
+}LinkList; //定义结点类型
 
 int main()
 {
     int n=0; //定义一个变量用来存储链表的长度
     int t=0; //用来记录链表的长度
-    LNode *L,*p,*q; //定义三个指针
+    LinkList *L,*p,*q; //定义三个指针
     printf("请输入你要定义的数组长度:\n");
     scanf("%d",&n); //输入数组长度
-    p=L=(LNode*) calloc(n,sizeof(LNode));//动态分配连续空间
+    p=L=(LinkList *) calloc(n,sizeof(LinkList));//动态分配连续空间
     for (int i = 0; i < n; ++i) { //循环输入数组
         scanf("%d",&t); //输入数组
-        q=(LNode*) calloc(n,sizeof(LNode)); //动态分配连续空间
+        q=(LinkList *) calloc(n,sizeof(LinkList)); //动态分配连续空间
         q->data=t; //赋值
         q->next=NULL; //指针域为空
         p->next=q; //指针域指向q

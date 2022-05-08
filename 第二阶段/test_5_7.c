@@ -7,6 +7,7 @@
 // 并顺序输出链表每个节点的值
 #include "stdio.h"
 #include "stdlib.h"
+#include "malloc.h"
 typedef int ElemType; //定义结构体的数据域的类型
 typedef int Status;  //定义返回类型的值
 #define OK 1
@@ -37,7 +38,7 @@ int main()
     int* arr;
     printf("请输入你要定义的数组长度:\n");
     scanf("%d",&n);
-    arr=(int*) malloc(4,sizeof(int));
+    arr=(int*) malloc(n,sizeof(int));
     InitList(L);
     return 0;
 }

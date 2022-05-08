@@ -11,6 +11,7 @@ typedef int ElemType; //定义结构体的数据域的类型
 typedef int Status;  //定义返回类型的值
 #define OK 1
 #define ERROR ０
+//链表初始化
 typedef struct LNode
 {
     ElemType data;//定义数据域
@@ -26,8 +27,9 @@ Status InitList(LinkList &L)
 int main()
 {
     int n=0;
+    LNode L;
     printf("请输入你要定义的数组长度:\n");
     scanf("%d",&n);
-
+    InitList(L);
     return 0;
 }

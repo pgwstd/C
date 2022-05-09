@@ -119,14 +119,14 @@ int String_rotate(char* str1,char* str2)
         int len= strlen(str1);
         strncat(str1,str1,len);
         char* ret=strstr(str1,str2);
-        return ret != NULL;
-//        if(ret == NULL){
-//            return 0;
-//        }
-//        else
-//        {
-//            return 1;
-//        }
+//        return ret != NULL;
+        if(ret == NULL){
+            return 0;
+        }
+        else
+        {
+            return 1;
+        }
     }
 
 }
@@ -136,7 +136,7 @@ int main()
     char s1[20]="AABCD";
     char s2[]="BCDAA";
     int ret=String_rotate(s1,s2);
-    if(ret==1){
+    if(ret == 1){
         printf("yes\n");
     }
     else

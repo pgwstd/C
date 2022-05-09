@@ -6,14 +6,14 @@
 //ABCD输出的左旋转2个数就是CDAB
 #include "stdio.h"
 #include "string.h"
-void String_left_rotate(char* array,int n)
-{
-    int len=strlen(array);
+void String_left_rotate(char* array,int n) {
+    int len = strlen(array);
     for (int i = 0; i < n; ++i) {
-         array[i]=array[len-i-1];
-    }
-    for (int i = 0; i < len-n-1; ++i) {
-        array[i]=array[n+i];
+        char tmp = *array;
+        for (int j = 0; j < len -  1; ++j) {
+            *(array + j) = *(array + j + 1);
+        }
+        *(array + len - 1) = tmp;
     }
 }
 void String_right_rotate(char* array,int n)
@@ -23,7 +23,7 @@ void String_right_rotate(char* array,int n)
 void String_print(char* array)
 {
     int len= strlen(array);
-    for (int i = 0; i < len-1; ++i) {
+    for (int i = 0; i < len; ++i) {
         printf("%c",array[i]);
     }
 }

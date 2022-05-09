@@ -45,6 +45,7 @@ void reverse(char* left,char* right)
 }
 void String_left_rotate(char* array,int n)
 {
+    assert(array);
     int len= strlen(array);
     reverse(array,array+n-1);
     reverse(array+n,array+len-1);
@@ -53,7 +54,8 @@ void String_left_rotate(char* array,int n)
 }
 void String_right_rotate(char* array,int n)
 {
-   int len= strlen(array);
+    assert(array);
+    int len= strlen(array);
     reverse(array,array+len-n-1);
     reverse(array+len-n,array+len-1);
     reverse(array,array+len-1);

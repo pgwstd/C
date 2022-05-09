@@ -98,8 +98,8 @@ int String_rotate(char* str1,char* str2)
 int main()
 {
 
-    char s1="AABCD";
-    char s2="BCDAA";
+    char s1[]="AABCD";
+    char s2[]="BCDAA";
     int ret=String_rotate(s1,s2);
     if(ret==1){
         printf("yes\n");

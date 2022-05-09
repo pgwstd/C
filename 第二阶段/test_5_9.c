@@ -86,14 +86,25 @@
 
 
 #include "stdio.h"
+#include "string.h"
 #include "assert.h"
 //写出一个函数，判断一个字符串是否等于另外一个字符串旋转之后的字符串
 //如:s1=AABCD 和 s2=BCDAA，返回1
-int String_rotate(char* str1,char* str2)
-{
+int String_rotate(char* str1,char* str2) {
     assert(str1);
     assert(str2);
-
+    int len = strlen(str1);
+    for (int i = 0; i < len; ++i) {  //移多少次头元素
+        char tmp = *str1;
+        for (int j = 0; j < len - 1; ++j) { //向前移动
+            *(str1 + j) = *(str1 + j + 1);
+        }
+        *(str1 + len - 1) = tmp;  //把头元素给数组尾部
+        if (strcmp(str1, str2) == 0) {  //strcmp比较两个字符串是否相同
+            return 1;
+       }
+    }
+    return 0;
 }
 int main()
 {

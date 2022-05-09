@@ -18,7 +18,14 @@ void String_left_rotate(char* array,int n) {
 }
 void String_right_rotate(char* array,int n)
 {
-
+    int len = strlen(array);
+    for (int i = 0; i < n; ++i) {  //移多少次尾元素
+        char tmp = *(array+len-1);
+        for (int j = len-1; j >= 0; --j) { //向后移动
+            *(array + j) = *(array + j - 1);
+        }
+        *array  = tmp;  //把尾元素给数组头部
+    }
 }
 void String_print(char* array)
 {
@@ -26,6 +33,7 @@ void String_print(char* array)
     for (int i = 0; i < len; ++i) {
         printf("%c",array[i]);
     }
+    printf("\n");
 }
 int main()
 {
@@ -33,8 +41,11 @@ int main()
     int n=0;
     printf("请输入你要旋转的元素的个数:\n");
     scanf("%d",&n);
+    printf("左移:\n");
     String_left_rotate(arr,n);
     String_print(arr);
-//    String_right_rotate(arr,n);
+    printf("右移:\n");
+    String_right_rotate(arr,n);
+    String_print(arr);
     return 0;
 }

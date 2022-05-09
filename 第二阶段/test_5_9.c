@@ -8,12 +8,12 @@
 #include "string.h"
 void String_left_rotate(char* array,int n) {
     int len = strlen(array);
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i) {  //移多少次头元素
         char tmp = *array;
-        for (int j = 0; j < len -  1; ++j) {
+        for (int j = 0; j < len -  1; ++j) { //向前移动
             *(array + j) = *(array + j + 1);
         }
-        *(array + len - 1) = tmp;
+        *(array + len - 1) = tmp;  //把头元素给数组尾部
     }
 }
 void String_right_rotate(char* array,int n)

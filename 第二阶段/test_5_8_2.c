@@ -49,6 +49,7 @@ int find_sum(int array[3][3],int* px,int* py,int k)
     }
     return 0;
 }
+
 int main()
 {
 

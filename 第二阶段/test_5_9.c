@@ -90,7 +90,7 @@
 #include "assert.h"
 //写出一个函数，判断一个字符串是否等于另外一个字符串旋转之后的字符串
 //如:s1=AABCD 和 s2=BCDAA，返回1
-int String_rotate(char* str1,char* str2) {
+int String_rotate(char* str1,char* str2) {  //暴力穷举法
     assert(str1);
     assert(str2);
     int len = strlen(str1);

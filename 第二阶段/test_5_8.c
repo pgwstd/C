@@ -6,7 +6,14 @@
 //第二行输入 n 个正整数，表示数组中各个元素的值
 //把数组转换成链表后输出交换位置后的链表
 #include "stdio.h"
+#include "stdlib.h"
 int main()
 {
+    int* arr;
+    int n=0;
+    printf("请输入你要定义的数组长度:\n");
+    scanf("%d",&n);
+    arr=(int*)calloc(n,sizeof(int));
+
     return 0;
 }

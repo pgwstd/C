@@ -19,9 +19,12 @@
 #include "string.h"
 void my_strcat(char *str,const char *str2)
 {
-    int count=0;
+
     while (*str != '\0'){
-        count++;
+        str++;
+    }
+    while (*str++ = *str2++){
+       ;
     }
 }
 int main()

@@ -66,12 +66,13 @@ int my_strcmp(const char* p,const char* q)
             p++;
             q++;
     }
-    if(*p++ > *q++){
-        return 1;
-    }
-    else{
-        return -1;
-    }
+//    if(*p++ > *q++){
+//        return 1;
+//    }
+//    else{
+//        return -1;
+//    }
+    return *p-*q;
 
 }
 int main()

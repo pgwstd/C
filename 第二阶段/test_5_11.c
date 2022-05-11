@@ -106,12 +106,22 @@
 //    return 0;
 //
 //}
+//#include "stdio.h"
+//#include "string.h"
+//int main()
+//{
+//  char arr[20]="hello ";
+//  char arr2[]="wrold";
+//  strncat(arr,arr2,3);
+//    printf("%s",arr);
+//}
 #include "stdio.h"
 #include "string.h"
 int main()
 {
-  char arr[20]="hello ";
-  char arr2[]="wrold";
-  strncat(arr,arr2,3);
-    printf("%s",arr);
+    char *p="abcdef";
+    char *q="abcqwert";
+    int ret=strcmp(p,q);
+    printf("%d",ret);
+    return 0;
 }

@@ -17,10 +17,11 @@
 //}
 #include "stdio.h"
 #include "string.h"
+#include "assert.h"
 void my_strcat(char *str,const char *str2)
 {
 
-
+    assert(*str && *str2);
     while (*str != '\0'){
         str++;
     }

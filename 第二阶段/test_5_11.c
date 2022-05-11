@@ -19,15 +19,15 @@
 #include "stdio.h"
 #include "string.h"
 #include "assert.h"
-void my_strcat(char *str,const char *str2)
+void my_strcat(char *dst,const char *src)
 {
 
-    assert(*str && *str2);
-    while (*str != '\0'){
-        str++;
+    assert(*dst && *src);
+    while (*dst != '\0'){
+        dst++;
     }
-    while (*str2 != '\0'){
-        *str++ = *str2++;
+    while (*src != '\0'){
+        *dst++ = *src++;
     }
 }
 int main()

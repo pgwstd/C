@@ -31,7 +31,7 @@
 
 
 //strlen函数指针相减实现
-int strlen_sort( char* array)
+unsigned int strlen_sort( char* array)
 {
 
     assert(array);

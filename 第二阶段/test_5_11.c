@@ -54,8 +54,8 @@
 //        printf("<=\n");
 //    }
 //    return 0;
-#include "stdio.h"
-#include "assert.h"
+//#include "stdio.h"
+//#include "assert.h"
 //int my_strcmp(const char* p,const char* q)
 //{
 //    assert(p && q);
@@ -74,35 +74,35 @@
 //    }
 //
 //}
-int my_strcmp(const char* p,const char* q)
-{
-    assert(p && q);
-    while (*p == *q){
-        if(*p == '\0' && *q == '\0'){
-            return 0;
-        }
-        p++;
-        q++;
-    }
-    return *p-*q;
-
-}
-int main()
-{
-     char* p="asafasf";
-     char* q="aaee";
-     int ret=my_strcmp(p,q);
-     if(ret > 0 ){
-        printf("p > q\n");
-    }
-    else if(ret < 0)
-    {
-        printf("p < q\n");
-    }
-    else
-     {
-         printf("p = q\n");
-     }
-    return 0;
-
-}
+//int my_strcmp(const char* p,const char* q)
+//{
+//    assert(p && q);
+//    while (*p == *q){
+//        if(*p == '\0' && *q == '\0'){
+//            return 0;
+//        }
+//        p++;
+//        q++;
+//    }
+//    return *p-*q;
+//
+//}
+//int main()
+//{
+//     char* p="asafasf";
+//     char* q="aaee";
+//     int ret=my_strcmp(p,q);
+//     if(ret > 0 ){
+//        printf("p > q\n");
+//    }
+//    else if(ret < 0)
+//    {
+//        printf("p < q\n");
+//    }
+//    else
+//     {
+//         printf("p = q\n");
+//     }
+//    return 0;
+//
+//}

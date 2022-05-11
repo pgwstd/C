@@ -16,25 +16,78 @@
 //    return 0;
 //}
 //strcat追加函数实现
-#include "stdio.h"
-#include "string.h"
-#include "assert.h"
-void my_strcat(char *dst,const char *src)
-{
+//#include "stdio.h"
+//#include "string.h"
+//#include "assert.h"
+//void my_strcat(char *dst,const char *src)
+//{
+//
+//    assert(*dst && *src);
+//    while (*dst != '\0'){
+//        dst++;
+//    }
+//    while (*src != '\0'){
+//        *dst++ = *src++;
+//    }
+//}
+//int main()
+//{
+//    char arr[20]="abc ";
+//    char arr2[]="efg";
+//    my_strcat(arr,arr2);
+//    printf("%s",arr);
+//    return 0;
+//}
+//strcmp函数与strncmp函数实现
+//#include "stdio.h"
+//#include "string.h"
+//int main()
+//{
 
-    assert(*dst && *src);
-    while (*dst != '\0'){
-        dst++;
+//    char *p="abc";
+//    char *q="sdfafa";
+//    if(strcmp(p,q) ){
+//        printf(">\n");
+//    }
+//    else
+//    {
+//        printf("<=\n");
+//    }
+//    return 0;
+#include "stdio.h"
+int my_strcmp(const char* p,const char* q)
+{
+    while (*p == *q){
+        if(*p == '\0' && *q == '\0'){
+            return 0;
+        }
+            p++;
+            q++;
     }
-    while (*src != '\0'){
-        *dst++ = *src++;
+    if(*p++ > *q++){
+        return 1;
     }
+    else{
+        return -1;
+    }
+
 }
 int main()
 {
-    char arr[20]="abc ";
-    char arr2[]="efg";
-    my_strcat(arr,arr2);
-    printf("%s",arr);
+     char* p="asafasf";
+     char* q="aaee";
+     int ret=my_strcmp(p,q);
+     if(ret > 0 ){
+        printf(">\n");
+    }
+    else if(ret < 0)
+    {
+        printf("<\n");
+    }
+    else
+     {
+         printf("=\n");
+     }
     return 0;
+
 }

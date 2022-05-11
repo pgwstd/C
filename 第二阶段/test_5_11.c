@@ -121,7 +121,8 @@ int main()
 {
     char *p="abcdef";
     char *q="abcqwert";
-    int ret=strcmp(p,q);
+//    int ret=strcmp(p,q);
+    int ret= strncmp(p,q,3);
     printf("%d",ret);
     return 0;
 }

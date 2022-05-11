@@ -15,6 +15,7 @@
 //    printf("%d",len);
 //    return 0;
 //}
+//strcat函数实现
 #include "stdio.h"
 #include "string.h"
 #include "assert.h"

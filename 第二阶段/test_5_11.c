@@ -17,11 +17,15 @@
 //}
 #include "stdio.h"
 #include "string.h"
+void my_strcat(char *str,const char *str2)
+{
+
+}
 int main()
 {
     char arr[20]="abc";
     char arr2[]="efg";
-    strcat(arr,arr2);
+    my_strcat(arr,arr2);
     printf("%s",arr);
     return 0;
 }

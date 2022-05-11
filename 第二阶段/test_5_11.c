@@ -56,6 +56,24 @@
 //    return 0;
 #include "stdio.h"
 #include "assert.h"
+//int my_strcmp(const char* p,const char* q)
+//{
+//    assert(p && q);
+//    while (*p == *q){
+//        if(*p == '\0' && *q == '\0'){
+//            return 0;
+//        }
+//            p++;
+//            q++;
+//    }
+//    if(*p++ > *q++){
+//        return 1;
+//    }
+//    else{
+//        return -1;
+//    }
+//
+//}
 int my_strcmp(const char* p,const char* q)
 {
     assert(p && q);
@@ -63,16 +81,10 @@ int my_strcmp(const char* p,const char* q)
         if(*p == '\0' && *q == '\0'){
             return 0;
         }
-            p++;
-            q++;
+        p++;
+        q++;
     }
-    if(*p++ > *q++){
-        return 1;
-    }
-    else{
-        return -1;
-    }
-//    return *p-*q;
+    return *p-*q;
 
 }
 int main()

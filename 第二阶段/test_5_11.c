@@ -55,8 +55,10 @@
 //    }
 //    return 0;
 #include "stdio.h"
+#include "assert.h"
 int my_strcmp(const char* p,const char* q)
 {
+    assert(p && q);
     while (*p == *q){
         if(*p == '\0' && *q == '\0'){
             return 0;

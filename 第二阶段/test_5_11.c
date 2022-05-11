@@ -20,11 +20,12 @@
 void my_strcat(char *str,const char *str2)
 {
 
+
     while (*str != '\0'){
         str++;
     }
-    while (*str++ = *str2++){
-       ;
+    while (*str2 != '\0'){
+        *str++ = *str2++;
     }
 }
 int main()

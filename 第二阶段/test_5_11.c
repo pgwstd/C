@@ -110,7 +110,7 @@
 #include "string.h"
 int main()
 {
-  char arr[20]="hello";
+  char arr[20]="hello ";
   char arr2[]="wrold";
   strncat(arr,arr2,3);
     printf("%s",arr);

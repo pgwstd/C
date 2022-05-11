@@ -66,13 +66,13 @@ int my_strcmp(const char* p,const char* q)
             p++;
             q++;
     }
-//    if(*p++ > *q++){
-//        return 1;
-//    }
-//    else{
-//        return -1;
-//    }
-    return *p-*q;
+    if(*p++ > *q++){
+        return 1;
+    }
+    else{
+        return -1;
+    }
+//    return *p-*q;
 
 }
 int main()
@@ -81,15 +81,15 @@ int main()
      char* q="aaee";
      int ret=my_strcmp(p,q);
      if(ret > 0 ){
-        printf(">\n");
+        printf("p > q\n");
     }
     else if(ret < 0)
     {
-        printf("<\n");
+        printf("p < q\n");
     }
     else
      {
-         printf("=\n");
+         printf("p = q\n");
      }
     return 0;
 

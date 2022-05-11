@@ -115,14 +115,24 @@
 //  strncat(arr,arr2,3);
 //    printf("%s",arr);
 //}
+//#include "stdio.h"
+//#include "string.h"
+//int main()
+//{
+//    char *p="abcdef";
+//    char *q="abcqwert";
+////    int ret=strcmp(p,q);
+//    int ret= strncmp(p,q,3);
+//    printf("%d",ret);
+//    return 0;
+//}
 #include "stdio.h"
 #include "string.h"
 int main()
 {
-    char *p="abcdef";
-    char *q="abcqwert";
-//    int ret=strcmp(p,q);
-    int ret= strncmp(p,q,3);
-    printf("%d",ret);
+    char arr[20]="abcdfg\0#########";
+    char arr2[]="left";
+    strncat(arr,arr2,10);
+    printf("%s",arr);
     return 0;
 }

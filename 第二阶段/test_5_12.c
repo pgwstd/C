@@ -39,9 +39,14 @@
 //    return 0;
 //}
 #include "stdio.h"
+#include "string.h"
 int main()
 {
 
-
+    char arr1[]="adfg.wgasg@qq";
+    char arr2[]=".@";
+    char tmp[20];
+    strcpy(tmp,arr1);
+    printf("%s",tmp);
     return 0;
 }

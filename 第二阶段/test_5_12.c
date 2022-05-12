@@ -4,18 +4,19 @@
 #include "stdio.h"
 #include "string.h"
 #include "assert.h"
-int my_strstr(const char* str1,const char* str2)
+char* my_strstr(char* str1,char* str2)
 {
     assert(str1 && str2);
-        while (*str1 != '\0') {
-            while (*str1 == *str2 && *str2 != '\0') {
+    char* cp=str1;
+        while (*cp != '\0') {
+            while ((*str1 == *str2) && *str1 != '\0') {
                 str1++;
                 str2++;
             }
             if(*str2 == '\0') {
-                return str1;
+                return cp;
             }
-            str1++;
+            cp++;
         }
     return NULL;
 }
@@ -23,7 +24,7 @@ int main()
 {
 
     char arr1[]="abcdfgfsf";
-    char arr2[]="abgg";
+    char arr2[]="bcd";
     char* ret=my_strstr(arr1,arr2);
     if(ret == NULL)
     {
@@ -31,7 +32,7 @@ int main()
     }
     else
     {
-        printf("找到了\n");
+        printf("找到了:%s\n",ret);
     }
 
     return 0;

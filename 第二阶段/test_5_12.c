@@ -44,9 +44,18 @@ int main()
 {
 
     char arr1[]="adfg.wgasg@qq";
-    char arr2[]=".@";
-    char tmp[20];
+    char* arr2=".@ ";
+    char tmp[20]={0};
     strcpy(tmp,arr1);
-    printf("%s",tmp);
+    printf("%s\n",tmp);
+
+    char* ret= strtok(tmp,arr2);
+    printf("%s\n",ret);
+
+    ret= strtok(NULL,arr2);
+    printf("%s\n",ret);
+
+    ret= strtok(NULL,arr2);
+    printf("%s\n",ret);
     return 0;
 }

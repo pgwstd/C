@@ -10,7 +10,7 @@ char* my_strstr(const char* str1,const char* str2)
     const char* cp=str1;
         while (*cp != '\0') {
             str1=cp;
-            while ((*str1 == *str2) && *str1 != '\0') {
+            while ((*str1 == *str2) && *str1 != '\0' && *str2 != '\0') {
                 str1++;
                 str2++;
             }

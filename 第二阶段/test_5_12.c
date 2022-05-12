@@ -7,28 +7,25 @@
 int my_strstr(const char* str1,const char* str2)
 {
     assert(str1 && str2);
-    if(*str1 != '\0') {
         while (*str1 != '\0') {
             while (*str1 == *str2 && *str2 != '\0') {
                 str1++;
                 str2++;
             }
+            if(*str2 == '\0') {
+                return str1;
+            }
             str1++;
         }
-        return 1;
-    } else
-    {
-        return 0;
-    }
-
+    return NULL;
 }
 int main()
 {
 
     char arr1[]="abcdfgfsf";
-    char arr2[]="bcd";
-    int ret=my_strstr(arr1,arr2);
-    if(ret == 0)
+    char arr2[]="abgg";
+    char* ret=my_strstr(arr1,arr2);
+    if(ret == NULL)
     {
         printf("没找到\n");
     }

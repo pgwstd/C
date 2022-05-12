@@ -9,6 +9,7 @@ char* my_strstr(char* str1,char* str2)
     assert(str1 && str2);
     char* cp=str1;
         while (*cp != '\0') {
+            str1=cp;
             while ((*str1 == *str2) && *str1 != '\0') {
                 str1++;
                 str2++;

@@ -19,7 +19,7 @@ typedef struct {
     Person *base;//初始化时动态分配存储空间
     int front;//头指针
     int rear;//尾指针
-} SqQueue;
+}SqQueue;
 
 SqQueue Mdancers,  Fdancers;//存放男女队
 

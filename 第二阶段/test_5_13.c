@@ -3,6 +3,7 @@
 //
 #include "stdio.h"
 #include "stdlib.h"
+#include "string.h"
 #define OK 1
 #define ERROR 0
 #define OVERFLOW  -1
@@ -25,7 +26,7 @@ typedef struct
 
 SqQueue Man,Woman;
 //循环队列的初始化
-Status InitQueue(SqQueue &Q)
+int InitQueue(SqQueue &Q)
 {
     Q.base = new Person[MAXQSIZE];
     if (!Q.base)
@@ -34,7 +35,7 @@ Status InitQueue(SqQueue &Q)
     return OK;
 }
 //循环队列的入队
-Status EnQueue(SqQueue &Q,Person e)
+int EnQueue(SqQueue &Q,Person e)
 {
     if ((Q.rear + 1) % MAXQSIZE == Q.front)
         return ERROR;
@@ -43,7 +44,7 @@ Status EnQueue(SqQueue &Q,Person e)
     return OK;
 }
 //循环队列的出队
-Status DeQueue(SqQueue &Q,Person e)
+int DeQueue(SqQueue &Q,Person e)
 {
     if (Q.front == Q.rear)
        return ERROR;

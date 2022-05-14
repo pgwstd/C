@@ -21,7 +21,6 @@ int main()
 
     char arr1[10]={1,2,3,4,5,6,7,8,9,10};
     char arr2[10]={ 0 };
-    my_memcpy(arr1,arr2,20);
-    printf("%s",arr1);
+    my_memcpy(arr2,arr1,10);
     return 0;
 }

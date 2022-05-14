@@ -5,7 +5,7 @@
 #include "stdio.h"
 #include "string.h"
 #include "assert.h"
-void* my_memcpy(void* dest,const void* src,int num)
+void* my_memcpy(void* dest,const void* src,size_t num)
 {
     assert(dest && src);
     void* ret=dest;

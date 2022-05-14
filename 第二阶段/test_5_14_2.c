@@ -5,8 +5,9 @@
 #include "stdio.h"
 #include "string.h"
 #include "assert.h"
-void* my_memcpy(void* dest,const void*src,int num)
+void* my_memcpy(void* dest,const void* src,int num)
 {
+    assert(dest && src);
     void* ret=dest;
     while (num--){
         *(char*)dest=*(char*)src;
@@ -19,8 +20,8 @@ int main()
 {
 
     char arr1[10]={1,2,3,4,5,6,7,8,9,10};
-    char arr2[10]={1};
-    my_memcpy(arr1,arr2,10);
+    char arr2[10]={ 0 };
+    my_memcpy(arr1,arr2,20);
     printf("%s",arr1);
     return 0;
 }

@@ -39,12 +39,14 @@ int main()
 {
 
     int arr1[10]={1,2,3,4,5,6,7,8,9,10};
-//    int arr2[10]={ 1 };
+    int arr2[10]={ 1,3 };
 //      memcpy(arr1+2,arr1,20);
 //    my_memcpy(arr1+2,arr1,20);
 //    my_memmove(arr1+2,arr1,20);
-    for (int i = 0; i < 10; ++i) {
-        printf("%d\n",arr1[i]);
-    }
+//    for (int i = 0; i < 10; ++i) {
+//        printf("%d\n",arr1[i]);
+//    }
+    int ret=memcmp(arr1,arr2,8);
+    printf("%d",ret);
     return 0;
 }

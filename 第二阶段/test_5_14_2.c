@@ -49,6 +49,6 @@ int main()
 //    int ret=memcmp(arr1,arr2,8);
 //    printf("%d",ret);
     int arr[10]={0};
-    memset(arr,1,20);
+    memset(arr,1,20); //字节单位
     return 0;
 }

@@ -1,9 +1,8 @@
 //
 // Created by 潘光伟 on 2022/5/16.
 //
-//实现二分查找
+//实现二分查找的两种实现
 #include "stdio.h"
-
 int find_sort(int ptr[], int k, int sz) {
     int left = 0;
     int right = sz - 1;
@@ -26,9 +25,9 @@ int find_sort2(int *ptr, int k, int sz) {
     while (left <= right) {
         int mid = (left + right) / 2;
         if (k < *(ptr + mid)) {   //k=5  mid=6
-            right = mid - 1;
+            right = mid ;
         } else if (k > *(ptr + mid)) {  //k=5  mid=4
-            left = mid + 1;
+            left = mid ;
         } else {
             return mid;
         }

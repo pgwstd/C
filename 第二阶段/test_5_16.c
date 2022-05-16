@@ -6,7 +6,6 @@ int find_sort(int ptr[],int k,int sz)
 {
     int left=0;
     int right=sz-1;
-
     while (left <= right)
     {
         int mid=(left+right)/2;
@@ -29,10 +28,10 @@ int main()
 {
 
     int  arr[]={1,2,3,4,5,6,7,8,9,10};
-    int kil=7;
+    int kil=0;
     int size=sizeof(arr)/sizeof(arr[0]);
     scanf("%d",&kil);
     int ret=find_sort(arr,kil,size);
-    printf("%d",ret);
+    printf("下标是:%d",ret);
     return 0;
 }

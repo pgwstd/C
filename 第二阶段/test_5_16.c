@@ -2,18 +2,28 @@
 // Created by 潘光伟 on 2022/5/16.
 //
 #include "stdio.h"
-int find_sort(int *ptr,int k,int sz)
+int find_sort(int ptr[],int k,int sz)
 {
-    int* left=ptr;
-    int* right=ptr+sz-1;
-    while (left < right)
+    int left=0;
+    int right=sz-1;
+
+    while (left <= right)
     {
-        if(k < *(ptr+sz/2))
+        int mid=(left+right)/2;
+        if(k < ptr[mid])
         {
-
+              right=mid-1;
         }
-
+        else if(k > ptr[mid])
+        {
+           left=mid+1;
+        }
+        else
+        {
+            return mid;
+        }
     }
+    return -1;
 }
 int main()
 {
@@ -22,6 +32,7 @@ int main()
     int kil=7;
     int size=sizeof(arr)/sizeof(arr[0]);
     scanf("%d",&kil);
-    find_sort(arr,kil,size);
+    int ret=find_sort(arr,kil,size);
+    printf("%d",ret);
     return 0;
 }

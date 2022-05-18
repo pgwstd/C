@@ -41,14 +41,16 @@
 
 //计算共用体的大小
 #include "stdio.h"
-union U{
-    char arr[5];
-    int a;
-}u;
-int main()
-{
 
-    printf("%d\n",sizeof(u));
-    printf("%d\n",sizeof(union U));
+union U {
+    char arr[5];
+//    int a;
+    char c;
+} u;
+
+int main() {
+
+    printf("%d\n", sizeof(u));
+    printf("%d\n", sizeof(union U));
     return 0;
 }

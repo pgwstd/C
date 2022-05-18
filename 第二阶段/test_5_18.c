@@ -2,42 +2,42 @@
 // Created by 潘光伟 on 2022/5/18.
 //
 #include <stdio.h>
-//#include "string.h"
-//typedef int KeyType;
-//typedef int InfoType;
-//typedef struct {
-//    KeyType key;
-//    KeyType key2;
-//    InfoType otherinfo;
-//}ElenType;
-//typedef struct {
-//    ElenType *R;
-//    int lenght;
-//}SStable;
-//
-////哨兵顺序查找
-//int Sear_Seq(SStable ST,KeyType key){
-//    ST.R[0].key = key;
-//    for (int i = ST.lenght; ST.R[i].key != key ; --i) {
-//        return i;
-//    }
-//}
-////二分查找
-//int Search_Bin(SStable ST,KeyType key2){
-//    int left=1;
-//    int right=ST.lenght;
-//    while (left <= right){
-//        int mid=(left+right)/2;
-//        if (key2 < ST.R[mid].key2){
-//            right=mid-1;
-//        }
-//        else if (key2 > ST.R[mid].key2){
-//            left=mid+1;
-//        } else{
-//            return mid;
-//        }
-//    }
-//}
+#include "string.h"
+typedef int KeyType;
+typedef int InfoType;
+typedef struct {
+    KeyType key;
+    KeyType key2;
+    InfoType otherinfo;
+}ElenType;
+typedef struct {
+    ElenType *R;
+    int lenght;
+}SStable;
+
+//哨兵顺序查找
+int Sear_Seq(SStable ST,KeyType key){
+    ST.R[0].key = key;
+    for (int i = ST.lenght; ST.R[i].key != key ; --i) {
+        return i;
+    }
+}
+//二分查找
+int Search_Bin(SStable ST,KeyType key2){
+    int left=1;
+    int right=ST.lenght;
+    while (left <= right){
+        int mid=(left+right)/2;
+        if (key2 < ST.R[mid].key2){
+            right=mid-1;
+        }
+        else if (key2 > ST.R[mid].key2){
+            left=mid+1;
+        } else{
+            return mid;
+        }
+    }
+}
 int find_sort(int str[],int k,int sz)
 {
     for (int i = 0; i < sz-1; ++i) {

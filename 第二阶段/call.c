@@ -112,8 +112,8 @@ void FindCall(caller *pc){
         return;
     }
     else {
-        printf("%-8s\t%-11s\t%-8s\t%-15s\t%-15s\t\n", "姓名", "年龄","性别", "电话", "地址");
-        printf("%-8s\t%-8d\t%-8s\t%-13s\t%-20s\t\n",
+        printf("%-8s\t%-8s\t%-8s\t%-15s\t%-15s\t\n", "姓名", "年龄","性别", "电话", "地址");
+        printf("%-5s\t%-5d\t%-5s\t%-13s\t%-20s\t\n",
                pc->data[pos].name,
                pc->data[pos].age,
                pc->data[pos].sex,
@@ -124,8 +124,8 @@ void FindCall(caller *pc){
 
 //打印通讯录
 void PintfCall(const caller *pc){
-    printf("%-8s\t%-11s\t%-8s\t%-15s\t%-15s\t\n", "姓名", "年龄","性别", "电话", "地址");
+    printf("%-8s\t%-8s\t%-8s\t%-15s\t%-15s\t\n", "姓名", "年龄","性别", "电话", "地址");
     for (int i = 0; i < pc->sz; ++i) {
-        printf("%-8s\t%-8d\t%-8s\t%-13s\t%-20s\t\n", pc->data[i].name, pc->data[i].age,pc->data[i].sex, pc->data[i].phome, pc->data[i].addr);
+        printf("%-5s\t%-5d\t%-5s\t%-13s\t%-20s\t\n", pc->data[i].name, pc->data[i].age,pc->data[i].sex, pc->data[i].phome, pc->data[i].addr);
     }
 }

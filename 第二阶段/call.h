@@ -8,15 +8,15 @@
 #include "stdio.h"
 #include "string.h"
 #define max_name 8
-#define max_phe 13
+#define max_phe 14
 #define max_addr 20
-#define max_sex 3
+#define max_sex 8
 #define maxsize 100
 
 typedef struct call{
     char name[max_name];  //姓名
     int age;               //年龄
-    char sex[max_sex];     //性别
+    char sex[max_sex];    //性别
     char phome[max_phe];  //电话
     char addr[max_addr];  //地址
 }call;//重定义结构体名为call

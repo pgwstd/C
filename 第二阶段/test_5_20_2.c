@@ -20,20 +20,20 @@ typedef struct mylist{
 }SStable;
 
 //线性表初始化
-void MyList(SStable *ST){
-    ST->lenght=0; //指向第一个元素
-    memset(ST->R, 0 ,sizeof(ST->R)); //内存设置函数，将开辟的空间全部置成0
+void MyList(SStable ST){
+    ST.lenght=0; //指向第一个元素
+    memset(ST.R, 0 ,sizeof(ST.R)); //内存设置函数，将开辟的空间全部置成0
 
 }
 //初始化数组
-void AddArr(SStable *ST){
-    if(ST->lenght == MaxSize){
+void AddArr(SStable ST){
+    if(ST.lenght == MaxSize){
         printf("数组已满，无法增加！\n");
         return;
     }
     printf("请输入元素:>");
-    scanf("%d",&(ST->R));
-    ST->lenght++;
+    scanf("%d",&(ST.R));
+    ST.lenght++;
 
 }
 
@@ -72,7 +72,7 @@ int main()
 {
    //初始化链表
    SStable Initmylist;
-   MyList(&Initmylist);
+   MyList(Initmylist);
    int input=0;
     do {
         menu();
@@ -81,7 +81,7 @@ int main()
         switch (input) {
             case 1:
                 //初始化数组
-                AddArr(&Initmylist);
+                AddArr(Initmylist);
                 break;
                 //打印数组
                 //查找数组

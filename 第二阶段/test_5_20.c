@@ -14,5 +14,7 @@ int main()
     for (int i = 0; i < n; ++i) {
         printf("%d ",p[i]);
     }
+    free(p);
+    p = NULL;
     return 0;
 }

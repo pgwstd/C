@@ -1,20 +1,20 @@
 //
 // Created by 潘光伟 on 2022/5/20.
 //
-#include "stdio.h"
-#include "stdlib.h"
-int main()
-{
-    int n=0;
-    scanf("%d",&n);
-    int* p=(int*)malloc(n*sizeof(int));
-    for (int i = 0; i < n; ++i) {
-        *(p+i)=i;
-    }
-    for (int i = 0; i < n; ++i) {
-        printf("%d ",p[i]);
-    }
-    free(p);
-    p = NULL;
-    return 0;
-}
+//#include "stdio.h"
+//#include "stdlib.h"
+//int main()
+//{
+//    int n=0;
+//    scanf("%d",&n);
+//    int* p=(int*)malloc(n*sizeof(int));
+//    for (int i = 0; i < n; ++i) {
+//        *(p+i)=i;
+//    }
+//    for (int i = 0; i < n; ++i) {
+//        printf("%d ",p[i]);
+//    }
+//    free(p); //释放空间(要和mallo成对出现)
+//    p = NULL; //指针置为空
+//    return 0;
+//}

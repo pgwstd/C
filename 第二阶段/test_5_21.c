@@ -64,6 +64,7 @@ int main() {
     SStable Initmylist;
     InitSStable(&Initmylist);
     int n=0;
+    int key=0;
     printf("请定义你的顺序表1长度：\n");
     scanf("%d",&n);
     printf("请输入顺序表1的元素：\n");
@@ -73,15 +74,11 @@ int main() {
         scanf("%d",&e.key);
         InsertSStable(&Initmylist,e);
     }
-    //输出顺序表
-    printf("顺序表1为：\n");
-    for (int i = 0; i < n; ++i) {
-        printf("%d ",Initmylist.R[i].key);
-    }
-    printf("\n");
     //查找元素
-    printf("哨兵查找元素6的结果是：");
-    int ret=SearchSeq(Initmylist,6);
+    printf("请输入你要查找的元素:\n");
+    scanf("%d",&key);
+    printf("哨兵查找元素的结果是：");
+    int ret=SearchSeq(Initmylist,key);
     if (ret == -1){
         printf("未找到\n");
     }else{
@@ -101,13 +98,9 @@ int main() {
         scanf("%d",&e.key);
         InsertSStable(&Initmylist,e);
     }
-    //输出顺序表
-    printf("顺序表2为：\n");
-    for (int i = 0; i < n; ++i) {
-        printf("%d ",Initmylist.R[i].key);
-    }
-    printf("\n");
-    int ret2=SearchBin(Initmylist,50);
+    printf("请输入你要查找的元素:\n");
+    scanf("%d",&key);
+    int ret2=SearchBin(Initmylist,key);
     //查找元素
     printf("二分查找元素50的结果是：");
     if (ret2 == -1){

@@ -40,10 +40,8 @@ Status InsertSStable(SStable *S, ElenType e){
 //哨兵顺序查找
 int SearchSeq(SStable ST,KeyType key){
     ST.R[0].key = key;
-    for (int i = ST.lenght; ST.R[i].key != key; --i) {
+    for (int i = ST.lenght; ST.R[i].key != key; --i);
         return i;
-    }
-    return -1;
 }
 //二分查找
 int SearchBin(SStable ST,KeyType key){

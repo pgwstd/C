@@ -25,7 +25,7 @@ typedef struct{
 }SStable;
 //初始化顺序表
 Status InitSStable(SStable *S){
-    S->R = (ElenType *)malloc(MAXSIZE * sizeof(ElenType));
+    S->R = (ElenType *)calloc(MAXSIZE , sizeof(ElenType));  //全部初始化为0
     if(!S->R)
         exit(OVERFLOW);
     S->lenght = 0;
@@ -40,9 +40,10 @@ Status InsertSStable(SStable *S, ElenType e){
 //哨兵顺序查找
 int SearchSeq(SStable ST,KeyType key){
     ST.R[0].key = key;
-    for (int i = ST.lenght; ST.R[i].key != key ; --i) {
+    for (int i = ST.lenght; ST.R[i].key != key; --i) {
         return i;
     }
+    return -1;
 }
 //二分查找
 int SearchBin(SStable ST,KeyType key){
@@ -56,7 +57,7 @@ int SearchBin(SStable ST,KeyType key){
         else if (key > ST.R[mid].key){
             left=mid+1;
         } else{
-            return mid;
+            return mid+1;
         }
     }
     return -1;
@@ -64,16 +65,19 @@ int SearchBin(SStable ST,KeyType key){
 int main() {
     SStable Initmylist;
     InitSStable(&Initmylist);
+    int n=0;
+    printf("请定义你的顺序表1长度：\n");
+    scanf("%d",&n);
     printf("请输入顺序表1的元素：\n");
      //从键盘输入顺序表
-    for (int i = 0; i < 6; ++i) {
+    for (int i = 0; i < n; ++i) {
         ElenType e;
         scanf("%d",&e.key);
         InsertSStable(&Initmylist,e);
     }
     //输出顺序表
     printf("顺序表1为：\n");
-    for (int i = 0; i < 6; ++i) {
+    for (int i = 0; i < n; ++i) {
         printf("%d ",Initmylist.R[i].key);
     }
     printf("\n");
@@ -89,17 +93,19 @@ int main() {
     Initmylist.R = NULL;
 
 
+    printf("请定义你的顺序表2长度：\n");
+    scanf("%d",&n);
     printf("请输入顺序表2的元素：\n");
     InitSStable(&Initmylist);
     //从键盘输入顺序表
-    for (int i = 0; i < 6; ++i) {
+    for (int i = 0; i < n; ++i) {
         ElenType e;
         scanf("%d",&e.key);
         InsertSStable(&Initmylist,e);
     }
     //输出顺序表
     printf("顺序表2为：\n");
-    for (int i = 0; i < 6; ++i) {
+    for (int i = 0; i < n; ++i) {
         printf("%d ",Initmylist.R[i].key);
     }
     printf("\n");

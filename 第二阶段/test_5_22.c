@@ -4,6 +4,7 @@
 #include "stdio.h"
 int main()
 {
+    printf("qweqr");
     return 0;
 }
 

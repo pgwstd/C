@@ -8,10 +8,10 @@
 		},
 		"paths" : 
 		{
-			"cmake" : "/Users/panguangwei/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5080.224/CLion.app/Contents/bin/cmake/mac/bin/cmake",
-			"cpack" : "/Users/panguangwei/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5080.224/CLion.app/Contents/bin/cmake/mac/bin/cpack",
-			"ctest" : "/Users/panguangwei/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5080.224/CLion.app/Contents/bin/cmake/mac/bin/ctest",
-			"root" : "/Users/panguangwei/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5080.224/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22"
+			"cmake" : "/Users/panguangwei/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/CLion.app/Contents/bin/cmake/mac/bin/cmake",
+			"cpack" : "/Users/panguangwei/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/CLion.app/Contents/bin/cmake/mac/bin/cpack",
+			"ctest" : "/Users/panguangwei/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/CLion.app/Contents/bin/cmake/mac/bin/ctest",
+			"root" : "/Users/panguangwei/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5591.52/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22"
 		},
 		"version" : 
 		{
@@ -35,7 +35,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cache-v2-2b9fa6d1e5e6c15d91f3.json",
+			"jsonFile" : "cache-v2-4bb4875bbe88f669d579.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -44,7 +44,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cmakeFiles-v1-929046d38e4cb24347ed.json",
+			"jsonFile" : "cmakeFiles-v1-d322915b8204f5f89b1c.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{
@@ -66,7 +66,7 @@
 	{
 		"cache-v2" : 
 		{
-			"jsonFile" : "cache-v2-2b9fa6d1e5e6c15d91f3.json",
+			"jsonFile" : "cache-v2-4bb4875bbe88f669d579.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -76,7 +76,7 @@
 		},
 		"cmakeFiles-v1" : 
 		{
-			"jsonFile" : "cmakeFiles-v1-929046d38e4cb24347ed.json",
+			"jsonFile" : "cmakeFiles-v1-d322915b8204f5f89b1c.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{

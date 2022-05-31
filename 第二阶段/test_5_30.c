@@ -5,4 +5,5 @@
 int main()
 {
     printf("2123213");
+    return 0;
 }

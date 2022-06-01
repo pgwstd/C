@@ -5,5 +5,6 @@
 int main()
 {
     printf("2123213");
+    printf("算法61");
     return 0;
 }

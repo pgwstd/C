@@ -12,9 +12,9 @@
 int main()
 {
 
-    char str={0};
+    char ch=0;
     printf("请输入你要打印的字符:\n");
-    scanf("%c",&str);
+    scanf("%c",&ch);
     //打印上半部分
     for(int i=0;;i++){
         printf(" ");

@@ -16,9 +16,10 @@ int main()
     printf("请输入你要打印的字符:\n");
     scanf("%c",&ch);
     //打印上半部分
-    for(int i=0;;i++){
+    for(int i=0;i<3;i++){
         printf(" ");
     }
+
     //打印下部分
     return 0;
 }

@@ -81,6 +81,9 @@
 		<Unit filename="/Users/panguangwei/c_homework/算法练习/test_6_5.c">
 			<Option target="c_homework"/>
 		</Unit>
+		<Unit filename="/Users/panguangwei/c_homework/算法练习/test_6_6.c">
+			<Option target="c_homework"/>
+		</Unit>
 		<Unit filename="/Users/panguangwei/c_homework/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

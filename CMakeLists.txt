@@ -4,5 +4,5 @@ project(c_homework C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(c_homework
-        算法练习/test_6_5.c)
+        算法练习/test_6_5.c 算法练习/test_6_6.c)
 

@@ -18,6 +18,11 @@ void bbubble_sort(int a[], int n)
             }
         }
     }
+
+
+
+
+
 }
 //输出数组
 void print_array(int a[], int n)

@@ -5,5 +5,6 @@
 int main()
 {
     printf("123123");
+    printf("qwe");
 
 }

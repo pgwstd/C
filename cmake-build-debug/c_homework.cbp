@@ -78,9 +78,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/panguangwei/Documents/C_homework/算法练习/test_6_21.c">
-			<Option target="c_homework"/>
-		</Unit>
 		<Unit filename="/Users/panguangwei/Documents/C_homework/算法练习/test_6_22.c">
 			<Option target="c_homework"/>
 		</Unit>

@@ -5,6 +5,7 @@
 int main()
 {
     printf("123123");
+    printf("\n");
     printf("qwe");
 
 }

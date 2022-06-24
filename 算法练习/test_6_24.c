@@ -288,6 +288,8 @@ int main()
     SeqListPrint(&L);
     SeqListPushAssign(&L,0,-1);
     SeqListPrint(&L);
+    SeqListPushAssign(&L,12,12);
+    SeqListPrint(&L);
 
     //删除数据(尾删)
     SeqListPopBack(&L);

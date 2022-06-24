@@ -144,8 +144,15 @@ void SeqListPrint(SeqList *L)
 //查找表中指定位置的元素
 void SeqListGetElem(SeqList *L, int i)
 {
+    assert(L->size);
+    if (i <= L->size || i > 0)
+    {
+        printf("位于表%d的位置的元素是:%d \n", i, L->Data[i - 1]);
+    } else
+    {
 
-    printf("位于表%d的位置的元素是:%d \n", i, L->Data[i - 1]);
+        printf("-1");
+    }
 }
 
 //输出表中的元素个数

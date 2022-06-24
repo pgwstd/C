@@ -138,7 +138,7 @@ void SeqListPopFront(SeqList *L)
 {
     assert(L->size);
     int start = 0;
-    while (start < L->size)
+    while (start < L->size-1)
     {
         L->Data[start] = L->Data[start + 1];
         start++;
@@ -158,7 +158,7 @@ void SeqListPrint(SeqList *L)
 
 
 //查找表中指定位置的元素
-void SeqListGetElem(SeqList *L, int i)
+int SeqListGetElem(SeqList *L, int i)
 {
     assert(L->size);
     if (i <= L->size || i > 0)
@@ -166,8 +166,7 @@ void SeqListGetElem(SeqList *L, int i)
         printf("位于表%d的位置的元素是:%d \n", i, L->Data[i - 1]);
     } else
     {
-
-        printf("-1");
+        return -1;
     }
 }
 
@@ -178,18 +177,17 @@ void SeqListLenght(SeqList *L)
 }
 
 //查找表中是否有这个元素
-void SeqListSeachElem(SeqList *L, SLData x)
+int SeqListSeachElem(SeqList *L, SLData x)
 {
     for (int i = 0; i < L->size; ++i)
     {
         if (L->Data[i] == x)
         {
             printf("表中存在%d这个元素,下标是:%d\n", x,i);
-            return;
         }
 
     }
-    printf("表中没有这个元素！");
+    return -1;
 }
 
 //删除指定位置的元素
@@ -268,12 +266,12 @@ int main()
 //        menu();
 //    } while (input);
     //插入数据(尾插)
-//    SeqListPushBack(&L, 1);
-//    SeqListPushBack(&L, 2);
-//    SeqListPushBack(&L, 3);
-//    SeqListPushBack(&L, 4);
-//    SeqListPushBack(&L, 5);
-//    SeqListPrint(&L);
+    SeqListPushBack(&L, 1);
+    SeqListPushBack(&L, 2);
+    SeqListPushBack(&L, 3);
+    SeqListPushBack(&L, 4);
+    SeqListPushBack(&L, 5);
+    SeqListPrint(&L);
 
     //插入数据(头插)
     SeqListPushFront(&L, 1);

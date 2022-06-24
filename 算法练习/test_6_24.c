@@ -34,7 +34,7 @@ void SeqListPushBack(SeqList *L, SLData x)
         exit(-1);
     }
     //插入数据
-    L->Data = x;
+    L->Data[L->size] = x;  //访问开始时的下标进行插入
     L->size++;
 
 

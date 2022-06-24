@@ -225,6 +225,9 @@ int main()
     //查找表中元素是否存在
     SeqListSeachElem(&L,3);
 
+    //删除指定位置的元素
+    //删除指定元素
+
     //销毁顺序表
     SeqDestroyList(&L);
     return 0;

@@ -104,6 +104,14 @@ void SeqListPushFront(SeqList *L, SLData x)
     L->size++;
 }
 
+//在指定位置插入元素
+void SeqListPushAssign(SeqList *L,int i,SLData x)
+{
+    assert(L->size);
+
+}
+
+
 //删除数据(尾删)
 void SeqListPopBack(SeqList *L)
 {
@@ -141,6 +149,7 @@ void SeqListPrint(SeqList *L)
     printf("\n");
 }
 
+
 //查找表中指定位置的元素
 void SeqListGetElem(SeqList *L, int i)
 {
@@ -168,7 +177,7 @@ void SeqListSeachElem(SeqList *L, SLData x)
     {
         if (L->Data[i] == x)
         {
-            printf("表中存在这个元素,下标是:%d\n", i);
+            printf("表中存在%d这个元素,下标是:%d\n", x,i);
             return;
         }
 
@@ -225,14 +234,23 @@ void SeqDestroyList(SeqList *L)
     L->size = L->length = 0;
 }
 
-
+//菜单
+void menu()
+{
+    printf("----------1.头插----------\n");
+    printf("----------2.尾插----------\n");
+    printf("----------3.头删----------\n");
+    printf("----------4.尾删----------\n");
+    printf("----------5.打印----------\n");
+    printf("----------6.销毁----------\n");
+}
 int main()
 {
 
     //初始化顺序表
     SeqList L;
     SeqInitList(&L);
-
+    menu();
     //插入数据(尾插)
     SeqListPushBack(&L, 1);
     SeqListPushBack(&L, 2);
@@ -248,6 +266,9 @@ int main()
     SeqListPushFront(&L, 4);
     SeqListPushFront(&L, 5);
     SeqListPrint(&L);
+
+    //在指定位置插入元素
+    SeqListPushAssign(&L,2,90);
 
     //删除数据(尾删)
     SeqListPopBack(&L);

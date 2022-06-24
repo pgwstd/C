@@ -108,7 +108,14 @@ void SeqListPushFront(SeqList *L, SLData x)
 void SeqListPushAssign(SeqList *L,int i,SLData x)
 {
     assert(L->size);
-
+    int end = L->size-1;
+    while(end >= i)
+    {
+        L->Data[end+1] = L->Data[end];
+        end--;
+    }
+    L->Data[i] = x;
+    L->size++;
 }
 
 
@@ -269,6 +276,7 @@ int main()
 
     //在指定位置插入元素
     SeqListPushAssign(&L,2,90);
+    SeqListPrint(&L);
 
     //删除数据(尾删)
     SeqListPopBack(&L);

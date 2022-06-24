@@ -60,7 +60,7 @@ void SeqListPopBack(SeqList *L)
 //        printf("数据域为空,不可删除！");
 //        exit(-1);
 //    }
-    //使用断言，如果删多了，直接报出错误
+    //使用断言，如果删多了为空时，直接报出错误
     assert(L->size);
     L->size--;
 }

@@ -138,6 +138,19 @@ void SeqListPrint(SeqList *L)
     printf("\n");
 }
 
+//查找表中指定位置的元素
+void SeqListGetElem(SeqList *L,int i)
+{
+
+    printf("位于表%d的位置的元素是%d ", i,L->Data[i-1]);
+}
+
+//输出表中的元素个数
+void SeqListLenght(SeqList *L)
+{
+    printf("表中还有%d个元素\n",L->size);
+}
+
 //销毁顺序表
 void SeqDestroyList(SeqList *L)
 {
@@ -172,21 +185,28 @@ int main()
 
     //删除数据(尾删)
     SeqListPopBack(&L);
-    SeqListPopBack(&L);
-    SeqListPopBack(&L);
-    SeqListPopBack(&L);
+//    SeqListPopBack(&L);
+//    SeqListPopBack(&L);
+//    SeqListPopBack(&L);
     SeqListPrint(&L);
 
     //删除数据(头删)
     SeqListPopFront(&L);
-    SeqListPopFront(&L);
 //    SeqListPopFront(&L);
 //    SeqListPopFront(&L);
 //    SeqListPopFront(&L);
 //    SeqListPopFront(&L);
+//    SeqListPopFront(&L);
+    SeqListPrint(&L);
 
     //遍历顺序表
     SeqListPrint(&L);
+
+    //返回顺序表中元素的个数
+    SeqListLenght(&L);
+
+    //查找指定位置中的元素
+    SeqListGetElem(&L,2);
 
     //销毁顺序表
     SeqDestroyList(&L);

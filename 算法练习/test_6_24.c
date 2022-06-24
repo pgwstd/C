@@ -244,12 +244,17 @@ void SeqDestroyList(SeqList *L)
 //菜单
 void menu()
 {
-    printf("----------1.头插----------\n");
-    printf("----------2.尾插----------\n");
-    printf("----------3.头删----------\n");
-    printf("----------4.尾删----------\n");
-    printf("----------5.打印----------\n");
-    printf("----------6.销毁----------\n");
+    printf("----------1.头插----------------------\n");
+    printf("----------2.尾插----------------------\n");
+    printf("----------3.指定位置插入元素------------\n");
+    printf("----------4.头删----------------------\n");
+    printf("----------5.尾删----------------------\n");
+    printf("----------6.删除指定位置元素-------------\n");
+    printf("----------7.删除指定元素----------------\n");
+    printf("----------8.输出表中的元素个数-----------\n");
+    printf("----------9.查找表中指定位置的元素--------\n");
+    printf("----------10.打印顺序表-----------------\n");
+    printf("----------11.销毁顺序表-----------------\n");
 }
 int main()
 {
@@ -257,14 +262,18 @@ int main()
     //初始化顺序表
     SeqList L;
     SeqInitList(&L);
-    menu();
+//    int input = 0;
+//    do
+//    {
+//        menu();
+//    } while (input);
     //插入数据(尾插)
-    SeqListPushBack(&L, 1);
-    SeqListPushBack(&L, 2);
-    SeqListPushBack(&L, 3);
-    SeqListPushBack(&L, 4);
-    SeqListPushBack(&L, 5);
-    SeqListPrint(&L);
+//    SeqListPushBack(&L, 1);
+//    SeqListPushBack(&L, 2);
+//    SeqListPushBack(&L, 3);
+//    SeqListPushBack(&L, 4);
+//    SeqListPushBack(&L, 5);
+//    SeqListPrint(&L);
 
     //插入数据(头插)
     SeqListPushFront(&L, 1);

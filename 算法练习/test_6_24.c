@@ -30,7 +30,7 @@ void SeqListPushBack(SeqList *L, SLData x)
     //判断顺序表空间是来否满，如果满了就开辟空间(2倍的)
     if (L->size == L->length)
     {
-        //如果等于0就开辟4个空间，不等于0就乘于2倍
+        //三目运算：如果等于0就开辟4个空间，不等于0就乘于2倍
         int capacity = L->length == 0 ? 4 : L->length * 2;
         SLData *tmp = (SLData *) realloc(L->Data, capacity * sizeof(SLData));
         if (tmp == NULL)

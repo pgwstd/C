@@ -158,13 +158,13 @@ int main()
     SeqListPushFront(&L,5);
     SeqListPrint(&L);
     //删除数据(尾删)
-//    SeqListPopBack(&L);
-//    SeqListPopBack(&L);
-//    SeqListPopBack(&L);
-//    SeqListPopBack(&L);
+    SeqListPopBack(&L);
+    SeqListPopBack(&L);
+    SeqListPopBack(&L);
+    SeqListPopBack(&L);
 
     //遍历顺序表
-//    SeqListPrint(&L);
+    SeqListPrint(&L);
     //销毁顺序表
     SeqDestroyList(&L);
     return 0;

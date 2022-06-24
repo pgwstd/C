@@ -79,6 +79,7 @@ int main()
     SeqListPushBack(&L, 2);
     SeqListPushBack(&L, 3);
     SeqListPushBack(&L, 4);
+    SeqListPushBack(&L, 5);
 
     //遍历顺序表
     SeqListPrint(&L);

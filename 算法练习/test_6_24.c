@@ -142,13 +142,27 @@ void SeqListPrint(SeqList *L)
 void SeqListGetElem(SeqList *L,int i)
 {
 
-    printf("位于表%d的位置的元素是:%d ", i,L->Data[i-1]);
+    printf("位于表%d的位置的元素是:%d \n", i,L->Data[i-1]);
 }
 
 //输出表中的元素个数
 void SeqListLenght(SeqList *L)
 {
     printf("表中还有%d个元素\n",L->size);
+}
+
+//查找表中是否有这个元素
+void SeqListSeachElem(SeqList *L,SLData x)
+{
+    for (int i = 0; i < L->size; ++i)
+    {
+        if (L->Data[i] == x){
+            printf("表中存在这个元素,下标是:%d\n",i);
+            return;
+        }
+
+    }
+    printf("表中没有这个元素！");
 }
 
 //销毁顺序表
@@ -207,6 +221,9 @@ int main()
 
     //查找指定位置中的元素
     SeqListGetElem(&L,2);
+
+    //查找表中元素是否存在
+    SeqListSeachElem(&L,3);
 
     //销毁顺序表
     SeqDestroyList(&L);

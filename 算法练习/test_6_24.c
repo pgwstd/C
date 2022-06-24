@@ -54,7 +54,8 @@ void SeqListPushBack(SeqList *L, SLData x)
 //删除数据(尾删)
 void SeqListPopBack(SeqList *L)
 {
-
+//  L->Data[L->size-1] = 0;
+  L->size--;
 }
 
 //遍历顺序表

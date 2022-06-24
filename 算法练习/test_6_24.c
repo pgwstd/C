@@ -177,6 +177,11 @@ int main()
     SeqListPrint(&L);
     //删除数据(头删)
     SeqListPopFront(&L);
+    SeqListPopFront(&L);
+//    SeqListPopFront(&L);
+//    SeqListPopFront(&L);
+//    SeqListPopFront(&L);
+//    SeqListPopFront(&L);
     //遍历顺序表
     SeqListPrint(&L);
     //销毁顺序表

@@ -286,6 +286,8 @@ int main()
     //在指定位置插入元素
     SeqListPushAssign(&L,2,90);
     SeqListPrint(&L);
+    SeqListPushAssign(&L,0,-1);
+    SeqListPrint(&L);
 
     //删除数据(尾删)
     SeqListPopBack(&L);

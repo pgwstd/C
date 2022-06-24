@@ -5,6 +5,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "assert.h"
+
 //重定义数据类型
 typedef int SLData;
 //定义顺序表，动态开辟空间
@@ -50,6 +51,19 @@ void SeqListPushBack(SeqList *L, SLData x)
 
 }
 
+//头插法
+void SeqListPushFront(SeqList *L,SLData x)
+{
+    //挪动数据
+    int end = L->size -1;
+    while (end > 0)
+    {
+        L->Data[end+1] = L->Data[end];
+        --end;
+    }
+    L->Data[0] = x;
+    L->size++;
+}
 
 //删除数据(尾删)
 void SeqListPopBack(SeqList *L)
@@ -91,21 +105,29 @@ int main()
     SeqList L;
     SeqInitList(&L);
 
-    //插入数据
-    SeqListPushBack(&L, 1);
-    SeqListPushBack(&L, 2);
-    SeqListPushBack(&L, 3);
-    SeqListPushBack(&L, 4);
-    SeqListPushBack(&L, 5);
+    //插入数据(尾插)
+//    SeqListPushBack(&L, 1);
+//    SeqListPushBack(&L, 2);
+//    SeqListPushBack(&L, 3);
+//    SeqListPushBack(&L, 4);
+//    SeqListPushBack(&L, 5);
+//    SeqListPrint(&L);
+
+    //插入数据(头插)
+    SeqListPushFront(&L,1);
+    SeqListPushFront(&L,2);
+    SeqListPushFront(&L,3);
+    SeqListPushFront(&L,4);
+    SeqListPushFront(&L,5);
     SeqListPrint(&L);
-    //删除数据
-    SeqListPopBack(&L);
-    SeqListPopBack(&L);
-    SeqListPopBack(&L);
-    SeqListPopBack(&L);
+    //删除数据(尾删)
+//    SeqListPopBack(&L);
+//    SeqListPopBack(&L);
+//    SeqListPopBack(&L);
+//    SeqListPopBack(&L);
 
     //遍历顺序表
-    SeqListPrint(&L);
+//    SeqListPrint(&L);
     //销毁顺序表
     SeqDestroyList(&L);
     return 0;

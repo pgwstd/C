@@ -90,6 +90,7 @@ int main()
     SeqListPushBack(&L, 3);
     SeqListPushBack(&L, 4);
     SeqListPushBack(&L, 5);
+    SeqListPrint(&L);
     //删除数据
     SeqListPopBack(&L);
     //遍历顺序表

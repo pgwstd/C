@@ -27,11 +27,19 @@ void SeqInitList(SeqList *L)
 //尾插法
 void SeqListPushBack(SeqList *L, SLData x)
 {
-    //判断顺序表空间是来否满
+    //判断顺序表空间是来否满，如果满了就开辟空间(2倍的)
     if (L->size == L->length)
     {
-        printf("空间已满无进行数据插入!");
-        exit(-1);
+        //如果等于0就开辟4个空间，不等于0就乘于2倍
+        int capacity = L->length == 0 ? 4 : L->length * 2;
+        SLData *tmp = (SLData *) realloc(L->Data, capacity * sizeof(SLData));
+        if (tmp == NULL)
+        {
+            printf("申请空间失败!");
+            exit(-1);
+        }
+        L->Data = tmp;
+        L->length = capacity;
     }
     //插入数据
     L->Data[L->size] = x;  //访问开始时的下标进行插入
@@ -49,7 +57,7 @@ void SeqListPrint(SeqList *L)
 {
     for (int i = 0; i < L->size; ++i)
     {
-        printf("%d",L->Data[i]);
+        printf("%d ", L->Data[i]);
     }
     printf("\n");
 }

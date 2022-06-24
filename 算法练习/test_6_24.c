@@ -51,8 +51,11 @@ void SeqListPushBack(SeqList *L, SLData x)
 }
 
 
-//删除指定数据
+//删除数据(尾删)
+void SeqListPopBack(SeqList *L)
+{
 
+}
 
 //遍历顺序表
 void SeqListPrint(SeqList *L)
@@ -64,8 +67,13 @@ void SeqListPrint(SeqList *L)
     printf("\n");
 }
 
-//退出顺序表
-
+//销毁顺序表
+void SeqDestroyList(SeqList *L)
+{
+    free(L->Data);
+    L->Data = NULL;
+    L->size = L->length = 0;
+}
 
 
 int main()
@@ -81,8 +89,11 @@ int main()
     SeqListPushBack(&L, 3);
     SeqListPushBack(&L, 4);
     SeqListPushBack(&L, 5);
-
+    //删除数据
+    SeqListPopBack(&L);
     //遍历顺序表
     SeqListPrint(&L);
+    //销毁顺序表
+    SeqDestroyList(&L);
     return 0;
 }

@@ -36,6 +36,7 @@ void SeqListPushBack(SeqList *L, SLData x)
         if (tmp == NULL)
         {
             printf("申请空间失败!");
+            //退出整个程序
             exit(-1);
         }
         //把开辟好的空间给数据域和顺序表空间

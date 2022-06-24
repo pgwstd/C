@@ -69,7 +69,7 @@ void SeqListPushBack(SeqList *L, SLData x)
     //插入数据
     L->Data[L->size] = x;  //访问开始时的下标进行插入
     L->size++;
-
+//    SeqListPushAssign(L, L->size, x);
 
 }
 
@@ -102,6 +102,7 @@ void SeqListPushFront(SeqList *L, SLData x)
     }
     L->Data[0] = x;
     L->size++;
+//    SeqListPushAssign(L, 0, x);
 }
 
 //在指定位置插入元素

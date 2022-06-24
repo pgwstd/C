@@ -4,7 +4,7 @@
 //顺序表练习
 #include "stdio.h"
 #include "stdlib.h"
-
+#include "assert.h"
 //重定义数据类型
 typedef int SLData;
 //定义顺序表，动态开辟空间
@@ -55,7 +55,14 @@ void SeqListPushBack(SeqList *L, SLData x)
 void SeqListPopBack(SeqList *L)
 {
 //  L->Data[L->size-1] = 0;
-  L->size--;
+//    if (L->size == 0)
+//    {
+//        printf("数据域为空,不可删除！");
+//        exit(-1);
+//    }
+    //使用断言，如果删多了，直接报出错误
+    assert(L->size);
+    L->size--;
 }
 
 //遍历顺序表
@@ -93,6 +100,10 @@ int main()
     SeqListPrint(&L);
     //删除数据
     SeqListPopBack(&L);
+    SeqListPopBack(&L);
+    SeqListPopBack(&L);
+    SeqListPopBack(&L);
+
     //遍历顺序表
     SeqListPrint(&L);
     //销毁顺序表

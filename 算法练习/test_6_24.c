@@ -162,7 +162,7 @@ void SeqListPrint(SeqList *L)
 //查找表中指定位置的元素
 int SeqListGetElem(SeqList *L, int i)
 {
-    assert(L->size >= i && i >= 0);
+    assert(L->size >  i && i >= 0);
     if (i <= L->size || i > 0)
     {
         printf("位于表%d的位置的元素是:%d \n", i, L->Data[i - 1]);
@@ -197,7 +197,7 @@ int SeqListSearchElem(SeqList *L, SLData x)
 //删除指定位置的元素
 void SeqListSiteElem(SeqList *L, int i)
 {
-    assert(L->size >= i && i >= 0);
+    assert(L->size > i && i >= 0);
     if (i <= L->size || i >= 0)
     {
         i = i - 1;

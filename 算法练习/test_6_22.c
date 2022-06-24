@@ -21,7 +21,7 @@ typedef struct node
 //创建头结点
 node *add_head()
 {
-    node *Head = (node *) malloc(sizeof(node));  //开辟空间
+    node *Head = (node *) malloc(sizeof(node));  //开辟链表空间
     if (Head == NULL)
     {
         return NULL;

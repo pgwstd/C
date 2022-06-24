@@ -201,7 +201,7 @@ void SeqListAssignElem(SeqList *L, SLData x)
         {
             while (i < L->size)
             {
-                L->Data[i] = L->Data[i+1];
+                L->Data[i] = L->Data[i + 1];
                 i++;
             }
             L->size--;

@@ -119,6 +119,7 @@ void SeqListPopBack(SeqList *L)
 //删除数据(头删)
 void SeqListPopFront(SeqList *L)
 {
+    assert(L->size);
     int start = 0;
     while (start < L->size)
     {

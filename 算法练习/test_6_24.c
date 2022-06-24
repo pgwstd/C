@@ -93,7 +93,7 @@ void SeqListPushFront(SeqList *L,SLData x)
     SeqListCheakLenght(L);
     //挪动数据
     int end = L->size -1;
-    while (end > 0)
+    while (end >= 0)
     {
         L->Data[end+1] = L->Data[end];
         --end;

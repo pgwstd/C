@@ -142,7 +142,7 @@ void SeqListPrint(SeqList *L)
 void SeqListGetElem(SeqList *L,int i)
 {
 
-    printf("位于表%d的位置的元素是%d ", i,L->Data[i-1]);
+    printf("位于表%d的位置的元素是:%d ", i,L->Data[i-1]);
 }
 
 //输出表中的元素个数

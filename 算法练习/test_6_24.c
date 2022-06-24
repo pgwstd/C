@@ -108,6 +108,7 @@ void SeqListPushFront(SeqList *L, SLData x)
 void SeqListPushAssign(SeqList *L,int i,SLData x)
 {
     assert(L->size >= i && i >= 0);
+    SeqListCheakLength(L);
     int end = L->size-1;
     while(end >= i)
     {

@@ -25,7 +25,7 @@ void SeqInitList(SeqList *L)
 }
 
 //自动扩容
-void SeqListCheakLenght(SeqList *L)
+void SeqListCheakLength(SeqList *L)
 {
     //判断顺序表空间是来否满，如果满了就开辟空间(2倍的)
     if (L->size == L->length)
@@ -65,7 +65,7 @@ void SeqListPushBack(SeqList *L, SLData x)
 //        L->Data = tmp;
 //        L->length = capacity;
 //    }
-    SeqListCheakLenght(L);
+    SeqListCheakLength(L);
     //插入数据
     L->Data[L->size] = x;  //访问开始时的下标进行插入
     L->size++;
@@ -92,7 +92,7 @@ void SeqListPushFront(SeqList *L, SLData x)
 //        L->Data = tmp;
 //        L->length = capacity;
 //    }
-    SeqListCheakLenght(L);
+    SeqListCheakLength(L);
     //挪动数据
     int end = L->size - 1;
     while (end >= 0)
@@ -171,13 +171,13 @@ int SeqListGetElem(SeqList *L, int i)
 }
 
 //输出表中的元素个数
-void SeqListLenght(SeqList *L)
+void SeqListLength(SeqList *L)
 {
     printf("表中还有%d个元素\n", L->size);
 }
 
 //查找表中是否有这个元素
-int SeqListSeachElem(SeqList *L, SLData x)
+int SeqListSearchElem(SeqList *L, SLData x)
 {
     for (int i = 0; i < L->size; ++i)
     {
@@ -305,13 +305,13 @@ int main()
     SeqListPrint(&L);
 
     //返回顺序表中元素的个数
-    SeqListLenght(&L);
+    SeqListLength(&L);
 
     //查找指定位置中的元素
     SeqListGetElem(&L, 2);
 
     //查找表中元素是否存在
-    SeqListSeachElem(&L, 3);
+    SeqListSearchElem(&L, 3);
 
     //删除指定位置的元素
     SeqListSiteElem(&L, 2);

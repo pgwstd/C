@@ -65,17 +65,32 @@ void LinkListPushBack(LinkList **P, LinkData x)
 
 }
 
+void LinkListPushFront(LinkList **P, LinkData x)
+{
+    LinkList *newnode=LinkListOpen(x);
+    newnode->next = *P;
+    *P = newnode;
+}
+
 int main()
 {
     //初始化链表为空
     LinkList *L = NULL;
 
-    //插入数据
+    //插入数据(尾插)
     LinkListPushBack(&L, 1);
     LinkListPushBack(&L, 2);
     LinkListPushBack(&L, 3);
     LinkListPushBack(&L, 4);
     LinkListPushBack(&L, 5);
+
+    //插入数据(尾插)
+    LinkListPushFront(&L, 1);
+    LinkListPushFront(&L, 2);
+    LinkListPushFront(&L, 3);
+    LinkListPushFront(&L, 4);
+    LinkListPushFront(&L, 5);
+
 
     //打印链表
     LinkListPrint(L);

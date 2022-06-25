@@ -98,6 +98,11 @@ int main()
     LinkListPushFront(&L, 4);
     LinkListPushFront(&L, 5);
 
+    //尾删
+
+
+
+    //头删
 
     //打印链表
     LinkListPrint(L);

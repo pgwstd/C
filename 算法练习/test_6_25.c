@@ -16,10 +16,13 @@ typedef struct LinkList
 } LinkList;
 
 //开辟空间
-//void LinkListOpen(LinkList *P)
-//{
-//
-//}
+LinkList * LinkListOpen(LinkData x)
+{
+    LinkList *newnode = (LinkList*) malloc(sizeof(LinkList));
+    newnode->Data = x;
+    newnode->next = NULL;
+    return  newnode;
+}
 
 //遍历链表
 void LinkListPrint(LinkList *P)
@@ -33,14 +36,15 @@ void LinkListPrint(LinkList *P)
     printf("\n");
 }
 
-//插入新节点
+//插入新节点(尾插)
 void LinkListPushBack(LinkList **P, LinkData x)
 {
     //新建一个节点
-    LinkList *newnode = (LinkList*) malloc(sizeof(LinkList));
-    newnode->Data = x;
-    newnode->next = NULL;
+//    LinkList *newnode = (LinkList*) malloc(sizeof(LinkList));
+//    newnode->Data = x;
+//    newnode->next = NULL;
 
+    LinkList *newnode=LinkListOpen(x);
     //如果是一开始没有结点就直接指向这个结点
     if (*P == NULL)
     {

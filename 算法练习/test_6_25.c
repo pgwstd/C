@@ -19,6 +19,13 @@ typedef struct LinkList
 LinkList * LinkListOpen(LinkData x)
 {
     LinkList *newnode = (LinkList*) malloc(sizeof(LinkList));
+    //开辟失败处理
+    if (newnode == NULL)
+    {
+        printf("malloc fail\n");
+        exit(-1);
+    }
+    //开辟成功处理
     newnode->Data = x;
     newnode->next = NULL;
     return  newnode;

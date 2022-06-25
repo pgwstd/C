@@ -72,6 +72,8 @@ void LinkListPushBack(LinkList **P, LinkData x)
 
 }
 
+
+//插入数据(头插)
 void LinkListPushFront(LinkList **P, LinkData x)
 {
     LinkList *newnode=LinkListOpen(x);
@@ -79,6 +81,18 @@ void LinkListPushFront(LinkList **P, LinkData x)
     *P = newnode;
 }
 
+
+//删除数据(尾删)
+void  LinkListPopBack(LinkList **P)
+{
+
+}
+
+//删除数据(头删)
+void  LinkListPopFront(LinkList **P)
+{
+
+}
 int main()
 {
     //初始化链表为空
@@ -99,10 +113,11 @@ int main()
     LinkListPushFront(&L, 5);
 
     //尾删
-
+    LinkListPopBack(&L);
 
 
     //头删
+    LinkListPopFront(&L);
 
     //打印链表
     LinkListPrint(L);

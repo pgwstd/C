@@ -24,6 +24,7 @@ void SeqInitList(SeqList *L)
     L->size = L->length = 0;
 }
 
+
 //自动扩容
 void SeqListCheakLength(SeqList *L)
 {

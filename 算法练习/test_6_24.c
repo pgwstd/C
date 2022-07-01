@@ -135,6 +135,7 @@ void SeqListPopBack(SeqList *L)
     L->size--;
 }
 
+
 //删除数据(头删)
 void SeqListPopFront(SeqList *L)
 {
@@ -147,6 +148,7 @@ void SeqListPopFront(SeqList *L)
     }
     L->size--;
 }
+
 
 //遍历顺序表
 void SeqListPrint(SeqList *L)

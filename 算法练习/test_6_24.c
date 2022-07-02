@@ -298,18 +298,18 @@ int main()
 
     //删除数据(尾删)
     SeqListPopBack(&L);
-//    SeqListPopBack(&L);
-//    SeqListPopBack(&L);
-//    SeqListPopBack(&L);
+    SeqListPopBack(&L);
+    SeqListPopBack(&L);
+    SeqListPopBack(&L);
     SeqListPrint(&L);
 
     //删除数据(头删)
     SeqListPopFront(&L);
-//    SeqListPopFront(&L);
-//    SeqListPopFront(&L);
-//    SeqListPopFront(&L);
-//    SeqListPopFront(&L);
-//    SeqListPopFront(&L);
+    SeqListPopFront(&L);
+    SeqListPopFront(&L);
+    SeqListPopFront(&L);
+    SeqListPopFront(&L);
+    SeqListPopFront(&L);
     SeqListPrint(&L);
 
     //遍历顺序表

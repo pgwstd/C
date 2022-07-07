@@ -78,7 +78,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/panguangwei/Documents/C_HomeWork/算法练习/test_6_24.c">
+		<Unit filename="/Users/panguangwei/Documents/C_HomeWork/算法练习/test_7_7.c">
 			<Option target="c_homework"/>
 		</Unit>
 		<Unit filename="/Users/panguangwei/Documents/C_HomeWork/CMakeLists.txt">

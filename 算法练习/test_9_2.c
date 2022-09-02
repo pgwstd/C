@@ -4,7 +4,7 @@
 //数组int A[10]数组元素升序
 #include "stdio.h"
 
-void Num_Rise(int arr[], int sz)
+void Num_Rise(int *arr, int sz)
 {
 
     int tmp = 0;

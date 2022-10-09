@@ -46,3 +46,8 @@ int main()
     }
 
 }
+
+void stop()
+{
+    wait_flag = 0;
+}

@@ -10,12 +10,15 @@
 
 int wait_flag;
 
-void stop();
+void stop()
+{
+    wait_flag = 0;
+}
 
 int main()
 {
     int pid1, pid2;
-    signal(3, stop);
+    signal(2, stop);
     while ((pid1 = fork()) == -1);
     if (pid1 > 0)
     {
@@ -45,9 +48,4 @@ int main()
         exit(0);
     }
 
-}
-
-void stop()
-{
-    wait_flag = 0;
 }

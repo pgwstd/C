@@ -18,7 +18,8 @@ void stop()
 int main()
 {
     int pid1, pid2;
-    signal(2, stop);
+    sleep(20);
+    signal(3, stop);
     while ((pid1 = fork()) == -1);
     if (pid1 > 0)
     {

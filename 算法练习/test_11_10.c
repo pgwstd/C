@@ -5,73 +5,73 @@
   *   --------------------------------------------*/
 #include <stdio.h>
 
-int curr[5][5], maxclaim[5][5], avl[5];
-int alloc[5] = {0, 0, 0, 0, 0};
-int maxres[5], running[5], safe = 0;
-int count = 0, i, j, exec, r, p, k = 1;
+int curr[5][5], maxclaim[5][5], avl[5]; //Avl是可用资源
+int alloc[5] = {0, 0, 0, 0, 0}; //Alloc是已分配的资源
+int maxres[5], running[5], safe = 0;    //Safe是安全状态
+int count = 0, i, j, exec, r, p, k = 1; //Exec是执行的进程数
 
 int main() {
-    printf("\nEnter the number of processes: ");
-    scanf("%d", &p);
+    printf("\nEnter the number of processes: ");    //输入进程数
+    scanf("%d", &p);    //p是进程数
     for (i = 0; i < p; i++) {
         running[i] = 1;
         count++;
     }
-    printf("\nEnter the number of resources: ");
-    scanf("%d", &r);
+    printf("\nEnter the number of resources: ");    //输入资源数
+    scanf("%d", &r);    //r是资源数
     printf("\nEnter Claim Vector:");
     for (i = 0; i < r; i++) {
         scanf("%d", &maxres[i]);
     }
-    printf("\nEnter Allocated Resource Table:\n");
+    printf("\nEnter Allocated Resource Table:\n");  //输入已分配的资源表
     for (i = 0; i < p; i++) {
         for (j = 0; j < r; j++) {
-            scanf("%d", &curr[i][j]);
+            scanf("%d", &curr[i][j]);   //输入当前进程已分配的资源
         }
     }
-    printf("\nEnter Maximum Claim Table:\n");
+    printf("\nEnter Maximum Claim Table:\n");   //输入最大需求表
     for (i = 0; i < p; i++) {
         for (j = 0; j < r; j++) {
-            scanf("%d", &maxclaim[i][j]);
+            scanf("%d", &maxclaim[i][j]);   //输入当前进程最大需求的资源
         }
     }
-    printf("\nThe Claim Vector is: ");
+    printf("\nThe Claim Vector is: ");  //输出资源数
     for (i = 0; i < r; i++) {
-        printf("\t%d", maxres[i]);
+        printf("\t%d", maxres[i]);  //输出最大资源数
     }
-    printf("\nThe Allocated Resource Table:\n");
+    printf("\nThe Allocated Resource Table:\n");    //输出已分配的资源表
     for (i = 0; i < p; i++) {
         for (j = 0; j < r; j++) {
-            printf("\t%d", curr[i][j]);
+            printf("\t%d", curr[i][j]); //输出当前进程已分配的资源
         }
         printf("\n");
     }
-    printf("\nThe Maximum Claim Table:\n");
+    printf("\nThe Maximum Claim Table:\n"); //输出最大需求表
     for (i = 0; i < p; i++) {
         for (j = 0; j < r; j++) {
-            printf("\t%d", maxclaim[i][j]);
+            printf("\t%d", maxclaim[i][j]); //输出当前进程最大需求的资源
         }
         printf("\n");
     }
     for (i = 0; i < p; i++) {
         for (j = 0; j < r; j++) {
-            alloc[j] += curr[i][j];
+            alloc[j] += curr[i][j]; //计算已分配的资源
         }
     }
-    printf("\nAllocated resources:");
+    printf("\nAllocated resources:");   //输出已分配的资源
     for (i = 0; i < r; i++) {
-        printf("\t%d", alloc[i]);
+        printf("\t%d", alloc[i]);   //输出已分配的资源
     }
     for (i = 0; i < r; i++) {
-        avl[i] = maxres[i] - alloc[i];
+        avl[i] = maxres[i] - alloc[i];  //计算可用资源
     }
-    printf("\nAvailable resources:");
+    printf("\nAvailable resources:");   //输出可用资源
     for (i = 0; i < r; i++) {
-        printf("\t%d", avl[i]);
+        printf("\t%d", avl[i]); //输出可用资源
     }
     printf("\n");
     //Main procedure goes below to check for unsafe state.
-    while (count != 0) {
+    while (count != 0) {    //当进程数不为0时
         safe = 0;
         for (i = 0; i < p; i++) {
             if (running[i]) {
@@ -83,7 +83,7 @@ int main() {
                     }
                 }
                 if (exec) {
-                    printf("\nProcess%d is executing\n", i + 1);
+                    printf("\nProcess%d is executing\n", i + 1);    //输出执行的进程
                     running[i] = 0;
                     count--;
                     safe = 1;
@@ -95,7 +95,7 @@ int main() {
                 }
             }
         }
-        if (!safe) {
+        if (!safe) {    //如果不安全
             printf("\nThe processes are in unsafe state.\n");
             break;
         } else {

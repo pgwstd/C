@@ -74,7 +74,7 @@ int main() {
     //Main procedure goes below to check for unsafe state.
     while (count != 0) {    //当进程数不为0时
         safe = 0;
-        for (i = 0; i < p; i++) {
+        for (i = 0; i < p; i++) {   //遍历进程
             if (running[i]) {
                 exec = 1;
                 for (j = 0; j < r; j++) {
@@ -83,7 +83,7 @@ int main() {
                         break;
                     }
                 }
-                if (exec) {
+                if (exec) { //如果当前进程可以执行
                     printf("\nProcess%d is executing\n", i + 1);    //输出执行的进程
                     running[i] = 0;
                     count--;
@@ -99,10 +99,10 @@ int main() {
         if (!safe) {    //如果不安全
             printf("\nThe processes are in unsafe state.\n");
             break;
-        } else {
+        } else {    //如果安全
             printf("\nThe process is in safe state");
             printf("\nAvailable vector:");
-            for (i = 0; i < r; i++) {
+            for (i = 0; i < r; i++) {   //输出可用资源
                 printf("\t%d", avl[i]);
             }
             printf("\n");

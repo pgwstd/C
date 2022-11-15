@@ -11,7 +11,7 @@ int available[N]={3,3,2};
 int max[M][N]={{7,5,3},{3,2,2},{9,0,2},{2,2,2},{4,3,3}};
 int allocation[M][N]={{0,1,0},{2,0,0},{3,0,2},{2,1,1},{0,0,2}};
 int need[M][N],p[M];
-void init(){
+void init(){    //初始化need数组
     int i,j;
     for(i=0;i<M;i++){
         for(j=0;j<N;j++){
@@ -19,7 +19,7 @@ void init(){
         }
     }
 }
-void output(){
+void output(){ //输出need数组
     int i,j;
     printf("\nThe table of allocation is:");
     for(i=0;i<M;i++){
@@ -29,7 +29,7 @@ void output(){
         }
     }
 }
-int compare(int need[],int work[]){
+int compare(int need[],int work[]){ //比较need和work
     int j;
     for(j=0;j<N;j++){
         if(need[j]>work[j]){

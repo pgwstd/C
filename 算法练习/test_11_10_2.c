@@ -33,7 +33,7 @@ int compare(int need[],int work[]){ //比较need和work
     int j;
     for(j=0;j<N;j++){
         if(need[j]>work[j]){
-            return FALSE;
+            return FALSE;//如果need大于work，返回FALSE
         }
     }
     return TRUE;

@@ -101,35 +101,35 @@ void operate() {
                 continue;
             }
         }
-        printf("Input a request\n");
+        printf("Input a request\n");//输入请求
         for (j = 0; j < N; j++) {
             scanf("%d", &request[j]);
         }
         //当申请量大于需求量的时候，输出“The demand is out of need!\n”以及输出output()函数。
-        for (j = 0; j < N; j++) {
-            if (request[j] > need[i][j]) {
+        for (j = 0; j < N; j++) {   //判断申请量是否大于需求量
+            if (request[j] > need[i][j]) {  //申请量大于需求量
                 printf("The demand is out of need!\n");
-                f1 = TRUE;
+                 f1 = TRUE;
                 break;
             }
         }
-        if (f1 == TRUE) {
-            output();
-            continue;
-        }
+         if (f1 == TRUE) {//当f1为TRUE的时候，输出output()函数
+             output();
+             continue;
+         }
         //当申请量大于系统可利用资源的时候，输出“The request is out of available!\n”以及output()函数。
 
-        for (j = 0; j < N; j++) {
-            if (request[j] > available[j]) {
+        for (j = 0; j < N; j++) {   //判断申请量是否大于系统可利用资源
+            if (request[j] > available[j]) {    //申请量大于系统可利用资源
                 printf("The request is out of available!\n");
-                int f1 = TRUE;
+                 f1 = TRUE;
                 break;
             }
         }
-        if (f1 == TRUE) {
-            output();
-            continue;
-        }
+         if (f1 == TRUE) {
+             output();
+             continue;
+         }
         if (f1 == TRUE) continue;
 
         //Available[j] = Available[j]-Request[j];

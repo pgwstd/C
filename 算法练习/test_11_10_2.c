@@ -6,20 +6,20 @@
 
 #define TRUE 1
 #define FALSE 0
-#define M 5
-#define N 3
-int available[N] = {3, 3, 2};
+#define M 5 //进程数
+#define N 3 //资源数
+int available[N] = {3, 3, 2};//可用资源
 int max[M][N] = {{7, 5, 3},
                  {3, 2, 2},
                  {9, 0, 2},
                  {2, 2, 2},
-                 {4, 3, 3}};
+                 {4, 3, 3}};//最大需求
 int allocation[M][N] = {{0, 1, 0},
                         {2, 0, 0},
                         {3, 0, 2},
                         {2, 1, 1},
-                        {0, 0, 2}};
-int need[M][N], p[M];
+                        {0, 0, 2}};//已分配
+int need[M][N], p[M];//need是还需要的资源，p是进程
 
 void init() {    //初始化need数组
     int i, j;
@@ -84,7 +84,7 @@ int isSecurity(int available[], int need[][N], int allocation[][N]) {  //判断�
 }
 
 void operate() {
-    int i, j, flag, f1, request[N];
+    int i, j, flag, f1, request[N];//request[N]表示进程N请求的资源
     printf("****************************************************************\n");
     printf("when you input a value which is smaller than zero,it will stop!\n");
     while (TRUE) {
@@ -135,7 +135,7 @@ void operate() {
         //Available[j] = Available[j]-Request[j];
 
         for (j = 0; j < N; j++) {
-            available[j] -= request[j];
+            available[j] -= request[j];//累减
         }
         //Allocation[i,j] = Allocation[i,j]+Request[j];
 

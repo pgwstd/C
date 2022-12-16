@@ -3,7 +3,6 @@
 #define N 10
 
 int main() {
-    int s;
     int a[N];
     int sum = 0;
     for (int s = 0; s < 10; ++s) {
